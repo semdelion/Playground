@@ -9,3 +9,7 @@
 /src/Semdelion/Playground/Playground.Droid/obj
 /src/Semdelion/Playground/Playground.iOS/obj
 /src/Semdelion/Playground/Playground.iOS/bin/Debug
+/src/Semdelion/Core/Semdelion.Droid/bin/Debug
+/src/Semdelion/Core/Semdelion.Droid/obj
+/src/Semdelion/Core/Semdelion.iOS/obj
+/src/Semdelion/Playground/Playground.Core/bin/Debug/netstandard2.0
