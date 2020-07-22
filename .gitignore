@@ -1,15 +1,40 @@
-﻿/src/Core/Semdelion.Droid/bin/Debug
-/src/Core/Semdelion.Droid/obj
-/src/Core/Semdelion.iOS/obj
-/src/Core/Semdelion.iOS/bin/Debug
-/src/Semdelion/.vs/Semdelion
-/src/Semdelion/Core/Semdelion.Core/obj
-/src/Semdelion/Playground/Playground.Core/obj
-/src/Semdelion/Playground/Playground.Droid/bin/Debug
-/src/Semdelion/Playground/Playground.Droid/obj
-/src/Semdelion/Playground/Playground.iOS/obj
-/src/Semdelion/Playground/Playground.iOS/bin/Debug
-/src/Semdelion/Core/Semdelion.Droid/bin/Debug
-/src/Semdelion/Core/Semdelion.Droid/obj
-/src/Semdelion/Core/Semdelion.iOS/obj
-/src/Semdelion/Playground/Playground.Core/bin/Debug/netstandard2.0
+﻿# Specific
+.mfractor/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Build results
+/**/Debug/*
+/**/Release/*
+/**/bin/*
+/**/obj/*
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+*.userprefs
+*.DS_Store
+*.Cache
+*.bak
+/src/UpgradeLog*.htm
+
+# Ignore Xamarin.Android Resource.Designer.cs files
+**/*.Droid*/**/[Rr]esource.[Dd]esigner.cs
+*/*.Droid/**/[Rr]esource.[Dd]esigner.cs
+**/*.Droid/**/[Rr]esource.[Dd]esigner.cs
+/**/*Android*/**/[Rr]esource.[Dd]esigner.cs
+**/Droid/**/[Rr]esource.[Dd]esigner.cs
+**/Android/**/[Rr]esource.[Dd]esigner.cs
+**/Droid/**/[Rr]esource.[Dd]esigner.cs
