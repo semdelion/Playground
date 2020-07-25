@@ -11,7 +11,7 @@ using Plugin.Permissions;
 namespace Playground.Droid
 {
     [MvxActivityPresentation]
-    [Activity(Theme = "@style/AppTheme.Main", 
+    [Activity(Theme = "@style/AppTheme", 
         LaunchMode = LaunchMode.SingleTask, 
         ScreenOrientation = ScreenOrientation.Portrait,
         WindowSoftInputMode = SoftInput.StateHidden, 

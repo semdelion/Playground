@@ -1,11 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Semdelion.DAL\Semdelion.DAL.csproj" />
     <ProjectReference Include="..\Semdelion.DAL\Semdelion.DAL.csproj" />
   </ItemGroup>
 
