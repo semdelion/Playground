@@ -16,7 +16,7 @@ namespace Playground.Droid
         ScreenOrientation = ScreenOrientation.Portrait,
         WindowSoftInputMode = SoftInput.StateHidden, 
         MainLauncher = true)]
-    class RootView : MvxAppCompatActivity<RootViewModel>
+    class MainActivity : MvxAppCompatActivity<RootViewModel>
     {
         protected override void OnCreate(Bundle bundle)
         {

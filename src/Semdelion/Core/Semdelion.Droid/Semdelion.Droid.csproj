@@ -61,6 +61,18 @@
     <PackageReference Include="MvvmCross.Plugin.Json">
       <Version>6.4.2</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.AppCompat">
+      <Version>1.1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.AppCompat.Resources">
+      <Version>1.1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData">
+      <Version>2.2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Google.Android.Material">
+      <Version>1.0.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
