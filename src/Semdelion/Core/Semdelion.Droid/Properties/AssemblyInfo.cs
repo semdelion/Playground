@@ -1,30 +1,15 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using Android.App;
+﻿using Android.App;
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("Semdelion.Droid")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Semdelion.Droid")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
+// Note: Shared assembly information is specified in SharedAssemblyInfo.cs
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+// We need to be able to download map tiles and access Google Play Services
+[assembly: UsesPermission("android.permission.INTERNET")]
+
+// Permission to receive remote notifications from Google Play Services.
+// Notice here that we have the package name of our application as a prefix on the permissions.
+// These are optional, but recommended.They will allow Maps to use the My Location provider.
+[assembly: UsesPermission("android.permission.ACCESS_COARSE_LOCATION")]
+[assembly: UsesPermission("android.permission.ACCESS_FINE_LOCATION")]
+[assembly: UsesPermission("android.permission.CAMERA")]
+[assembly: UsesPermission("android.permission.FLASHLIGHT")]
+[assembly: Permission(Name = "android.permission.INTERACT_ACROSS_USERS_FULL", ProtectionLevel = Android.Content.PM.Protection.Signature)]

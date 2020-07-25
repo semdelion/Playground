@@ -135,9 +135,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Semdelion.iOS\Semdelion.iOS.csproj">
+      <Project>{4526d6aa-c782-45f5-9d93-ddddabbc93c7}</Project>
+      <Name>Semdelion.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">
       <Project>{EA2234AA-4F99-4CC1-9BBA-C5D29E730AE6}</Project>
       <Name>Playground.Core</Name>
