@@ -6,6 +6,7 @@ using Android.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Plugin.Permissions;
+using Semdelion.Core.ViewModels;
 
 namespace Playground.Droid
 {

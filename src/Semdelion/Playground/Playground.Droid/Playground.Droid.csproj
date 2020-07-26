@@ -120,6 +120,10 @@
       <Project>{ea2234aa-4f99-4cc1-9bba-c5d29e730ae6}</Project>
       <Name>Playground.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Core\Semdelion.Core\Semdelion.Core.csproj">
+      <Project>{B7553A2A-B408-4FE4-A594-D879EE20188D}</Project>
+      <Name>Semdelion.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_main.xml">
