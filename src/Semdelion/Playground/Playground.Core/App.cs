@@ -1,5 +1,5 @@
 ﻿using MvvmCross.ViewModels;
-using Semdelion.Core.ViewModels;
+using Playground.Core.ViewModels;
 
 namespace Playground.Core
 {
