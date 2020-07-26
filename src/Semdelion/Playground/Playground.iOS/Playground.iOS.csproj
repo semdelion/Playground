@@ -147,6 +147,10 @@
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
+    <ProjectReference Include="..\..\Core\Semdelion.Core\Semdelion.Core.csproj">
+      <Project>{B7553A2A-B408-4FE4-A594-D879EE20188D}</Project>
+      <Name>Semdelion.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

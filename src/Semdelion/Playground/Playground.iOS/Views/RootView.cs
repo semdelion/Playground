@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Platforms.Ios.Views;
+using Semdelion.Core.ViewModels;
 
 namespace Playground.iOS.Views
 {
