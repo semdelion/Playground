@@ -1,8 +1,6 @@
 ﻿using MvvmCross.IoC;
 using MvvmCross.ViewModels;
-using Playground.Core.ViewModels;
-using System.Threading.Tasks;
-
+using Semdelion.Core.ViewModels;
 namespace Playground.Core
 {
     public class App : MvxApplication
@@ -16,7 +14,7 @@ namespace Playground.Core
 
            // Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(new TextProviderBuilder().TextProvider);
 
-            RegisterAppStart<RootViewModel>();
+            RegisterAppStart<MainViewModel>();
         }
     }
 }

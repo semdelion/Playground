@@ -1,31 +1,18 @@
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local          ="http://schemas.android.com/apk/res-auto"
-    android:id           ="@+id/main_frame"
-    android:layout_width ="match_parent"
-    android:layout_height="match_parent"
-    android:orientation  ="vertical">
-    <ScrollView
-        android:layout_width ="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-        <LinearLayout
-            android:layout_width ="match_parent"
-            android:layout_height="match_parent"
-            android:orientation  ="vertical">
-            <Button
-                android:layout_width    ="match_parent"
-                android:layout_height   ="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text            ="Show Child"
-                local:MvxBind           ="Click ShowChildCommand;" />
-        </LinearLayout>
-    </ScrollView>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android            ="http://schemas.android.com/apk/res/android"
+    android:id               ="@+id/main_RelativeLayout"
+    android:layout_width     ="match_parent"
+    android:layout_height    ="match_parent">
+    <include
+        layout="@layout/main_content_activity" />
+    <!-- The Left Navigation Drawer -->
     <FrameLayout
-        android:id="@+id/content_frame"
-        android:layout_width ="match_parent"
-        android:layout_height="160dp"
-        android:minWidth     ="25px"
-        android:minHeight    ="25px">
+        android:id            ="@+id/main_menuFragment"
+        android:layout_width  ="match_parent"
+        android:layout_height ="match_parent"
+        android:layout_gravity="start"
+        android:orientation   ="vertical">
+        <!-- The Main Content View -->
     </FrameLayout>
-</LinearLayout>
+</RelativeLayout>

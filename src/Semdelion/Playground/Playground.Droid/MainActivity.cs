@@ -5,7 +5,6 @@ using Android.Runtime;
 using Android.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
-using Playground.Core.ViewModels;
 using Plugin.Permissions;
 
 namespace Playground.Droid
@@ -16,7 +15,7 @@ namespace Playground.Droid
         ScreenOrientation = ScreenOrientation.Portrait,
         WindowSoftInputMode = SoftInput.StateHidden, 
         MainLauncher = true)]
-    class MainActivity : MvxAppCompatActivity<RootViewModel>
+    class MainActivity : MvxAppCompatActivity<MainViewModel>
     {
         protected override void OnCreate(Bundle bundle)
         {
