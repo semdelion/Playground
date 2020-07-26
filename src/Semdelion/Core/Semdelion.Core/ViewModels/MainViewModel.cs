@@ -9,10 +9,5 @@ namespace Semdelion.Core.ViewModels
         public MainViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
         {
         }
-
-        public override void ViewAppearing()
-        {
-            base.ViewAppearing();
-        }
     }
 }

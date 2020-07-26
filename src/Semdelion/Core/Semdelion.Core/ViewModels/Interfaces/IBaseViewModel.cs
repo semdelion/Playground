@@ -6,7 +6,15 @@ using System.ComponentModel;
 namespace Semdelion.Core.ViewModels.Interfaces
 {
     public interface IBaseViewModel: IMvxViewModel, INotifyPropertyChanged
-    { 
+    {
+        /// <summary>
+        ///     Заголовок вью модели.
+        /// </summary>
+        string Title { get; }
+
+        /// <summary>
+        ///     Состояние вью модели.
+        /// </summary>
         States State { get; set; }
     }
 

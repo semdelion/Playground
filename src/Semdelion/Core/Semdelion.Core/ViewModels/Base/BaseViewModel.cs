@@ -9,10 +9,14 @@ namespace Semdelion.Core.ViewModels.Base
 {
     public abstract class BaseViewModel : MvxNavigationViewModel, IBaseViewModel
     {
+        public virtual string Title => string.Empty;
+
         public States State { get; set; } = States.Clean;
 
-        public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
+        public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) 
+            : base(logProvider, navigationService)
         {
+
         }
     }
 }

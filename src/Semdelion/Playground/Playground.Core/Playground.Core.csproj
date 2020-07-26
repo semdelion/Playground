@@ -12,8 +12,4 @@
     <ProjectReference Include="..\..\Core\Semdelion.Core\Semdelion.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
 </Project>
