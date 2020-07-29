@@ -64,7 +64,8 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="View\FirstView.cs" />
+    <Compile Include="View\MainView.cs" />
+    <Compile Include="View\SecondView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -146,6 +147,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\first_view.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\second_view.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

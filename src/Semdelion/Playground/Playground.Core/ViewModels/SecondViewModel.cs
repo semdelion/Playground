@@ -4,9 +4,11 @@ using Semdelion.Core.ViewModels.Base;
 
 namespace Playground.Core.ViewModels
 {
-    public class FirstViewModel: BaseViewModel
+    public class SecondViewModel : BaseViewModel
     {
-        public FirstViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
+        public override string Title => "SecondViewModel";
+
+        public SecondViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
            : base(logProvider, navigationService)
         {
 

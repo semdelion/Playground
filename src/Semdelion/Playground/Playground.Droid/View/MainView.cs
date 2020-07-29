@@ -7,9 +7,9 @@ using Semdelion.Droid.Resources.View;
 
 namespace Playground.Droid.View
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.main_layoutContent, false)]
-    [Register(nameof(FirstView))]
-    public class FirstView : MvxBaseFragment<FirstViewModel>
+    [MvxFragmentPresentation(typeof(MainFragmentHostViewModel), Resource.Id.main_layoutContent, false)]
+    [Register(nameof(MainView))]
+    public class MainView : BaseFragment<MainViewModel>
     {
         protected override int FragmentId => Resource.Layout.first_view;
 
