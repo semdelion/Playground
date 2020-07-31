@@ -68,12 +68,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Entitlements.plist" />
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Views\RootView.xib" />
-    <Compile Include="Views\RootView.cs" />
-    <Compile Include="Views\RootView.designer.cs">
-      <DependentUpon>RootView.cs</DependentUpon>
+    <InterfaceDefinition Include="Views\MainView.xib" />
+    <Compile Include="Views\MainView.cs" />
+    <Compile Include="Views\MainView.designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup.cs" />
+    <InterfaceDefinition Include="Views\SecondView.xib" />
+    <Compile Include="Views\SecondView.cs" />
+    <Compile Include="Views\SecondView.designer.cs">
+      <DependentUpon>SecondView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

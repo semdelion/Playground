@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Playground.iOS.Views
 {
-    [Register("RootView")]
-    partial class RootView
+    [Register("MainView")]
+    partial class MainView
     {
         void ReleaseDesignerOutlets()
         {

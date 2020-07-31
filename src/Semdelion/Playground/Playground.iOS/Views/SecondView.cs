@@ -3,9 +3,9 @@ using Playground.Core.ViewModels;
 
 namespace Playground.iOS.Views
 {
-    public partial class RootView : MvxViewController<MainViewModel>
+    public partial class SecondView : MvxViewController<SecondViewModel>
     {
-        public RootView() : base("RootView", null)
+        public SecondView() : base(nameof(SecondView), null)
         {
         }
     }
