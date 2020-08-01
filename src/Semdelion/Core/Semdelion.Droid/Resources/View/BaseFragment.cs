@@ -1,4 +1,5 @@
-﻿using Android.OS;
+﻿using Android.Bluetooth;
+using Android.OS;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -6,7 +7,9 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
+using Semdelion.Core.Enums;
 using Semdelion.Core.ViewModels.Interfaces;
+using Semdelion.Droid.Bindings;
 
 namespace Semdelion.Droid.Resources.View
 {
@@ -40,13 +43,15 @@ namespace Semdelion.Droid.Resources.View
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             view = this.BindingInflate(FragmentId, container, false);
-            Binding(view);
+            Binding(view, container);
             return view;
         }
 
-        protected virtual void Binding(Android.Views.View view)
+        protected virtual void Binding(Android.Views.View view, ViewGroup viewGroup)
         {
-            this.CreateBinding(this).For(v => v.Title).To<TViewModel>(vm => vm.Title).Apply();
+            var set = this.CreateBindingSet<BaseFragment<TViewModel>, TViewModel>();
+            set.Bind(this).For(v => v.Title).To(vm => vm.Title);
+            set.Apply();
         }
     }
 }

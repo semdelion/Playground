@@ -11,7 +11,12 @@ namespace Semdelion.Core.ViewModels.Base
     {
         public virtual string Title { get; set; } = string.Empty;
 
-        public States State { get; set; } = States.Clean;
+        public States _state;
+        public States State
+        { 
+            get => _state;
+            set => SetProperty(ref _state, value);
+        } 
 
         public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) 
             : base(logProvider, navigationService)

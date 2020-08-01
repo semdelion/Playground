@@ -6,7 +6,6 @@ namespace Semdelion.Core.Enums
 {
     public enum States
     {
-        Clean,
         Loading,
         Normal,
         Error,
