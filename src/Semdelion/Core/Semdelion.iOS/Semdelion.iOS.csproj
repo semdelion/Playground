@@ -41,19 +41,17 @@
     <Folder Include="Views\" />
     <Folder Include="Views\States\" />
     <Folder Include="Bindings\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\States\LoadingView.cs" />
-    <Compile Include="Views\States\LoadingView.designer.cs">
-      <DependentUpon>LoadingView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Bindings\StatesTargetBinding.cs" />
     <Compile Include="BaseIosSetup.cs" />
     <Compile Include="Views\States\NoDataView.cs" />
-    <Compile Include="Views\States\NoDataView.designer.cs">
-      <DependentUpon>NoDataView.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Extensions\ContraintExtension.cs" />
+    <Compile Include="Views\States\ErrorView.cs" />
+    <Compile Include="Views\States\NoInternetConnectionView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Semdelion.Core\Semdelion.Core.csproj">
@@ -62,13 +60,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Views\States\LoadingView.xib" />
-    <InterfaceDefinition Include="Views\States\NoDataView.xib" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="MvvmCross">
       <Version>6.4.2</Version>
     </PackageReference>
+    <PackageReference Include="Com.Airbnb.iOS.Lottie">
+      <Version>2.5.11</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\error.json" />
+    <BundleResource Include="Resources\no-internet-connection.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

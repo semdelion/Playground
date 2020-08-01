@@ -1,8 +1,10 @@
 ﻿namespace Semdelion.iOS.Bindings
 {
     using System;
+    using CoreGraphics;
     using MvvmCross.Binding.Bindings.Target;
     using Semdelion.Core.Enums;
+    using Semdelion.iOS.Extensions;
     using Semdelion.iOS.Views.States;
     using UIKit;
 
@@ -20,32 +22,62 @@
         {
             try
             {
-                if (!(target is UIView view) || value == null) return;
-
+                if (!(target is UIView contentView) || value == null) return;
+               
                 States state = (States)Enum.Parse(typeof(States), value.ToString());
-                UIView stateView = new UIView();
+                UIView stateView = new UIView()
+                {
+                    TranslatesAutoresizingMaskIntoConstraints = false
+                };
+
+                foreach (UIView view in contentView.Subviews)
+                    view.RemoveFromSuperview();
+
+                contentView.Alpha = 1f;
+                var _frame = new CGRect(0, 0, contentView.Frame.Width, contentView.Frame.Height);
+
                 switch (state)
                 {
-                    case States.Clean:
-                        stateView = new NoDataView();
-                        break;
                     case States.Normal:
-                        stateView = new NoDataView();
+                        var vertStackView = new UIStackView
+                        {
+                            TranslatesAutoresizingMaskIntoConstraints = false,
+                            Distribution = UIStackViewDistribution.EqualSpacing,
+                            Axis = UILayoutConstraintAxis.Vertical,
+                            Alignment = UIStackViewAlignment.Fill,
+                            Spacing = 8
+                        };
+                        vertStackView.AddArrangedSubview(new UILabel() {Text = "NoInternet", TextColor = UIColor.Black });
+                        vertStackView.AddArrangedSubview(new UIButton(UIButtonType.ContactAdd));
+
+                        stateView.AddSubview(vertStackView);
+
+                        vertStackView.SetFillXContraintTo(stateView);
+                        vertStackView.SetBottomContraintTo(stateView, 0, NSLayoutRelation.GreaterThanOrEqual);
+
+                        stateView.AddConstraint(
+                            NSLayoutConstraint.Create(vertStackView, NSLayoutAttribute.CenterY, NSLayoutRelation.Equal, stateView, NSLayoutAttribute.CenterY, 1, 0)
+                        );
+                        //contentView.AddSubview(new UIButton(UIButtonType.ContactAdd) { Center = contentView.Center });
+                        //contentView.AddSubview(new UILabel() { Center = contentView.Center, Text = "Normal", TextColor = UIColor.Black });
                         break;
                     case States.Loading:
-                        stateView = new LoadingView();
                         break;
                     case States.NoData:
-                        stateView = new NoDataView();
                         break;
                     case States.NoInternet:
-                        stateView = new NoDataView();
+                        stateView = new NoInternetConnectionView(_frame);
                         break;
                     case States.Error:
-                        stateView = new NoDataView();
+                        stateView = new ErrorView(_frame);
                         break;
                 }
-                view.AddSubview(stateView);
+                contentView.AddSubview(stateView);
+                stateView.SetFillYContraintTo(contentView, 16);
+                stateView.SetLeftContraintTo(contentView, 16);
+                stateView.SetRightContraintTo(contentView, 16);
+                contentView.SetNeedsUpdateConstraints();
+                contentView.LayoutIfNeeded();
             }
             catch (Exception ex)
             {

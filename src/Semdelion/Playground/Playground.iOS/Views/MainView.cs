@@ -11,6 +11,10 @@ namespace Playground.iOS.Views
     {
         [Outlet]
         public UIButton NextButton { get; set; }
+
+        [Outlet]
+        public UIView ContentView { get; set; }
+
         public MainView() : base(nameof(MainView), null)
         {
         }
@@ -20,7 +24,7 @@ namespace Playground.iOS.Views
             base.ViewDidLoad();
             var set = this.CreateBindingSet<MainView, MainViewModel>();
             set.Bind(NextButton).To(vm => vm.ToSecondView);
-            set.Bind(View).For(StatesTargetBinding.Key).To(vm => vm.State);
+            //set.Bind(ContentView).For(StatesTargetBinding.Key).To(vm => vm.State);
             set.Apply();
         }
     }
