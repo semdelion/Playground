@@ -19,20 +19,17 @@ namespace Playground.Core.ViewModels
         public override async Task Initialize()
         {
             await base.Initialize();
+
             State = States.Error;
-            await Task.Delay(5000);
+            await Task.Delay(3000);
             State = States.NoInternet;
-            await Task.Delay(5000);
-            State = States.Normal;
-            await Task.Delay(1000);
+            await Task.Delay(3000);
             State = States.NoData;
-            await Task.Delay(1000);
+            await Task.Delay(3000);
+            State = States.Loading;
+            await Task.Delay(3000);
             State = States.Normal;
-            await Task.Delay(1000);
-            State = States.NoData;
-            await Task.Delay(1000);
-            State = States.Normal;
-            await Task.Delay(1000);
+            await Task.Delay(3000);
         }
     }
 }
