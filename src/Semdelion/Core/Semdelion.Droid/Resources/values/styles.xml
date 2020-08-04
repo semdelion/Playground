@@ -1,11 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <resources>
+  <!-- Theme -->
+  <style
+      name="Semdelion">
+    <!--  Text colors  -->
+  </style>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
+  <style name="AppTheme.Primary.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+  </style>
 </resources>

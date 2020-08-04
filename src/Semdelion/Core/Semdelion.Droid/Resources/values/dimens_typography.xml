@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <dimen
+      name="semdelion_text_size_h1">34sp</dimen>
+  <dimen
+      name="semdelion_text_size_h2">24sp</dimen>
+  <dimen
+      name="semdelion_text_size_h3">20sp</dimen>
+  <dimen
+      name="semdelion_text_size_subtitle1">16sp</dimen>
+  <dimen
+      name="semdelion_text_size_subtitle2">14sp</dimen>
+  <dimen
+      name="semdelion_text_size_body1">16sp</dimen>
+  <dimen
+      name="semdelion_text_size_body2">14sp</dimen>
+  <dimen
+      name="semdelion_text_size_button">14sp</dimen>
+  <dimen
+      name="semdelion_text_size_caption">12sp</dimen>
+  <dimen
+      name="semdelion_text_size_overline">10sp</dimen>
+  <!--  letter spacing = sketch character spacing / font size in sp  -->
+  <item
+      name  ="semdelion_letter_spacing_h1"
+      format="float"
+      type  ="dimen">0.007352941176471</item>
+  <item
+      name  ="semdelion_letter_spacing_h2"
+      format="float"
+      type  ="dimen">0</item>
+  <item
+      name  ="semdelion_letter_spacing_h3"
+      format="float"
+      type  ="dimen">0.0075</item>
+  <item
+      name  ="semdelion_letter_spacing_subtitle1"
+      format="float"
+      type  ="dimen">0.009375</item>
+  <item
+      name  ="semdelion_letter_spacing_subtitle2"
+      format="float"
+      type  ="dimen">0.007142857142857</item>
+  <item
+      name  ="semdelion_letter_spacing_body1"
+      format="float"
+      type  ="dimen">0.03125</item>
+  <item
+      name  ="semdelion_letter_spacing_body2"
+      format="float"
+      type  ="dimen">0.017857142857143</item>
+  <item
+      name  ="semdelion_letter_spacing_button"
+      format="float"
+      type  ="dimen">0.053571428571429</item>
+  <item
+      name  ="semdelion_letter_spacing_caption"
+      format="float"
+      type  ="dimen">0.033333333333333</item>
+  <item
+      name  ="semdelion_letter_spacing_overline"
+      format="float"
+      type  ="dimen">0.15</item>
+</resources>

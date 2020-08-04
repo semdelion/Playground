@@ -41,8 +41,8 @@ namespace Semdelion.Droid.Resources.View
 
         public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var view = base.OnCreateView(inflater, container, savedInstanceState);
-            view = this.BindingInflate(FragmentId, container, false);
+            base.OnCreateView(inflater, container, savedInstanceState);
+            var view = this.BindingInflate(FragmentId, container, false);
             Binding(view, container);
             return view;
         }

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <attr
+      name  ="semdelion_font_regular"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_regular_italic"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_bold"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_bold_italic"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_light"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_light_italic"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_thin"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_thin_italic"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_condensed_regular"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_condensed_italic"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_condensed_bold"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_condensed_bold_italic"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_black"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_black_italic"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_medium"
+      format="reference" />
+  <attr
+      name  ="semdelion_font_medium_italic"
+      format="reference" />
+</resources>

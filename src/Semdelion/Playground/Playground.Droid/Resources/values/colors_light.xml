@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary_Light">#2c3e50</color>
+    <color name="colorPrimaryDark_Light">#1B3147</color>
+    <color name="colorAccent_Light">#3498db</color>
+
+    <color name="colorBaseText_Light">#111111</color>
+    <color name="colorBackground_Light">#eeeeee</color>
+    <!--  Toolbar  -->
+    <color name="colorToolbarTitle_Light">#eeeeee</color>
+    <color name="colorBackgroundToolbar_Light">#2c3e50</color>
+</resources>

@@ -11,7 +11,7 @@ using Semdelion.Droid.Resources.View;
 namespace Playground.Droid
 {
     [MvxActivityPresentation]
-    [Activity(Theme = "@style/AppTheme", 
+    [Activity(Theme = "@style/AppThemeDark", 
         LaunchMode = LaunchMode.SingleTask, 
         ScreenOrientation = ScreenOrientation.Portrait,
         WindowSoftInputMode = SoftInput.StateHidden, 

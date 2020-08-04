@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <attr
+        name  ="semdelion_color_accent"
+        format="color" />
+    <attr
+        name  ="semdelion_color_accent_secondary"
+        format="color" />
+
+    <!--  ## Text colors  -->
+    <attr
+        name  ="semdelion_text_color"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_body"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_caption"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_headline"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_subtitle"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_navigation"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_overline"
+        format="reference|color" />
+    <attr
+         name  ="semdelion_text_color_tabs_title"
+         format="reference|color" />
+  
+  <!--  ## Background colors  -->
+    <attr
+        name  ="semdelion_color_background"
+        format="reference|color" />
+
+    <attr
+        name  ="semdelion_text_color_toolbar_title"
+        format="reference|color" />
+
+    <attr
+        name  ="semdelion_background_toolbar"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_color_primary_dark"
+        format="reference|color" />
+  
+</resources>

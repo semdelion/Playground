@@ -5,7 +5,6 @@
     xmlns:tools              ="http://schemas.android.com/tools"
     android:layout_width     ="match_parent"
     android:layout_height    ="match_parent">
-   
     <Button
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -15,7 +14,7 @@
         android:layout_width     ="match_parent"
         android:layout_height    ="match_parent"
         android:elevation        ="100dp"
-        android:background       ="@color/colorPrimaryDark"
+        android:background       ="?attr/semdelion_color_background"
         local:layout_behavior    ="@string/appbar_scrolling_view_behavior"
         local:MvxBind            ="StatesTargetBinding State">
     </FrameLayout>
