@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid
+        android:color="?attr/semdelion_ripple_color_button_outlined" />
+    <corners
+        android:radius="@dimen/semdelion_button_outlined_corner_radius" />
+    <stroke
+        android:width="@dimen/semdelion_button_outlined_border_width"
+        android:color="?attr/semdelion_border_color_button_outlined" />
+</shape>

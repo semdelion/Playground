@@ -59,5 +59,32 @@
         name="semdelion_text_color_toolbar_title">@color/colorToolbarTitle_Dark</item>
     <item
         name="semdelion_background_toolbar">@color/colorBackgroundToolbar_Dark</item>
+
+    <!--  Button  -->
+    <item
+        name="semdelion_text_color_button_contained_selector">#e4e4e4</item>
+    <item
+        name="semdelion_background_enabled_button_contained">#444444</item>
+    <item
+        name="semdelion_background_focused_button_contained">@color/colorBackgroundToolbar_Dark</item>
+    <item
+        name="semdelion_background_disabled_button_contained">@color/colorBackgroundToolbar_Dark</item>
+
+
+
+    <item
+           name="semdelion_text_color_button_text_selector">@color/colorBorderButton_Dark</item>
+    <item
+        name="semdelion_ripple_color_button_text">#222222</item>
+
+
+         
+    <item
+        name="semdelion_border_color_button_outlined">@color/colorBorderButton_Dark</item>
+    <item
+        name="semdelion_ripple_color_button_outlined">#222222</item>
+    <item
+        name="semdelion_text_color_button_outlined_selector">@color/colorBorderButton_Dark</item>
   </style>
+
 </resources>

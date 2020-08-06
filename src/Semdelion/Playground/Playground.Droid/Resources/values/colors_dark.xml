@@ -4,9 +4,12 @@
     <color name="colorPrimaryDark_Dark">#1B3147</color>
     <color name="colorAccent_Dark">#3498db</color>
 
-    <color name="colorBaseText_Dark">#eeeeee</color>
-    <color name="colorBackground_Dark">#111111</color>
+    <color name="colorBaseText_Dark">#e4e4e4</color>
+    <color name="colorBackground_Dark">#191919</color>
     <!--  Toolbar  -->
-    <color name="colorToolbarTitle_Dark">#eeeeee</color>
+    <color name="colorToolbarTitle_Dark">#e4e4e4</color>
     <color name="colorBackgroundToolbar_Dark">#2c3e50</color>
+
+
+    <color name="colorBorderButton_Dark">#73a8e9</color>
 </resources>

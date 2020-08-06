@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<resources>
+    <style
+        name="Semdelion.Widget.Button"
+        parent="Semdelion.TextAppearance.Button">
+        <item name="android:minWidth">@dimen/semdelion_button_min_width</item>
+        <item name="android:minHeight">@dimen/semdelion_button_min_height</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style
+        name="Semdelion.Widget.Button.Contained">
+        <item name="android:textColor">?attr/semdelion_text_color_button_contained_selector</item>
+        <item name="android:paddingLeft">@dimen/semdelion_button_contained_padding</item>
+        <item name="android:paddingRight">@dimen/semdelion_button_contained_padding</item>
+        <item name="android:background">@drawable/semdelion_background_button_contained</item>
+    </style>
+
+    <style
+        name="Semdelion.Widget.Button.Text">
+        <item name="android:paddingLeft">@dimen/semdelion_button_text_padding</item>
+        <item name="android:paddingRight">@dimen/semdelion_button_text_padding</item>
+        <item name="android:textColor">?attr/semdelion_text_color_button_text_selector</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:background">@drawable/semdelion_background_button_text</item>
+    </style>
+    <style
+        name="Semdelion.Widget.Button.Outlined">
+        <item name="android:paddingLeft">@dimen/semdelion_button_outlined_padding</item>
+        <item name="android:paddingRight">@dimen/semdelion_button_outlined_padding</item>
+        <item name="android:textColor">?attr/semdelion_text_color_button_outlined_selector</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:background">@drawable/semdelion_background_button_outlined</item>
+    </style>
+</resources>

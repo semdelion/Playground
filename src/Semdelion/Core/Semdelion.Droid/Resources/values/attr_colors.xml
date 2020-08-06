@@ -37,16 +37,43 @@
     <attr
         name  ="semdelion_color_background"
         format="reference|color" />
-
     <attr
         name  ="semdelion_text_color_toolbar_title"
         format="reference|color" />
-
     <attr
         name  ="semdelion_background_toolbar"
         format="reference|color" />
     <attr
         name  ="semdelion_color_primary_dark"
         format="reference|color" />
-  
+    <attr
+        name  ="semdelion_text_color_button_contained_selector"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_background_enabled_button_contained"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_background_focused_button_contained"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_background_disabled_button_contained"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_border_color_button_outlined"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_ripple_color_button_outlined"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_border_color_button_outlined"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_ripple_color_button_text"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_button_outlined_selector"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_button_text_selector"
+        format="reference|color" />
 </resources>
