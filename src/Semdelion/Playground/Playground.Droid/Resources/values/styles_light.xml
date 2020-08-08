@@ -59,20 +59,23 @@
 
     <!--  Button  -->
     <item
-        name="semdelion_text_color_button_contained_selector">@color/colorBackgroundToolbar_Light</item>
+        name="semdelion_background_enabled_button_contained">#cccccc</item>
     <item
-        name="semdelion_background_enabled_button_contained">@color/colorBackgroundToolbar_Light</item>
+        name="semdelion_background_focused_button_contained">#aaaaaa</item>
     <item
-        name="semdelion_background_focused_button_contained">@color/colorBackgroundToolbar_Light</item>
+        name="semdelion_background_disabled_button_contained">#cccccc</item>
     <item
-        name="semdelion_background_disabled_button_contained">@color/colorBackgroundToolbar_Light</item>
-   
-   
+        name="semdelion_text_color_enabled_button_contained">@color/colorBorderButton_Light</item>
     <item
-        name="semdelion_ripple_color_button_text">@color/colorBackgroundToolbar_Light</item>
-    
+        name="semdelion_text_color_disabled_button_contained">#999999</item>
+
+
     <item
-        name="semdelion_text_color_button_text_selector">@color/colorBackgroundToolbar_Light</item>
+        name="semdelion_ripple_color_button_text">#cccccc</item>
+    <item
+        name="semdelion_text_color_enabled_button_text">@color/colorBorderButton_Light</item>
+    <item
+        name="semdelion_text_color_disabled_button_text">#999999</item>
 
 
     <item
@@ -80,7 +83,13 @@
     <item
         name="semdelion_ripple_color_button_outlined">@color/colorBackgroundToolbar_Light</item>
     <item
-        name="semdelion_text_color_button_outlined_selector">@color/colorBorderButton_Light</item>
+        name="semdelion_border_color_disabled_button_outlined">#999999</item>
+    <item
+        name="semdelion_text_color_enabled_button_outlined">@color/colorBorderButton_Light</item>
+    <item
+        name="semdelion_text_color_disabled_button_outlined">#999999</item>
+
+
 
   </style>
 </resources>

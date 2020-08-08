@@ -196,6 +196,15 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\semdelion_background_button_outlined_disabled.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\color\semdelion_text_color_button_text_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\color\semdelion_text_color_button_contained_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\color\semdelion_text_color_button_outlined_selector.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
