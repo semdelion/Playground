@@ -4,13 +4,10 @@
     xmlns:tools              ="http://schemas.android.com/tools"
     android:layout_width     ="match_parent"
     android:layout_height    ="match_parent">
-
     <ProgressBar
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width                    ="match_parent"
+        android:layout_height                   ="wrap_content"
         local:layout_constraintBottom_toBottomOf="parent"
-        local:layout_constraintStart_toStartOf="parent"
-        local:layout_constraintTop_toTopOf="parent" />
-
+        local:layout_constraintStart_toStartOf  ="parent"
+        local:layout_constraintTop_toTopOf      ="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

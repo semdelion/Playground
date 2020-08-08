@@ -7,101 +7,101 @@
   <!-- Headlines -->
   <style
       name="Semdelion.TextAppearance.Headline">
-      <item name="android:textColor">?attr/semdelion_text_color_headline</item>
+      <item name="android:textColor"     >?attr/semdelion_text_color_headline</item>
   </style>
   <style
       name="Semdelion.TextAppearance.Headline.H1">
-      <item name="android:textSize">@dimen/semdelion_text_size_h1</item>
-      <item name="android:fontFamily">?attr/semdelion_font_regular</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_h1</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_h1</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_regular</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_h1</item>
   </style>
   <style
       name="Semdelion.TextAppearance.Headline.H2">
-      <item name="android:textSize">@dimen/semdelion_text_size_h2</item>
-      <item name="android:fontFamily">?attr/semdelion_font_regular</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_h2</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_h2</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_regular</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_h2</item>
   </style>
   <style
       name="Semdelion.TextAppearance.Headline.H3">
-      <item name="android:textSize">@dimen/semdelion_text_size_h3</item>
-      <item name="android:fontFamily">?attr/semdelion_font_medium</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_h3</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_h3</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_medium</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_h3</item>
   </style>
   <!-- Subtitles -->
   <style
       name="Semdelion.TextAppearance.Subtitle">
-      <item name="android:textColor">?attr/semdelion_text_color_subtitle</item>
+      <item name="android:textColor"     >?attr/semdelion_text_color_subtitle</item>
   </style>
   <style
       name="Semdelion.TextAppearance.Subtitle.S1">
-      <item name="android:textSize">@dimen/semdelion_text_size_subtitle1</item>
-      <item name="android:fontFamily">?attr/semdelion_font_regular</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_subtitle1</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_subtitle1</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_regular</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_subtitle1</item>
   </style>
   <style
       name="Semdelion.TextAppearance.Subtitle.S2">
-      <item name="android:textSize">@dimen/semdelion_text_size_subtitle2</item>
-      <item name="android:fontFamily">?attr/semdelion_font_medium</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_subtitle2</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_subtitle2</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_medium</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_subtitle2</item>
   </style>
   <!-- Bodies -->
   <style
       name="Semdelion.TextAppearance.Body">
-      <item name="android:textColor">?attr/semdelion_text_color_body</item>
+      <item name="android:textColor"     >?attr/semdelion_text_color_body</item>
   </style>
   <style
       name="Semdelion.TextAppearance.Body.B1">
-      <item name="android:textSize">@dimen/semdelion_text_size_body1</item>
-      <item name="android:fontFamily">?attr/semdelion_font_regular</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_body1</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_body1</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_regular</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_body1</item>
   </style>
   <style
       name="Semdelion.TextAppearance.Body.B2">
-      <item name="android:textSize">@dimen/semdelion_text_size_body2</item>
-      <item name="android:fontFamily">?attr/semdelion_font_regular</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_body2</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_body2</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_regular</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_body2</item>
   </style>
   <!-- Button -->
   <style
       name="Semdelion.TextAppearance.Button">
-      <item name="android:textSize">@dimen/semdelion_text_size_button</item>
-      <item name="android:fontFamily">?attr/semdelion_font_medium</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_button</item>
-      <item name="android:textAllCaps">true</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_button</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_medium</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_button</item>
+      <item name="android:textAllCaps"   >true</item>
   </style>
   <!-- Caption -->
   <style
       name="Semdelion.TextAppearance.Caption">
-      <item name="android:textColor">?attr/semdelion_text_color_caption</item>
-      <item name="android:textSize">@dimen/semdelion_text_size_caption</item>
-      <item name="android:fontFamily">?attr/semdelion_font_regular</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_caption</item>
+      <item name="android:textColor"     >?attr/semdelion_text_color_caption</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_caption</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_regular</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_caption</item>
   </style>
   <!-- Overline -->
   <style
       name="Semdelion.TextAppearance.Overline">
-      <item name="android:textColor">?attr/semdelion_text_color_overline</item>
-      <item name="android:textSize">@dimen/semdelion_text_size_overline</item>
-      <item name="android:fontFamily">?attr/semdelion_font_regular</item>
-      <item name="android:letterSpacing">@dimen/semdelion_letter_spacing_overline</item>
-      <item name="android:textAllCaps">true</item>
+      <item name="android:textColor"     >?attr/semdelion_text_color_overline</item>
+      <item name="android:fontFamily"    >?attr/semdelion_font_regular</item>
+      <item name="android:textSize"      >@dimen/semdelion_text_size_overline</item>
+      <item name="android:letterSpacing" >@dimen/semdelion_letter_spacing_overline</item>
+      <item name="android:textAllCaps"   >true</item>
   </style>
   <!--  Toolbar  -->
   <style
       name  ="Semdelion.TextAppearance.Toolbar.Title"
       parent="Semdelion.TextAppearance.Headline.H3">
-      <item name="android:textColor">?attr/semdelion_text_color_toolbar_title</item>
+      <item name="android:textColor"     >?attr/semdelion_text_color_toolbar_title</item>
   </style>
   <!--  Tabs  -->
   <style
       name  ="Semdelion.TextAppearance.Tabs.Title"
       parent="Semdelion.TextAppearance.Button">
-      <item name="android:textColor">?attr/semdelion_text_color_tabs_title</item>
+      <item name="android:textColor"     >?attr/semdelion_text_color_tabs_title</item>
   </style>
   <!--  NavigationView  -->
   <style
       name  ="Semdelion.TextAppearance.NavigationView.Text"
       parent="Semdelion.TextAppearance.Body.B2">
-      <item name="android:textColor">?attr/semdelion_text_color_navigation</item>
+      <item name="android:textColor"     >?attr/semdelion_text_color_navigation</item>
   </style>
 </resources>

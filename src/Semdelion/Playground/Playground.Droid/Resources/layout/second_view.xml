@@ -6,9 +6,11 @@
     android:layout_width     ="match_parent"
     android:layout_height    ="match_parent">
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="кнопка"/>
+        style                    ="@style/Semdelion.Widget.Button.Contained"
+        android:layout_width     ="match_parent"
+        android:layout_height    ="wrap_content"
+        android:layout_margin    ="16dp"
+        android:text             ="кнопка"/>
      <FrameLayout
         android:id               ="@+id/state_frage_layout"
         android:layout_width     ="match_parent"

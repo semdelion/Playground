@@ -3,25 +3,25 @@
     <style
         name  ="Semdelion.Widget.Toolbar.Theme"
         parent="">
-        <item name="colorControlNormal">?attr/semdelion_text_color_toolbar_title</item>
-        <item name="actionMenuTextColor">?attr/semdelion_text_color_toolbar_title</item>
+        <item name="colorControlNormal"      >?attr/semdelion_text_color_toolbar_title</item>
+        <item name="actionMenuTextColor"     >?attr/semdelion_text_color_toolbar_title</item>
     </style>
     <style
         name  ="Semdelion.Widget.Toolbar.Style"
         parent="">
-        <item name="android:minHeight">?attr/actionBarSize</item>
-        <item name="android:background">?attr/semdelion_background_toolbar</item>
-        <item name="android:titleTextColor">?attr/semdelion_text_color_toolbar_title</item>
-        <item name="android:theme">@style/Semdelion.Widget.Toolbar.Theme</item>
-        <item name="titleTextAppearance">@style/Semdelion.TextAppearance.Toolbar.Title</item>
+        <item name="android:minHeight"       >?attr/actionBarSize</item>
+        <item name="android:background"      >?attr/semdelion_background_toolbar</item>
+        <item name="android:titleTextColor"  >?attr/semdelion_text_color_toolbar_title</item>
+        <item name="android:theme"           >@style/Semdelion.Widget.Toolbar.Theme</item>
+        <item name="titleTextAppearance"     >@style/Semdelion.TextAppearance.Toolbar.Title</item>
     </style>
     <style
         name  ="Semdelion.Widget.Toolbar.PopupMenu"
         parent="">
-        <item name="colorPrimary">?attr/semdelion_color_accent</item>
-        <item name="colorControlHighlight">?attr/semdelion_color_accent</item>
-        <item name="android:colorBackground">?attr/semdelion_color_background</item>
-        <item name="android:textAppearance">@style/Semdelion.TextAppearance.Body.B1</item>
+        <item name="colorPrimary"            >?attr/semdelion_color_accent</item>
+        <item name="colorControlHighlight"   >?attr/semdelion_color_accent</item>
+        <item name="android:colorBackground" >?attr/semdelion_color_background</item>
         <item name="android:colorPrimaryDark">?attr/semdelion_color_primary_dark</item>
+        <item name="android:textAppearance"  >@style/Semdelion.TextAppearance.Body.B1</item>
     </style>
 </resources>

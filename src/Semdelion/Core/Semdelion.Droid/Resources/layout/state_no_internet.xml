@@ -1,45 +1,43 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android        ="http://schemas.android.com/apk/res/android"
+    xmlns:local          ="http://schemas.android.com/apk/res-auto"
+    xmlns:tools          ="http://schemas.android.com/tools"
+    android:layout_width ="match_parent"
     android:layout_height="match_parent">
-
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        local:layout_constraintBottom_toTopOf="@+id/state_no_internet_guideline"
-        local:layout_constraintEnd_toEndOf="parent"
+        android:id                            ="@+id/lottieAnimationView"
+        android:layout_width                  ="0dp"
+        android:layout_height                 ="0dp"
+        local:layout_constraintBottom_toTopOf ="@+id/state_no_internet_guideline"
+        local:layout_constraintEnd_toEndOf    ="parent"
         local:layout_constraintStart_toStartOf="parent"
-        local:layout_constraintTop_toTopOf="parent"
-        local:lottie_autoPlay="true"
-        local:lottie_fileName="state_no_internet.json"
-        local:lottie_loop="true" />
-
+        local:layout_constraintTop_toTopOf    ="parent"
+        local:lottie_autoPlay                 ="true"
+        local:lottie_fileName                 ="state_no_internet.json"
+        local:lottie_loop                     ="true" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/state_no_internet_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        local:layout_constraintGuide_percent="0.7" />
-
+        android:id                            ="@+id/state_no_internet_guideline"
+        android:layout_width                  ="wrap_content"
+        android:layout_height                 ="wrap_content"
+        android:orientation                   ="horizontal"
+        local:layout_constraintGuide_percent  ="0.7" />
     <TextView
-        android:id="@+id/state_no_internet_textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Нет инернета"
-        local:layout_constraintEnd_toEndOf="parent"
+        style                                 ="@style/Semdelion.TextAppearance.Subtitle.S1"
+        android:id                            ="@+id/state_no_internet_textView"
+        android:layout_width                  ="0dp"
+        android:layout_height                 ="wrap_content"
+        android:gravity                       ="center"
+        android:text                          ="Нет инернета"
+        local:layout_constraintEnd_toEndOf    ="parent"
         local:layout_constraintHorizontal_bias="0.0"
         local:layout_constraintStart_toStartOf="parent"
-        local:layout_constraintTop_toTopOf="@+id/state_no_internet_guideline" />
-
+        local:layout_constraintTop_toTopOf    ="@+id/state_no_internet_guideline" />
     <Button
-        android:id="@+id/state_no_internet_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Обновить"
-        local:layout_constraintTop_toBottomOf="@+id/state_no_internet_textView" />
-
+        style                                 ="@style/Semdelion.Widget.Button.Text"
+        android:id                            ="@+id/state_no_internet_button"
+        android:layout_width                  ="match_parent"
+        android:layout_height                 ="wrap_content"
+        android:layout_margin                 ="16dp"
+        android:text                          ="Обновить"
+        local:layout_constraintTop_toBottomOf ="@+id/state_no_internet_textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

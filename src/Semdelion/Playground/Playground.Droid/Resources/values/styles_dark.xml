@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-  <!-- PRE-LOLLIPOP Application theme.  -->
-  <style
-      name  ="AppThemeDark"
-      parent="SemdelionDark">
-    <item
-        name="colorPrimary">@color/colorPrimary_Dark</item>
-    <item
-        name="colorPrimaryDark">@color/colorPrimaryDark_Dark</item>
-    <item
-        name="colorAccent">@color/colorPrimary_Dark</item>
-  </style>
+    <style
+        name  ="AppThemeDark"
+        parent="SemdelionDark">
+        <item
+            name="colorPrimary">@color/colorPrimary_Dark</item>
+        <item
+            name="colorPrimaryDark">@color/colorPrimaryDark_Dark</item>
+        <item
+            name="colorAccent">@color/colorPrimary_Dark</item>
+    </style>
   
-  <style
-      name  ="SemdelionDark"
-      parent="Theme.AppCompat.Light.NoActionBar">
-    <!--   Fonts     -->
+    <style
+        name  ="SemdelionDark"
+        parent="Theme.AppCompat.Light.NoActionBar">
+        <!--   Fonts     -->
 
-    <item
-        name="semdelion_font_regular">@font/roboto_regular</item>
-    <item
-        name="semdelion_font_regular_italic">@font/roboto_italic</item>
-    <item
-        name="semdelion_font_bold">@font/roboto_bold</item>
-    <item
-        name="semdelion_font_light">@font/roboto_light</item>
-    <item
-        name="semdelion_font_medium">@font/roboto_medium</item>
+        <item
+            name="semdelion_font_regular">@font/roboto_regular</item>
+        <item
+            name="semdelion_font_regular_italic">@font/roboto_italic</item>
+        <item
+            name="semdelion_font_bold">@font/roboto_bold</item>
+        <item
+            name="semdelion_font_light">@font/roboto_light</item>
+        <item
+            name="semdelion_font_medium">@font/roboto_medium</item>
 
-    <!--   Colors     -->
-    <item
-        name="semdelion_color_accent">@color/colorPrimary_Dark</item>
-    <item
-        name="semdelion_color_accent_secondary">@color/colorPrimaryDark_Dark</item>
-    <item
-        name="semdelion_text_color">@color/colorBaseText_Dark</item>
-    <item
-        name="semdelion_color_background">@color/colorBackground_Dark</item>
-    <item
-        name="semdelion_text_color_body">@color/colorBaseText_Dark</item>
-    <item
-        name="semdelion_text_color_caption">@color/colorBaseText_Dark</item>
-    <item
-        name="semdelion_text_color_headline">@color/colorBaseText_Dark</item>
-    <item
-        name="semdelion_text_color_subtitle">@color/colorBaseText_Dark</item>
-    <item
-        name="semdelion_text_color_navigation">@color/colorBaseText_Dark</item>
-    <item
-        name="semdelion_text_color_overline">@color/colorBaseText_Dark</item>
-    <item
-        name="semdelion_text_color_tabs_title">@color/colorBaseText_Dark</item>
-    <item
-        name="semdelion_color_primary_dark">@color/colorPrimaryDark_Dark</item>
+        <!--   Colors     -->
+        <item
+            name="semdelion_color_accent">@color/colorPrimary_Dark</item>
+        <item
+            name="semdelion_color_accent_secondary">@color/colorPrimaryDark_Dark</item>
+        <item
+            name="semdelion_text_color">@color/colorBaseText_Dark</item>
+        <item
+            name="semdelion_color_background">@color/colorBackground_Dark</item>
+        <item
+            name="semdelion_text_color_body">@color/colorBaseText_Dark</item>
+        <item
+            name="semdelion_text_color_caption">@color/colorBaseText_Dark</item>
+        <item
+            name="semdelion_text_color_headline">@color/colorBaseText_Dark</item>
+        <item
+            name="semdelion_text_color_subtitle">@color/colorBaseText_Dark</item>
+        <item
+            name="semdelion_text_color_navigation">@color/colorBaseText_Dark</item>
+        <item
+            name="semdelion_text_color_overline">@color/colorBaseText_Dark</item>
+   
 
-    <!--  Toolbar  -->
-    <item
-        name="semdelion_text_color_toolbar_title">@color/colorToolbarTitle_Dark</item>
-    <item
-        name="semdelion_background_toolbar">@color/colorBackgroundToolbar_Dark</item>
+        <!--  Toolbar  -->
+        <item
+            name="semdelion_text_color_toolbar_title">@color/colorToolbarTitle_Dark</item>
+        <item
+            name="semdelion_background_toolbar">@color/colorBackgroundToolbar_Dark</item>
+        <item
+           name="semdelion_text_color_tabs_title">@color/colorBaseText_Dark</item>
+        <item
+            name="semdelion_color_primary_dark">@color/colorPrimaryDark_Dark</item>
 
-    <!--  Button  -->
-    <item
-        name="semdelion_background_enabled_button_contained">#444444</item>
-    <item
-        name="semdelion_background_focused_button_contained">#222222</item>
-    <item
-        name="semdelion_background_disabled_button_contained">#222222</item>
-    <item
-        name="semdelion_text_color_enabled_button_contained">#e4e4e4</item>
-    <item
-        name="semdelion_text_color_disabled_button_contained">#999999</item>
-
-
-    <item
-        name="semdelion_ripple_color_button_text">#222222</item>
-    <item
-        name="semdelion_text_color_enabled_button_text">@color/colorBorderButton_Dark</item>
-    <item
-        name="semdelion_text_color_disabled_button_text">#999999</item>
+        <!--  Button  -->
+        <item
+            name="semdelion_background_enabled_button_contained">#444444</item>
+        <item
+            name="semdelion_background_focused_button_contained">#292929</item>
+        <item
+            name="semdelion_background_disabled_button_contained">#292929</item>
+        <item
+            name="semdelion_text_color_enabled_button_contained">#e4e4e4</item>
+        <item
+            name="semdelion_text_color_disabled_button_contained">@color/colorButtonTextDisabled_Dark</item>
 
 
-    <item
-        name="semdelion_border_color_button_outlined">@color/colorBorderButton_Dark</item>
-    <item
-        name="semdelion_ripple_color_button_outlined">#222222</item>
-    <item
-        name="semdelion_border_color_disabled_button_outlined">#222222</item>
-    <item
-        name="semdelion_text_color_enabled_button_outlined">@color/colorBorderButton_Dark</item>
-    <item
-        name="semdelion_text_color_disabled_button_outlined">#999999</item>
+        <item
+            name="semdelion_ripple_color_button_text">#333333</item>
+        <item
+            name="semdelion_text_color_enabled_button_text">@color/Dark_Blue</item>
+        <item
+            name="semdelion_text_color_disabled_button_text">@color/colorButtonTextDisabled_Dark</item>
 
-  </style>
+
+        <item
+            name="semdelion_border_color_button_outlined">@color/Dark_Blue</item>
+        <item
+            name="semdelion_ripple_color_button_outlined">#333333</item>
+        <item
+            name="semdelion_border_color_disabled_button_outlined">#333333</item>
+        <item
+            name="semdelion_text_color_enabled_button_outlined">@color/Dark_Blue</item>
+        <item
+            name="semdelion_text_color_disabled_button_outlined">@color/colorButtonTextDisabled_Dark</item>
+
+    </style>
 </resources>

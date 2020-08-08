@@ -6,8 +6,6 @@ using Playground.Core.ViewModels;
 using Semdelion.Droid.Resources.View;
 using Android.Widget;
 using Android.Support.V7.App;
-using Android.Content;
-using Android.Speech;
 using System;
 
 namespace Playground.Droid.View

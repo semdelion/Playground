@@ -12,10 +12,9 @@ using Semdelion.Droid.Resources.View;
 namespace Playground.Droid
 {
     [MvxActivityPresentation]
-    [Activity(Theme = "@style/AppThemeDark", 
-        LaunchMode = LaunchMode.SingleTask,
-        WindowSoftInputMode = SoftInput.StateHidden, 
-        MainLauncher = true)]
+    [Activity( LaunchMode = LaunchMode.SingleTask,
+               WindowSoftInputMode = SoftInput.StateHidden, 
+               MainLauncher = true)]
     class MainActivity : BaseFragmentHostActivity<MainFragmentHostViewModel>
     {
         protected override void OnCreate(Bundle bundle)

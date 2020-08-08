@@ -2,7 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
   <item android:state_pressed="true">
     <set>
-      <objectAnimator android:propertyName="translationZ"
+      <objectAnimator
+          android:propertyName="translationZ"
           android:duration="@android:integer/config_shortAnimTime"
           android:valueTo="6dp"
           android:valueType="floatType"/>
@@ -11,7 +12,8 @@
   <item
       android:state_pressed="false">
     <set>
-      <objectAnimator android:propertyName="translationZ"
+      <objectAnimator 
+          android:propertyName="translationZ"
           android:duration="100"
           android:valueTo="2dp"
           android:valueType="floatType"/>

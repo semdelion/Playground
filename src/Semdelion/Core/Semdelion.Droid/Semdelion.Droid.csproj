@@ -191,7 +191,7 @@
     <AndroidResource Include="Resources\drawable\semdelion_background_button_text_focused.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\animator\animatorb.xml" />
+    <AndroidResource Include="Resources\animator\button_animator.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\semdelion_background_button_outlined_disabled.xml" />

@@ -1,20 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-  <!-- Theme -->
-  <style
-    name  ="AppThemeDark"
-    parent="">
-  </style>
-  <style
-    name  ="AppThemeLight"
-    parent="">
-  </style>
-  <style
-      name="Semdelion">
-    <!--  Text colors  -->
-  </style>
-
-  <style name="AppTheme.Primary.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-    <!-- Customize your theme here. -->
-  </style>
+    <style
+        name  ="AppThemeDark"
+        parent="">
+    </style>
+    <style
+        name  ="AppThemeLight"
+        parent="">
+    </style>
+    <style
+        name="Semdelion">
+    </style>
+    <style 
+        name="AppTheme.Primary.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
 </resources>

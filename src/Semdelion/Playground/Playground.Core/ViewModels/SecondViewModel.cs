@@ -29,7 +29,6 @@ namespace Playground.Core.ViewModels
             State = States.Loading;
             await Task.Delay(3000);
             State = States.Normal;
-            await Task.Delay(3000);
         }
     }
 }

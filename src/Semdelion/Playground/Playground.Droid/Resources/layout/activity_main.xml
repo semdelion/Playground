@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android            ="http://schemas.android.com/apk/res/android"
     android:id               ="@+id/main_RelativeLayout"
     android:layout_width     ="match_parent"
     android:layout_height    ="match_parent">
     <include
         layout="@layout/main_content_activity" />
-    <!-- The Left Navigation Drawer -->
     <FrameLayout
         android:id            ="@+id/main_menuFragment"
         android:layout_width  ="match_parent"
         android:layout_height ="match_parent"
         android:layout_gravity="start"
         android:orientation   ="vertical">
-        <!-- The Main Content View -->
     </FrameLayout>
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
