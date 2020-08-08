@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
 using Android.Views;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
@@ -12,8 +13,7 @@ namespace Playground.Droid
 {
     [MvxActivityPresentation]
     [Activity(Theme = "@style/AppThemeDark", 
-        LaunchMode = LaunchMode.SingleTask, 
-        ScreenOrientation = ScreenOrientation.Portrait,
+        LaunchMode = LaunchMode.SingleTask,
         WindowSoftInputMode = SoftInput.StateHidden, 
         MainLauncher = true)]
     class MainActivity : BaseFragmentHostActivity<MainFragmentHostViewModel>
@@ -21,16 +21,15 @@ namespace Playground.Droid
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
             SetContentView(Resource.Layout.activity_main);
-            if (this.SupportActionBar == null)
+            if (SupportActionBar == null)
             {
-                var toolbar = this.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.main_toolbar);
-                this.SetSupportActionBar(toolbar);
+                var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.main_toolbar);
+                SetSupportActionBar(toolbar);
             }
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);

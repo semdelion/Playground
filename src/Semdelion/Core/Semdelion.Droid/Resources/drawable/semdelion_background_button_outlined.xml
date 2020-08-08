@@ -8,5 +8,8 @@
         android:state_pressed="true"
         android:drawable     ="@drawable/semdelion_background_button_outlined_focused" />
     <item
+        android:state_enabled="false"
+        android:drawable     ="@drawable/semdelion_background_button_outlined_disabled" />
+    <item
         android:drawable="@drawable/semdelion_background_button_outlined_enabled" />
 </selector>

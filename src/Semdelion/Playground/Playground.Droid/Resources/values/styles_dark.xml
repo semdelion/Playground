@@ -66,14 +66,14 @@
     <item
         name="semdelion_background_enabled_button_contained">#444444</item>
     <item
-        name="semdelion_background_focused_button_contained">@color/colorBackgroundToolbar_Dark</item>
+        name="semdelion_background_focused_button_contained">#222222</item>
     <item
-        name="semdelion_background_disabled_button_contained">@color/colorBackgroundToolbar_Dark</item>
+        name="semdelion_background_disabled_button_contained">#222222</item>
 
 
 
     <item
-           name="semdelion_text_color_button_text_selector">@color/colorBorderButton_Dark</item>
+        name="semdelion_text_color_button_text_selector">@color/colorBorderButton_Dark</item>
     <item
         name="semdelion_ripple_color_button_text">#222222</item>
 
@@ -85,6 +85,9 @@
         name="semdelion_ripple_color_button_outlined">#222222</item>
     <item
         name="semdelion_text_color_button_outlined_selector">@color/colorBorderButton_Dark</item>
-  </style>
+    <item
+        name="semdelion_border_color_disabled_button_outlined">#222222</item>
+
+    </style>
 
 </resources>

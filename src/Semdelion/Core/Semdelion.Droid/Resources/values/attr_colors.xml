@@ -59,6 +59,9 @@
         name  ="semdelion_background_disabled_button_contained"
         format="reference|color" />
     <attr
+        name  ="semdelion_border_color_disabled_button_outlined"
+        format="reference|color" />
+    <attr
         name  ="semdelion_border_color_button_outlined"
         format="reference|color" />
     <attr

@@ -4,6 +4,11 @@ using Android.Runtime;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
 using Semdelion.Droid.Resources.View;
+using Android.Widget;
+using Android.Support.V7.App;
+using Android.Content;
+using Android.Speech;
+using System;
 
 namespace Playground.Droid.View
 {
@@ -16,7 +21,22 @@ namespace Playground.Droid.View
         public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
+            var button = view.FindViewById<Button>(Resource.Id.first_view_button_theme);
+            button.Click += ChangeTheme;
+
             return view;
+        }
+
+        private void ChangeTheme(object o, EventArgs e)
+        {
+            if (AppCompatDelegate.DefaultNightMode == AppCompatDelegate.ModeNightYes)
+            {
+                AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
+            }
+            else
+            {
+                AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightYes;
+            }
         }
     }
 }

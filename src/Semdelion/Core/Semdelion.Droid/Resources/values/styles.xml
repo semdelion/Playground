@@ -2,6 +2,14 @@
 <resources>
   <!-- Theme -->
   <style
+    name  ="AppThemeDark"
+    parent="">
+  </style>
+  <style
+    name  ="AppThemeLight"
+    parent="">
+  </style>
+  <style
       name="Semdelion">
     <!--  Text colors  -->
   </style>

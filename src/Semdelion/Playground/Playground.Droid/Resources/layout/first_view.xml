@@ -1,41 +1,71 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <LinearLayout
     xmlns:android        ="http://schemas.android.com/apk/res/android"
     xmlns:local          ="http://schemas.android.com/apk/res-auto"
     android:orientation  ="vertical"
     android:layout_width ="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin = "16dp">
+    android:layout_margin= "16dp">
     <Button
-        android:text         ="Button"
-        android:layout_width ="match_parent"
-        android:layout_height="wrap_content"
-        android:minWidth     ="25px"
-        android:minHeight    ="25px"
-        android:id           ="@+id/button1"
-        local:MvxBind        ="Click ToSecondView"/>
+        android:text               ="Button"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:id                 ="@+id/button1"
+        android:layout_marginBottom="10dp"
+        local:MvxBind              ="Click ToSecondView"/>
      <Button
-        android:id           ="@+id/button_theme"
-        android:text         ="Teme"
-        android:layout_width ="match_parent"
-        android:layout_height="wrap_content"
+        android:id                 ="@+id/first_view_button_theme"
+        android:text               ="Teme"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:layout_marginBottom="28dp"/>
+
+
+     <Button
+        style                      ="@style/Semdelion.Widget.Button.Contained"
+        android:text               ="Button"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:layout_margin      = "16dp"
         android:layout_marginBottom="20dp"/>
      <Button
-        style                ="@style/Semdelion.Widget.Button.Contained"
-        android:text         ="Button"
-        android:layout_width ="match_parent"
-        android:layout_height="wrap_content"
+        style                      ="@style/Semdelion.Widget.Button.Contained"
+        android:text               ="Button"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:layout_margin      ="16dp"
+        android:enabled            ="false"
         android:layout_marginBottom="20dp"/>
+    
      <Button
-        style                ="@style/Semdelion.Widget.Button.Text"
-        android:text         ="Button"
-        android:layout_width ="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"/>
-     <Button
-        style                ="@style/Semdelion.Widget.Button.Outlined"
-        android:text         ="Button"
-        android:layout_width ="match_parent"
-        android:layout_height="wrap_content"
+        style                      ="@style/Semdelion.Widget.Button.Outlined"
+        android:text               ="Button"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:layout_margin      = "16dp"
         android:layout_marginBottom="20dp" />
+     <Button
+        style                      ="@style/Semdelion.Widget.Button.Outlined"
+        android:text               ="Button"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:layout_margin      ="16dp"
+        android:enabled            ="false"
+        android:layout_marginBottom="20dp" />
+      <Button
+        style                      ="@style/Semdelion.Widget.Button.Text"
+        android:text               ="Button"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:layout_margin      ="16dp"
+        android:layout_marginBottom="20dp"/>
+     <Button
+        style                      ="@style/Semdelion.Widget.Button.Text"
+        android:text               ="Button"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:layout_margin      ="16dp"
+        android:enabled            ="false"
+        android:layout_marginBottom="20dp"/>
+    
 </LinearLayout>
