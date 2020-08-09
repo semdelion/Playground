@@ -45,13 +45,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\States\LoadingView.cs" />
     <Compile Include="Bindings\StatesTargetBinding.cs" />
     <Compile Include="BaseIosSetup.cs" />
-    <Compile Include="Views\States\NoDataView.cs" />
     <Compile Include="Extensions\ContraintExtension.cs" />
+    <Compile Include="Views\States\NoDataView.cs" />
+    <Compile Include="Views\States\NoDataView.designer.cs">
+      <DependentUpon>NoDataView.cs</DependentUpon>
+    </Compile>
+    
+    <Compile Include="Views\States\NoInternetView.cs" />
+    <Compile Include="Views\States\NoInternetView.designer.cs">
+      <DependentUpon>NoInternetView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\States\ErrorView.cs" />
-    <Compile Include="Views\States\NoInternetConnectionView.cs" />
+    <Compile Include="Views\States\ErrorView.designer.cs">
+      <DependentUpon>ErrorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\States\LoadingView.cs" />
+    <Compile Include="Views\States\LoadingView.designer.cs">
+      <DependentUpon>LoadingView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Semdelion.Core\Semdelion.Core.csproj">
@@ -69,7 +82,14 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\error.json" />
+    <BundleResource Include="Resources\no-data.json" />
     <BundleResource Include="Resources\no-internet-connection.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Views\States\NoDataView.xib" />
+    <InterfaceDefinition Include="Views\States\NoInternetView.xib" />
+    <InterfaceDefinition Include="Views\States\ErrorView.xib" />
+    <InterfaceDefinition Include="Views\States\LoadingView.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

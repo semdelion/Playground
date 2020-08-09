@@ -15,6 +15,7 @@ namespace Playground.iOS.Views
         {
             base.ViewDidLoad();
             var set = this.CreateBindingSet<SecondView, SecondViewModel>();
+            set.Bind().For(v => v.Title).To(vm => vm.Title);
             set.Bind(ContentView).For(StatesTargetBinding.Key).To(vm => vm.State);
             set.Apply();
         }

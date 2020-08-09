@@ -34,48 +34,30 @@
                     view.RemoveFromSuperview();
 
                 contentView.Alpha = 1f;
-                var _frame = new CGRect(0, 0, contentView.Frame.Width, contentView.Frame.Height);
+                var _frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
 
                 switch (state)
                 {
                     case States.Normal:
-                        var vertStackView = new UIStackView
-                        {
-                            TranslatesAutoresizingMaskIntoConstraints = false,
-                            Distribution = UIStackViewDistribution.EqualSpacing,
-                            Axis = UILayoutConstraintAxis.Vertical,
-                            Alignment = UIStackViewAlignment.Fill,
-                            Spacing = 8
-                        };
-                        vertStackView.AddArrangedSubview(new UILabel() {Text = "NoInternet", TextColor = UIColor.Black });
-                        vertStackView.AddArrangedSubview(new UIButton(UIButtonType.ContactAdd));
-
-                        stateView.AddSubview(vertStackView);
-
-                        vertStackView.SetFillXContraintTo(stateView);
-                        vertStackView.SetBottomContraintTo(stateView, 0, NSLayoutRelation.GreaterThanOrEqual);
-
-                        stateView.AddConstraint(
-                            NSLayoutConstraint.Create(vertStackView, NSLayoutAttribute.CenterY, NSLayoutRelation.Equal, stateView, NSLayoutAttribute.CenterY, 1, 0)
-                        );
-                        //contentView.AddSubview(new UIButton(UIButtonType.ContactAdd) { Center = contentView.Center });
-                        //contentView.AddSubview(new UILabel() { Center = contentView.Center, Text = "Normal", TextColor = UIColor.Black });
+                        contentView.Alpha = 0f;
                         break;
                     case States.Loading:
+                        stateView = new LoadingView(_frame);
                         break;
                     case States.NoData:
+                        stateView = new NoDataView(_frame);
                         break;
                     case States.NoInternet:
-                        stateView = new NoInternetConnectionView(_frame);
+                        stateView = new NoInternetView(_frame);
                         break;
                     case States.Error:
                         stateView = new ErrorView(_frame);
                         break;
                 }
                 contentView.AddSubview(stateView);
-                stateView.SetFillYContraintTo(contentView, 16);
-                stateView.SetLeftContraintTo(contentView, 16);
-                stateView.SetRightContraintTo(contentView, 16);
+                stateView.SetCenterContraintTo(contentView);// SetFillYContraintTo(contentView, 16);
+                stateView.SetLeftContraintTo(contentView, 0);
+                stateView.SetRightContraintTo(contentView, 0);
                 contentView.SetNeedsUpdateConstraints();
                 contentView.LayoutIfNeeded();
             }

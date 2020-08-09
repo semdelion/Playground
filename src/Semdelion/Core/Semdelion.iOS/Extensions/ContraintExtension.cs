@@ -70,5 +70,32 @@
                 1,
                 margin));
         }
+
+        public static void SetCenterXContraintTo(this UIView childView, UIView superView, float margin = 0, NSLayoutRelation relation = NSLayoutRelation.Equal)
+        {
+            superView.AddConstraint(NSLayoutConstraint.Create(
+                superView,
+                NSLayoutAttribute.CenterX,
+                relation,
+                childView,
+                NSLayoutAttribute.CenterX,
+                1,
+                margin));
+        }
+
+        public static NSLayoutConstraint SetCenterYContraintTo(this UIView childView, UIView superView, float margin = 0, NSLayoutRelation relation = NSLayoutRelation.Equal, int priority = 1000)
+        {
+            var constraint = NSLayoutConstraint.Create(superView, NSLayoutAttribute.CenterY, relation, childView, NSLayoutAttribute.CenterY, 1, margin);
+            constraint.Priority = priority;
+            superView.AddConstraint(constraint);
+
+            return constraint;
+        }
+
+        public static void SetCenterContraintTo(this UIView childView, UIView superView)
+        {
+            SetCenterXContraintTo(childView, superView);
+            SetCenterYContraintTo(childView, superView);
+        }
     }
 }

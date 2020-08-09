@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="222">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -19,18 +19,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.left.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JtL-sN-YK0">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="hs4-Ve-GdT"/>
-                                    <constraint firstAttribute="height" constant="130.5" id="jUn-KV-eK8"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_splashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="JtL-sN-YK0">
+                                <rect key="frame" x="36" y="318.5" width="342" height="259"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="JtL-sN-YK0" firstAttribute="centerX" secondItem="223" secondAttribute="centerX" id="5bt-0U-Knd"/>
-                            <constraint firstItem="JtL-sN-YK0" firstAttribute="centerY" secondItem="223" secondAttribute="centerY" id="qFs-Nv-HWY"/>
+                            <constraint firstItem="JtL-sN-YK0" firstAttribute="centerX" secondItem="223" secondAttribute="centerX" id="5hQ-JL-LK5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JtL-sN-YK0" secondAttribute="trailing" constant="16" id="O8r-ro-vbG"/>
+                            <constraint firstItem="JtL-sN-YK0" firstAttribute="leading" secondItem="223" secondAttribute="leadingMargin" constant="16" id="jYd-Wa-1LU"/>
+                            <constraint firstItem="JtL-sN-YK0" firstAttribute="centerY" secondItem="223" secondAttribute="centerY" id="v3G-Ny-XJJ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.turn.up.left.2" catalog="system" width="128" height="87"/>
+        <image name="logo_splashscreen" width="304.33334350585938" height="259.33334350585938"/>
     </resources>
 </document>

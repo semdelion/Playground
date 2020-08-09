@@ -137,9 +137,13 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logo_splashscreen.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_splashscreen.imageset\logo_splashscreen.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\ic_moon.imageset\" />
+    <Folder Include="Assets.xcassets\logo_splashscreen.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">
