@@ -3,7 +3,7 @@ using Android.Views;
 using Android.Runtime;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
-using Semdelion.Droid.Resources.View;
+using Semdelion.Droid.Views;
 using Android.Widget;
 using Android.Support.V7.App;
 using System;

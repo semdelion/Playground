@@ -1,17 +1,13 @@
-﻿using Android.Bluetooth;
-using Android.OS;
+﻿using Android.OS;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V4;
-using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
-using Semdelion.Core.Enums;
 using Semdelion.Core.ViewModels.Interfaces;
-using Semdelion.Droid.Bindings;
 
-namespace Semdelion.Droid.Resources.View
+namespace Semdelion.Droid.Views
 {
     public abstract class BaseFragment<TViewModel> : MvxFragment<TViewModel>
         where TViewModel : class, IBaseViewModel
@@ -39,7 +35,7 @@ namespace Semdelion.Droid.Resources.View
             }
         }
 
-        public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
             var view = this.BindingInflate(FragmentId, container, false);
@@ -47,7 +43,7 @@ namespace Semdelion.Droid.Resources.View
             return view;
         }
 
-        protected virtual void Binding(Android.Views.View view, ViewGroup viewGroup)
+        protected virtual void Binding(View view, ViewGroup viewGroup)
         {
             var set = this.CreateBindingSet<BaseFragment<TViewModel>, TViewModel>();
             set.Bind(this).For(v => v.Title).To(vm => vm.Title);

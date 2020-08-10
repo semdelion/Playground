@@ -3,7 +3,7 @@ using Android.Runtime;
 using Android.Views;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
-using Semdelion.Droid.Resources.View;
+using Semdelion.Droid.Views;
 
 namespace Playground.Droid.View
 {
