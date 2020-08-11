@@ -1,4 +1,5 @@
-﻿using MvvmCross.Logging;
+﻿using MvvmCross.Commands;
+using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using Semdelion.Core.ViewModels.Base;
 using System.Threading.Tasks;
@@ -11,10 +12,7 @@ namespace Playground.Core.ViewModels
         {
         }
 
-        public override void ViewAppearing()
-        {
-            base.ViewAppearing();
-            NavigationService.Navigate<MainViewModel>();
-        }
+        private IMvxCommand _firstViewModel;
+        public IMvxCommand FirstViewModel => _firstViewModel ??= new MvxAsyncCommand(() => NavigationService.Navigate<MainViewModel>());
     }
 }

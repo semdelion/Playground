@@ -1,7 +1,6 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using Semdelion.Core.Enums;
 using Semdelion.Core.ViewModels.Base;
 using System.Threading.Tasks;
 
