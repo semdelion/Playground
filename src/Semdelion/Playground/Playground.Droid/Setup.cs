@@ -8,7 +8,7 @@ using Semdelion.Droid.Bindings;
 
 namespace Playground.Droid
 {
-    public class Setup : MvxAndroidSetup <App>
+    public class Setup : MvxAndroidSetup <PlaygroundApp>
     {
 
         protected override IMvxAndroidViewPresenter CreateViewPresenter()

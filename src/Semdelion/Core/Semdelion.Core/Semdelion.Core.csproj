@@ -6,10 +6,26 @@
 
   <ItemGroup>
     <PackageReference Include="MvvmCross" Version="6.4.2" />
+    <PackageReference Include="Xamarin.Yaml.Parser" Version="1.1.9" />
+    <PackageReference Include="Xamarin.Yaml.Localization" Version="1.1.9" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Semdelion.DAL\Semdelion.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Providers\" />
+    <Folder Include="Providers\Interfaces\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Locales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Locales\en-US.yaml" />
+    <None Remove="Locales\ru-RU.yaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Locales\en-US.yaml" />
+    <EmbeddedResource Include="Locales\ru-RU.yaml" />
+  </ItemGroup>
 </Project>

@@ -12,4 +12,12 @@
     <ProjectReference Include="..\..\Core\Semdelion.Core\Semdelion.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Locales\en-US.yaml" />
+    <None Remove="Locales\ru-RU.yaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Locales\en-US.yaml" />
+    <EmbeddedResource Include="Locales\ru-RU.yaml" />
+  </ItemGroup>
 </Project>
