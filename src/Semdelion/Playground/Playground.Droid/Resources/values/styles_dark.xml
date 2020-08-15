@@ -91,6 +91,5 @@
             name="semdelion_text_color_enabled_button_outlined">@color/Dark_Blue</item>
         <item
             name="semdelion_text_color_disabled_button_outlined">@color/colorButtonTextDisabled_Dark</item>
-
     </style>
 </resources>

@@ -1,10 +1,10 @@
 ﻿using Android.OS;
-using Android.Support.V7.App;
-using Android.Support.V7.Widget;
 using Android.Views;
+using AndroidX.AppCompat.App;
+using AndroidX.AppCompat.Widget;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Views.Fragments;
 using Semdelion.Core.ViewModels.Interfaces;
 
 namespace Semdelion.Droid.Views

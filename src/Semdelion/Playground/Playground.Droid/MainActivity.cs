@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using AndroidX.AppCompat.Widget;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
 using Plugin.Permissions;
@@ -22,10 +23,9 @@ namespace Playground.Droid
             SetContentView(Resource.Layout.activity_main);
             if (SupportActionBar == null)
             {
-                var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.main_toolbar);
+                var toolbar = FindViewById<Toolbar>(Resource.Id.main_toolbar);
                 SetSupportActionBar(toolbar);
             }
-
 
             if (bundle == null)
                 ViewModel.FirstViewModel.Execute(null);
