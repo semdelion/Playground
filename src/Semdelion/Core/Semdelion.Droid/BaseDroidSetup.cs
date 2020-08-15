@@ -1,24 +1,34 @@
-﻿namespace Semdelion.iOS
+﻿namespace Semdelion.Droid
 {
-    using System.Globalization;
+    using Android.Views;
     using MvvmCross.Binding.Bindings.Target.Construction;
     using MvvmCross.Converters;
+    using MvvmCross.Droid.Support.V7.AppCompat;
     using MvvmCross.Localization;
-    using MvvmCross.Platforms.Ios.Core;
+    using MvvmCross.Platforms.Android.Core;
+    using MvvmCross.Platforms.Android.Presenters;
     using MvvmCross.ViewModels;
     using Semdelion.Core;
-    using Semdelion.iOS.Bindings;
-    using UIKit;
+    using Semdelion.Droid.Bindings;
+    using System.Globalization;
 
-    public abstract  class BaseIosSetup : MvxIosSetup
+    public abstract class BaseDroidSetup : MvxAndroidSetup
     {
         private App _app;
 
+        protected override IMvxAndroidViewPresenter CreateViewPresenter()
+        {
+            return new MvxAppCompatViewPresenter(this.AndroidViewAssemblies);
+        }
+
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
-            registry.RegisterCustomBindingFactory<UIView>(StatesTargetBinding.Key, view => new StatesTargetBinding(view));
+            MvxAppCompatSetupHelper.FillTargetFactories(registry);
             base.FillTargetFactories(registry);
+            registry.RegisterCustomBindingFactory<ViewGroup>(StatesTargetBinding.Key,
+                viewGroup => new StatesTargetBinding(viewGroup));
         }
+
         protected override void FillValueConverters(IMvxValueConverterRegistry registry)
         {
             base.FillValueConverters(registry);
@@ -36,7 +46,7 @@
         public override void InitializeSecondary()
         {
             base.InitializeSecondary();
-            _app.InitializeCultureInfo(new CultureInfo("en-US"));
+            _app.InitializeCultureInfo(new CultureInfo("ru-RU"));
         }
     }
 }

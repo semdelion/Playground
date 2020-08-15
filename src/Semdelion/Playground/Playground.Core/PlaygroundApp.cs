@@ -1,9 +1,9 @@
-﻿using MvvmCross.ViewModels;
-using Playground.Core.ViewModels;
+﻿using Playground.Core.ViewModels;
+using Semdelion.Core;
 
 namespace Playground.Core
 {
-    public class App : MvxApplication
+    public class PlaygroundApp: App 
     {
         public override void Initialize()
         {

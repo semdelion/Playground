@@ -1,7 +1,6 @@
-﻿using MvvmCross.Localization;
+﻿using System.ComponentModel;
 using MvvmCross.ViewModels;
 using Semdelion.Core.Enums;
-using System.ComponentModel;
 
 namespace Semdelion.Core.ViewModels.Interfaces
 {

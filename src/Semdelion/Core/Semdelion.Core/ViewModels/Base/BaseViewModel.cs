@@ -1,27 +1,63 @@
-﻿using MvvmCross.Localization;
-using MvvmCross.Logging;
-using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
-using Semdelion.Core.Enums;
-using Semdelion.Core.ViewModels.Interfaces;
-
-namespace Semdelion.Core.ViewModels.Base
+﻿namespace Semdelion.Core.ViewModels.Base
 {
-    public abstract class BaseViewModel : MvxNavigationViewModel, IBaseViewModel
+    using MvvmCross.Localization;
+    using MvvmCross.Logging;
+    using MvvmCross.Navigation;
+    using MvvmCross.ViewModels;
+    using Semdelion.Core.Enums;
+    using Semdelion.Core.ViewModels.Interfaces;
+
+    public abstract class BaseViewModel : MvxNavigationViewModel, IBaseViewModel, IMvxLocalizedTextSourceOwner
     {
+        #region Fields
+
+        private IMvxLanguageBinder _localizedTextSource;
+        private States _state;
+
+        #endregion
+
+        #region Properties
+
         public virtual string Title { get; set; } = string.Empty;
 
-        public States _state;
         public States State
-        { 
+        {
             get => _state;
             set => SetProperty(ref _state, value);
-        } 
-
-        public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) 
-            : base(logProvider, navigationService)
-        {
-
         }
+
+        public string this[string localizeKey] => TryLocalize(localizeKey);
+
+        #endregion
+
+        #region Services
+
+        public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ?? (_localizedTextSource = new MvxLanguageBinder("", this.GetType().Name));
+
+        #endregion
+
+        #region Constructor
+
+        protected BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
+        {
+        }
+
+        #endregion
+
+        #region Private
+
+        private string TryLocalize(string localizeKey)
+        {
+            try
+            {
+                return LocalizedTextSource.GetText(localizeKey);
+            }
+            catch
+            {
+                return "Key not found";
+            }
+        }
+
+        #endregion
     }
 }
