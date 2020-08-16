@@ -1,23 +1,14 @@
-﻿using System;
-using Android.OS;
-using Android.Runtime;
-using Android.Support.V7.App;
+﻿using Android.OS;
+using AndroidX.AppCompat.App;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Views;
 using Semdelion.Core.ViewModels.Interfaces;
 
 namespace Semdelion.Droid.Resources.View
 {
-    public class BaseFragmentHostActivity<TViewModel> : MvxAppCompatActivity<TViewModel> where TViewModel : class, IBaseViewModel
+    public class BaseFragmentHostActivity<TViewModel> : MvxActivity<TViewModel> where TViewModel : class, IBaseViewModel
     {
-        public BaseFragmentHostActivity()
-        {
-        }
-
-        protected BaseFragmentHostActivity(IntPtr javaReference, JniHandleOwnership transfer)
-            : base(javaReference, transfer)
-        {
-        }
+        public BaseFragmentHostActivity() : base() {}
 
         protected override void OnCreate(Bundle bundle)
         {
