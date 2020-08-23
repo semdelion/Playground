@@ -1,6 +1,7 @@
 ﻿namespace Semdelion.Droid
 {
     using Android.Views;
+    using MvvmCross;
     using MvvmCross.Binding.Bindings.Target.Construction;
     using MvvmCross.Converters;
     using MvvmCross.Localization;
@@ -8,8 +9,10 @@
     using MvvmCross.Platforms.Android.Presenters;
     using MvvmCross.ViewModels;
     using Semdelion.Core;
+    using Semdelion.DAL.Services;
     using Semdelion.Droid.Bindings;
     using System.Globalization;
+    using Xamarin.Android.Net;
 
     public abstract class BaseDroidSetup : MvxAndroidSetup
     {
@@ -22,7 +25,6 @@
 
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
-            //MvxAppCompatSetupHelper.FillTargetFactories(registry);
             base.FillTargetFactories(registry);
             registry.RegisterCustomBindingFactory<ViewGroup>(StatesTargetBinding.Key,
                 viewGroup => new StatesTargetBinding(viewGroup));
@@ -32,6 +34,12 @@
         {
             base.FillValueConverters(registry);
             registry.AddOrOverwrite("Language", new MvxLanguageConverter());
+        }
+
+        protected override void InitializeFirstChance()
+        {
+            base.InitializeFirstChance();
+            Mvx.IoCProvider.RegisterSingleton<IConnectionService>(() => new ConnectionService(() => new AndroidClientHandler()));
         }
 
         protected sealed override IMvxApplication CreateApp()

@@ -1,12 +1,15 @@
 ﻿namespace Semdelion.iOS
 {
     using System.Globalization;
+    using System.Net.Http;
+    using MvvmCross;
     using MvvmCross.Binding.Bindings.Target.Construction;
     using MvvmCross.Converters;
     using MvvmCross.Localization;
     using MvvmCross.Platforms.Ios.Core;
     using MvvmCross.ViewModels;
     using Semdelion.Core;
+    using Semdelion.DAL.Services;
     using Semdelion.iOS.Bindings;
     using UIKit;
 
@@ -19,6 +22,13 @@
             registry.RegisterCustomBindingFactory<UIView>(StatesTargetBinding.Key, view => new StatesTargetBinding(view));
             base.FillTargetFactories(registry);
         }
+
+        protected override void InitializeFirstChance()
+        {
+            base.InitializeFirstChance();
+            Mvx.IoCProvider.RegisterSingleton<IConnectionService>(() => new ConnectionService(() => new NSUrlSessionHandler()));
+        }
+
         protected override void FillValueConverters(IMvxValueConverterRegistry registry)
         {
             base.FillValueConverters(registry);
