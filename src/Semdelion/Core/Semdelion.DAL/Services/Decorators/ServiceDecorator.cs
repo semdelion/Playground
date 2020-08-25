@@ -1,13 +1,11 @@
 ﻿using MvvmCross;
 using Polly;
-using Semdelion.DAL.Enums;
 using Semdelion.DAL.Models;
 using Semdelion.DAL.Services.Filters;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -80,7 +78,7 @@ namespace Semdelion.DAL.Services.Decorators
             ServiceContext serviceContext,
             Func<Task<TResult>> apiFunc,
             ApiMethodContext apiContext) 
-            where TResult : HttpContent
+            where TResult : class
         {
             return SendApiMethodInternal(serviceContext, apiFunc, apiContext);
         }
@@ -90,7 +88,7 @@ namespace Semdelion.DAL.Services.Decorators
             ServiceContext serviceContext,
             Func<Task<Response>> apiMethodFunc, 
             ApiMethodContext apiContext)
-            where Response : HttpContent
+            where Response : class
         {
             apiContext ??= ApiMethodContext.Default;
             var filters = GetServiceFilters(serviceContext.IncludeFilters, serviceContext.ExcludeFilters);
@@ -160,7 +158,7 @@ namespace Semdelion.DAL.Services.Decorators
             ServiceContext serviceContext,
             Func<Task<Response>> apiMethodFunc,
             ApiMethodContext apiContext)
-            where Response : HttpContent
+            where Response : class
         {
             await CheckDoRequest(filters, serviceContext, apiContext);
             RequestResult<Response> requestResult;
@@ -198,7 +196,7 @@ namespace Semdelion.DAL.Services.Decorators
             IList<IServiceFilter> filters,
             RequestResult<Response> requestResult,
             ApiMethodContext apiContext)
-            where Response : HttpContent
+            where Response : class
         {
             if (filters.Count == 0)
             {

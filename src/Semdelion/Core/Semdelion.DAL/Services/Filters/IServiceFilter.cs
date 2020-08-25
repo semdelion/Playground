@@ -30,7 +30,7 @@
         /// <param name="responseWrapper">Результат с сервера.</param>
         /// <param name="apiContext">Контекст апи метода.</param>
         /// <returns>Результат валидации.</returns>
-        Task<ServiceFilterResult> ValidateResult<Response>(RequestResult<Response> requestResult, ApiMethodContext apiContext) where Response : HttpContent;
+        Task<ServiceFilterResult> ValidateResult<Response>(RequestResult<Response> requestResult, ApiMethodContext apiContext) where Response : class;
 
         /// <summary>
         ///     Может ли фильтр разрешить ошибку с сервера.
