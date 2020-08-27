@@ -3,8 +3,10 @@
     using System.Globalization;
     using System.Reflection;
     using MvvmCross;
+    using MvvmCross.IoC;
     using MvvmCross.Localization;
     using MvvmCross.ViewModels;
+    using Plugin.Connectivity;
     using Semdelion.Core.Providers;
     using Semdelion.Core.Providers.Interfaces;
     using Xamarin.Yaml.Localization;
@@ -30,6 +32,7 @@
 
             Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(textProvider);
             Mvx.IoCProvider.RegisterSingleton<IMvxLocalizationProvider>(textProvider);
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton(() => CrossConnectivity.Current);
 
         }
 

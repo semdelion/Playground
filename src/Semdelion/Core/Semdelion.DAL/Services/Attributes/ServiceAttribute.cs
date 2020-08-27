@@ -30,8 +30,8 @@
         public int MaxRetryCount { get; set; } = DefaultMaxRetryCount;
 
         /// <summary>
-        ///     Количество повторов на сервер, если вдруг произошла ошибка.
-        ///     По умолчанию = 1.
+        ///     Время ожидания между запросами 
+        ///     По умолчанию = 200.
         /// </summary>
         public int SleepTime { get; set; } = DefaultSleepTime;
 

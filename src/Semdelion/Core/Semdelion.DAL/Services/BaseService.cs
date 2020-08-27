@@ -30,7 +30,7 @@
         protected Task<RequestResult<TResult>> SendApiMethod<TResult>(
             Func<Task<TResult>> apiFunc,
             ApiMethodContext apiContext,
-            [CallerMemberName] string callerMethodName = null) where TResult : HttpContent
+            [CallerMemberName] string callerMethodName = null) where TResult : class
         {
             var context = GetServiceMethodContext(callerMethodName) ?? Context;
             return ServiceDecorator.SendApiMethod(context, apiFunc, apiContext);

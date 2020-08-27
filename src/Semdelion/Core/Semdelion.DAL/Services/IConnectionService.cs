@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,6 +11,10 @@ namespace Semdelion.DAL.Services
     /// </summary>
     public interface IConnectionService
     {
+
+        Lazy<HttpClient> _lazyHttpClient { get; }
+
+
         Task<HttpResponseMessage> SendAsync(string url,
                                                    HttpMethod method,
                                                    HttpContent httpContent = null,

@@ -4,7 +4,6 @@
     using Semdelion.DAL.Services.Filters;
     using System;
     using System.Collections.Generic;
-    using System.Net.Http;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -47,6 +46,6 @@
         Task<RequestResult<TResult>> SendApiMethod<TResult>(
             ServiceContext serviceContext, 
             Func<Task<TResult>> apiFunc, 
-            ApiMethodContext apiContext) where TResult : HttpContent;
+            ApiMethodContext apiContext) where TResult : class;
     }
 }

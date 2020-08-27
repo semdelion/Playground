@@ -9,7 +9,7 @@ namespace Semdelion.DAL.Services
 {
     public class ConnectionService : IConnectionService
     {
-        private readonly Lazy<HttpClient> _lazyHttpClient;
+        public Lazy<HttpClient> _lazyHttpClient { get; }
 
         public IDictionary<string, IEnumerable<string>> Headers { get; }
 

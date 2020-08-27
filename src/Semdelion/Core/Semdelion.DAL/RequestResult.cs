@@ -3,7 +3,7 @@ using System.Net.Http;
 
 namespace Semdelion.DAL
 {
-	public class RequestResult<T> where T : HttpContent
+	public class RequestResult<T> where T : class
 	{
 		public readonly string Message;
 		public readonly RequestStatus Status;
