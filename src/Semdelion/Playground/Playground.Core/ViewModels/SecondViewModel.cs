@@ -4,6 +4,7 @@ using MvvmCross.Navigation;
 using Playground.Core.Services;
 using Semdelion.Core.Enums;
 using Semdelion.Core.ViewModels.Base;
+using Semdelion.DAL.Exceptions;
 using System;
 using System.Threading.Tasks;
 
@@ -23,31 +24,22 @@ namespace Playground.Core.ViewModels
         public override async Task Initialize()
         {
             await base.Initialize();
-            State = States.Normal;
             try
             {
-
-               
+                State = States.Loading;
                 var t = await _contactService.GetContacts(10, 1);
-
-                   var tt = t.Data;
-
-
-                var tttt = tt;
+                var tt = t.Data;
+                State = States.Normal;
+            }
+            catch (NetworkConnectionException ex)
+            {
+                State = States.NoInternet;
             }
             catch (Exception ex)
             {
-                var t = ex.Message;
+                State = States.Error;
             }
-            //State = States.Error;
-            //await Task.Delay(3000);
-            //State = States.NoInternet;
-            //await Task.Delay(3000);
             //State = States.NoData;
-            //await Task.Delay(3000);
-            //State = States.Loading;
-            //await Task.Delay(3000);
-            //State = States.Normal;
         }
     }
 }

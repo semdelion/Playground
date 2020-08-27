@@ -14,7 +14,7 @@ namespace Playground.Core
             Mvx.IoCProvider.RegisterType<IContactService, ContactService>();
 
             var serviceDecorator = new ServiceDecorator();
-            //InitializeServiceDecorator(serviceDecorator);
+            ServiceDecorator.AddDefaultFilters(serviceDecorator);
 
             Mvx.IoCProvider.RegisterSingleton<IServiceDecorator>(serviceDecorator);
 

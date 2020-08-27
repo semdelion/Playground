@@ -117,7 +117,7 @@ namespace Semdelion.DAL.Services.Decorators
 
         public static void AddDefaultFilters(IServiceDecorator serviceDecorator)
         {
-            //serviceDecorator.AddFilter<AuthServiceFilter>();
+            serviceDecorator.AddFilter<NetworkConnectionServiceFilter>();
             //serviceDecorator.AddFilter<ApiMethodServiceFilter>();
             //serviceDecorator.AddFilter<CaptchaServiceFilter>();
         }

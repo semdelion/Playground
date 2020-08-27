@@ -13,6 +13,11 @@
     <PackageReference Include="Polly" Version="7.2.1" />
     <PackageReference Include="Polly.Contrib.WaitAndRetry" Version="1.1.1" />
     <PackageReference Include="Refit" Version="5.1.67" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\API\Semdelion.API\Semdelion.API.csproj" />
   </ItemGroup>
 
 </Project>
