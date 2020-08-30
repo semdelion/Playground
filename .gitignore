@@ -28,6 +28,7 @@
 *.DS_Store
 *.Cache
 *.bak
+google-services.json
 /src/UpgradeLog*.htm
 
 # Ignore Xamarin.Android Resource.Designer.cs files

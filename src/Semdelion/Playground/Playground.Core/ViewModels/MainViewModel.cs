@@ -14,6 +14,9 @@ namespace Playground.Core.ViewModels
         private IMvxCommand _toSecondView;
         public IMvxCommand ToSecondView => _toSecondView ??= new MvxAsyncCommand(NavigateSecondView);
 
+        private IMvxCommand _toFirebaseCommand;
+        public IMvxCommand ToFirebaseCommand => _toFirebaseCommand ??= new MvxAsyncCommand(ToFirebaseView);
+
         #endregion
 
         #region Properties
@@ -36,6 +39,11 @@ namespace Playground.Core.ViewModels
         private async Task NavigateSecondView()
         {
             await NavigationService.Navigate<SecondViewModel>();
+        }
+
+        private async Task ToFirebaseView()
+        {
+            await NavigationService.Navigate<FirebaseViewModel>();
         }
 
         #endregion

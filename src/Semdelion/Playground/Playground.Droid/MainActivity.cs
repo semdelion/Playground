@@ -1,9 +1,13 @@
 ﻿using Android.App;
 using Android.Content.PM;
+using Android.Gms.Common;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Util;
 using AndroidX.AppCompat.Widget;
+using Firebase.Messaging;
+using Firebase.Iid;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
 using Plugin.Permissions;

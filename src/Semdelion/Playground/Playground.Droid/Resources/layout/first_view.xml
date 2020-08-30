@@ -19,6 +19,13 @@
             android:layout_marginBottom="8dp"
             local:MvxBind              ="Click ToSecondView"/>
         <Button
+            android:text               ="Firebase"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:id                 ="@+id/FirebaseButton"
+            android:layout_marginBottom="8dp"
+            local:MvxBind              ="Click ToFirebaseCommand"/>
+        <Button
             android:id                 ="@+id/first_view_button_theme"
             android:text               ="Teme"
             android:layout_width       ="match_parent"
@@ -123,15 +130,3 @@
             local:MvxBind              ="Click ToSecondView"/>
     </LinearLayout>
 </ScrollView>
-
-
-
-      
-      
-
-      
-      
-
-      
-   
-      
