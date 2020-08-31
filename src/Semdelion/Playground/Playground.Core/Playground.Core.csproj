@@ -20,4 +20,8 @@
     <EmbeddedResource Include="Locales\en-US.yaml" />
     <EmbeddedResource Include="Locales\ru-RU.yaml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Tabs\" />
+    <Folder Include="ViewModels\Pager\" />
+  </ItemGroup>
 </Project>

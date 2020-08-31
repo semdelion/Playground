@@ -83,6 +83,47 @@
     <Compile Include="Views\SecondView.designer.cs">
       <DependentUpon>SecondView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Tabs\Tab1View.cs" />
+    <Compile Include="Views\Tabs\Tab1View.designer.cs">
+      <DependentUpon>Tab1View.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Tabs\Tab1View.xib" />
+    <Compile Include="Views\Tabs\Tab2View.cs" />
+    <Compile Include="Views\Tabs\Tab2View.designer.cs">
+      <DependentUpon>Tab2View.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Tabs\Tab2View.xib" />
+    <Compile Include="Views\Tabs\TabsRootView.cs" />
+    <Compile Include="Views\Tabs\TabsRootView.designer.cs">
+      <DependentUpon>TabsRootView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Tabs\TabsRootView.xib" />
+    <Compile Include="Custom\ScrollablePage\ScrollablePageViewController.cs" />
+    <Compile Include="Custom\ScrollablePage\IPageViewControllerDataSource.cs" />
+    <Compile Include="Custom\ScrollablePage\ScrollablePageDataSource.cs" />
+    <InterfaceDefinition Include="Views\Pager\PagerView.xib" />
+    <Compile Include="Views\Pager\PagerView.cs" />
+    <Compile Include="Views\Pager\PagerView.designer.cs">
+      <DependentUpon>PagerView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Custom\Pages\Page1View.xib" />
+    <Compile Include="Custom\Pages\Page1View.cs" />
+    <Compile Include="Custom\Pages\Page1View.designer.cs">
+      <DependentUpon>Page1View.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Custom\Pages\Page2View.xib" />
+    <Compile Include="Custom\Pages\Page2View.cs" />
+    <Compile Include="Custom\Pages\Page2View.designer.cs">
+      <DependentUpon>Page2View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\Pages\PageViewController.cs" />
+    <Compile Include="Views\Pager\PagesRootView.cs" />
+    <Compile Include="Views\Pager\Page2View.cs" />
+    <Compile Include="Views\Pager\Page3View.cs" />
+    <Compile Include="MvxPageViewController.cs" />
+    <Compile Include="MvxPageViewController.designer.cs">
+      <DependentUpon>MvxPageViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -152,6 +193,11 @@
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_moon.imageset\" />
     <Folder Include="Resources\" />
+    <Folder Include="Views\Tabs\" />
+    <Folder Include="Custom\" />
+    <Folder Include="Custom\ScrollablePage\" />
+    <Folder Include="Views\Pager\" />
+    <Folder Include="Custom\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">
@@ -168,6 +214,11 @@
       <Project>{B7553A2A-B408-4FE4-A594-D879EE20188D}</Project>
       <Name>Semdelion.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home%403x.png" />
+    <BundleResource Include="Resources\home%402x.png" />
+    <BundleResource Include="Resources\home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

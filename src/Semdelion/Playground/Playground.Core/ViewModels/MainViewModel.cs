@@ -1,9 +1,9 @@
-﻿using MvvmCross.Commands;
+﻿using System.Threading.Tasks;
+using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using Playground.Core.ViewModels.Tabs;
 using Semdelion.Core.ViewModels.Base;
-using System.Threading.Tasks;
-using MvvmCross.Localization;
 
 namespace Playground.Core.ViewModels
 {
@@ -35,7 +35,8 @@ namespace Playground.Core.ViewModels
 
         private async Task NavigateSecondView()
         {
-            await NavigationService.Navigate<SecondViewModel>();
+            //await NavigationService.Navigate<SecondViewModel>(); 
+            await NavigationService.Navigate<TabsRootViewModel>();
         }
 
         #endregion

@@ -1,4 +1,5 @@
-﻿using Playground.Core.ViewModels;
+﻿using Playground.Core.ViewModels.Pager;
+using Playground.Core.ViewModels.Tabs;
 using Semdelion.Core;
 
 namespace Playground.Core
@@ -8,7 +9,7 @@ namespace Playground.Core
         public override void Initialize()
         {
             base.Initialize();
-            RegisterAppStart<MainViewModel>();
+            RegisterAppStart<PagesRootViewModel>();
         }
     }
 }
