@@ -15,14 +15,12 @@ namespace Playground.Core.Services
     {
         private readonly IContact _contactService;
 
-
         public ContactService(IConnectionService connectionService, IServiceDecorator serviceDecorator) : base(connectionService, serviceDecorator) 
         {
-            connectionService._lazyHttpClient.Value.BaseAddress = new Uri("https://randomuser.me/api/");
             _contactService = RestService.For<IContact>(connectionService._lazyHttpClient.Value);
         }
 
-        public async Task<RequestResult<ContactResult>> GetContacts(int count, int page = 1, ApiMethodContext context = default)
+        public async Task<RequestResult<ContactResult>> GetContacts(int count = 5, int page = 1, ApiMethodContext context = default)
         {
             return await SendApiMethod(() => _contactService.GetContacts(count, page), context);
         }

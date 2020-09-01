@@ -9,6 +9,8 @@ namespace Semdelion.DAL.Services
 {
     public class ConnectionService : IConnectionService
     {
+        private readonly Uri _baseUri = new Uri("https://www.hltv.org/");
+
         public Lazy<HttpClient> _lazyHttpClient { get; }
 
         public IDictionary<string, IEnumerable<string>> Headers { get; }
@@ -16,6 +18,7 @@ namespace Semdelion.DAL.Services
         public ConnectionService(Func<HttpMessageHandler> httpHandlerFunc)
         {
             _lazyHttpClient = new Lazy<HttpClient>(() => new HttpClient(httpHandlerFunc()));
+            _lazyHttpClient.Value.BaseAddress = _baseUri;
             Headers = new Dictionary<string, IEnumerable<string>>();
         }
 

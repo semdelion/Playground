@@ -6,7 +6,6 @@
     using Semdelion.DAL.Services.Extensions;
     using System;
     using System.Linq;
-    using System.Net.Http;
     using System.Reflection;
     using System.Runtime.CompilerServices;
     using System.Threading.Tasks;

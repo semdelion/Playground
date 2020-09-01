@@ -1,5 +1,6 @@
 ﻿using MvvmCross;
 using Polly;
+using Semdelion.DAL.Exceptions;
 using Semdelion.DAL.Models;
 using Semdelion.DAL.Services.Filters;
 using System;
@@ -98,7 +99,7 @@ namespace Semdelion.DAL.Services.Decorators
                 return await Policy
                     .Handle<ApiMethodException>()
                     .WaitAndRetryAsync(
-                        serviceContext.MaxRetryCount, 
+                        serviceContext.MaxRetryCount,
                         retryNumber => TimeSpan.FromMilliseconds(serviceContext.SleepTime),
                         (exception, i) => HandleExceptionAsync(filters, exception, serviceContext, apiContext))
                     .ExecuteAsync(
@@ -107,7 +108,7 @@ namespace Semdelion.DAL.Services.Decorators
             }
             catch (Exception ex) when (ex is OperationCanceledException || ex is TaskCanceledException)
             {
-                throw ex;//new NoInternetConnectionException(ex);
+                throw new NetworkConnectionException(ex.Message, ex);
             }
             catch (ApiMethodException ex)
             {
@@ -164,8 +165,7 @@ namespace Semdelion.DAL.Services.Decorators
             RequestResult<Response> requestResult;
             try
             {
-                var t = await apiMethodFunc();
-                requestResult = new RequestResult<Response>(t, Enums.RequestStatus.Ok);
+                requestResult = new RequestResult<Response>(await apiMethodFunc(), Enums.RequestStatus.Ok);
             }
             //catch (ValidationApiException e)
             //{
