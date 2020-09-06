@@ -2,7 +2,9 @@
 {
     using Android.Views;
     using MvvmCross;
+    using MvvmCross.Binding;
     using MvvmCross.Binding.Bindings.Target.Construction;
+    using MvvmCross.Binding.Parse.Binding.Lang;
     using MvvmCross.Converters;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
@@ -11,6 +13,7 @@
     using MvvmCross.Plugin;
     using MvvmCross.ViewModels;
     using Semdelion.Core;
+    using Semdelion.Core.ViewModels.Base;
     using Semdelion.DAL.Helpers;
     using Semdelion.DAL.Helpers.Interfaces;
     using Semdelion.DAL.Services;
@@ -79,6 +82,17 @@
         {
             base.InitializeSecondary();
             _app.InitializeCultureInfo(new CultureInfo("ru-RU"));
+        }
+
+        public override void InitializePrimary()
+        {
+            base.InitializePrimary();
+            Mvx.IoCProvider.CallbackWhenRegistered<IMvxLanguageBindingParser>(parser =>
+            {
+                var parserIntance = (MvxLanguageBindingParser)parser;
+                parserIntance.DefaultTextSourceName = nameof(BaseViewModel.LocalizedTextSource);
+                parserIntance.DefaultBindingMode = MvxBindingMode.OneWay;
+            });
         }
     }
 }
