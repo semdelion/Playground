@@ -2,8 +2,6 @@
 using Semdelion.DAL.Exceptions;
 using Semdelion.DAL.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Semdelion.DAL.Services.Filters

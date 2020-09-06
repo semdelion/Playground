@@ -1,5 +1,6 @@
 ﻿using MvvmCross;
 using Polly;
+using Refit;
 using Semdelion.DAL.Exceptions;
 using Semdelion.DAL.Models;
 using Semdelion.DAL.Services.Filters;
@@ -98,13 +99,12 @@ namespace Semdelion.DAL.Services.Decorators
             {
                 return await Policy
                     .Handle<ApiMethodException>()
+                    .Or<ApiException>()
                     .WaitAndRetryAsync(
                         serviceContext.MaxRetryCount,
                         retryNumber => TimeSpan.FromMilliseconds(serviceContext.SleepTime),
                         (exception, i) => HandleExceptionAsync(filters, exception, serviceContext, apiContext))
-                    .ExecuteAsync(
-                        ct => ExecuteApiMethod(filters, serviceContext, apiMethodFunc, apiContext),
-                        (CancellationToken)apiContext);
+                    .ExecuteAsync(ct => ExecuteApiMethod(filters, serviceContext, apiMethodFunc, apiContext), (CancellationToken)apiContext);
             }
             catch (Exception ex) when (ex is OperationCanceledException || ex is TaskCanceledException)
             {
@@ -119,8 +119,6 @@ namespace Semdelion.DAL.Services.Decorators
         public static void AddDefaultFilters(IServiceDecorator serviceDecorator)
         {
             serviceDecorator.AddFilter<NetworkConnectionServiceFilter>();
-            //serviceDecorator.AddFilter<ApiMethodServiceFilter>();
-            //serviceDecorator.AddFilter<CaptchaServiceFilter>();
         }
 
         private IList<IServiceFilter> GetServiceFilters(Type[] includeTypes = null, Type[] excludeTypes = null)
@@ -165,12 +163,8 @@ namespace Semdelion.DAL.Services.Decorators
             RequestResult<Response> requestResult;
             try
             {
-                requestResult = new RequestResult<Response>(await apiMethodFunc(), Enums.RequestStatus.Ok);
+                requestResult = new RequestResult<Response>(await apiMethodFunc());
             }
-            //catch (ValidationApiException e)
-            //{
-            //    requestResult = new RequestResult<Response>(e,Enums.RequestStatus.Ok);
-            //}
             catch (Exception e)
             {
                 throw new ApiMethodException(e);
@@ -198,11 +192,6 @@ namespace Semdelion.DAL.Services.Decorators
             ApiMethodContext apiContext)
             where Response : class
         {
-            if (filters.Count == 0)
-            {
-                return;
-            }
-
             foreach (var filter in filters)
             {
                 var filterResult = await filter.ValidateResult(requestResult, apiContext);
@@ -215,13 +204,11 @@ namespace Semdelion.DAL.Services.Decorators
             }
         }
 
-        private static async Task CheckDoRequest(IList<IServiceFilter> filters, ServiceContext serviceContext, ApiMethodContext apiContext)
+        private static async Task CheckDoRequest(
+            IList<IServiceFilter> filters, 
+            ServiceContext serviceContext, 
+            ApiMethodContext apiContext)
         {
-            if (filters.Count == 0)
-            {
-                return;
-            }
-
             foreach (var filter in filters)
             {
                 var filterResult = await filter.CanDoRequest(serviceContext, apiContext);
@@ -234,14 +221,12 @@ namespace Semdelion.DAL.Services.Decorators
             }
         }
 
-        private static async Task CheckTryResolveException(IList<IServiceFilter> filters, Exception ex, ServiceContext serviceContext,
+        private static async Task CheckTryResolveException(
+            IList<IServiceFilter> filters, 
+            Exception ex, 
+            ServiceContext serviceContext,
             ApiMethodContext apiContext)
         {
-            if (filters.Count == 0)
-            {
-                return;
-            }
-
             foreach (var filter in filters)
             {
                 var filterResult = await filter.TryResolveException(serviceContext, ex, apiContext);

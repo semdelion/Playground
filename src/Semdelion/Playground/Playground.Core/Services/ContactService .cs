@@ -18,8 +18,6 @@ namespace Playground.Core.Services
 
         public ContactService(IConnectionService connectionService, IServiceDecorator serviceDecorator) : base(connectionService, serviceDecorator) 
         {
-            var url = (new Lazy<IAppSettings>(MvvmCross.Mvx.IoCProvider.Resolve<IAppSettings>)).Value.Environment.BaseUrl;
-            connectionService._lazyHttpClient.Value.BaseAddress = new Uri(url);
             _contactService = RestService.For<IContact>(connectionService._lazyHttpClient.Value);
         }
 

@@ -2,6 +2,7 @@
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using Playground.Core.Services;
+using Refit;
 using Semdelion.Core.Enums;
 using Semdelion.Core.ViewModels.Base;
 using Semdelion.DAL.Exceptions;
@@ -28,12 +29,15 @@ namespace Playground.Core.ViewModels
             {
                 State = States.Loading;
                 var t = await _contactService.GetContacts(10, 1);
-                var tt = t.Data;
                 State = States.Normal;
             }
             catch (NetworkConnectionException ex)
             {
                 State = States.NoInternet;
+            }
+            catch (ApiException ex)
+            {
+                State = States.Error;
             }
             catch (Exception ex)
             {

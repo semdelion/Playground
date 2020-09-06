@@ -9,7 +9,8 @@ namespace Semdelion.DAL.Services
 {
     public class ConnectionService : IConnectionService
     {
-        private readonly Uri _baseUri = new Uri("https://www.hltv.org/");
+       // private readonly Uri _baseUri = new Uri("https://randomuser.me/api/");  
+        private readonly Uri _baseUri = new Uri("https://magnolia-stg.loymax.tech/");
 
         public Lazy<HttpClient> _lazyHttpClient { get; }
 
@@ -45,14 +46,19 @@ namespace Semdelion.DAL.Services
                                               HttpContent httpContent,
                                               IDictionary<string, IEnumerable<string>> headers = null,
                                               IDictionary<string, object> properties = null,
-                                              CancellationToken cancellationToken = default) =>
-            SendAsync(url, HttpMethod.Post, httpContent, headers, properties, cancellationToken);
+                                              CancellationToken cancellationToken = default)
+        {
+            return SendAsync(url, HttpMethod.Post, httpContent, headers, properties, cancellationToken);
+        }
+            
 
         public Task<HttpResponseMessage> GET(string url,
                                              IDictionary<string, IEnumerable<string>> headers = null,
                                              IDictionary<string, object> properties = null,
-                                             CancellationToken cancellationToken = default) =>
-            SendAsync(url, HttpMethod.Get, null, headers, properties, cancellationToken);
+                                             CancellationToken cancellationToken = default)
+        {
+            return SendAsync(url, HttpMethod.Get, null, headers, properties, cancellationToken);
+        }
 
         public void AddHeader(string key, IEnumerable<string> value) => Headers.Add(key, value);
 

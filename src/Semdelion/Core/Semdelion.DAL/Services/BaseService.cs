@@ -13,10 +13,9 @@
     public abstract class BaseService
     {
         private ServiceContext _serviceContext;
+        private IServiceDecorator ServiceDecorator { get; }
 
         protected IConnectionService ConnectionService { get; }
-
-        private IServiceDecorator ServiceDecorator { get; }
 
         private ServiceContext Context => _serviceContext ??= GetServiceContext();
 
