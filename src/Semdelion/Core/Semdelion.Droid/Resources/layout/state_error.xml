@@ -27,7 +27,6 @@
         android:layout_height                 ="wrap_content"
         android:gravity                       ="center"
         local:MvxLang                         ="Text State.Error"
-        local:MvxBind                         ="Text StateMessage"
         local:layout_constraintEnd_toEndOf    ="parent"
         local:layout_constraintHorizontal_bias="0.0"
         local:layout_constraintStart_toStartOf="parent"

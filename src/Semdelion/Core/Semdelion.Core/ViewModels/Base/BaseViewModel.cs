@@ -27,16 +27,14 @@
             set => SetProperty(ref _state, value);
         }
 
-        public virtual string StateMessage { get; set; }
-
         public virtual IMvxCommand RefreshCommand { get; set; } = null;
 
-        public string this[string localizeKey] => TryLocalize(localizeKey);
+        public string this[string localizeKey] => LocalizedTextSource.GetText(localizeKey);
         #endregion
 
         #region Services
 
-        public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ?? (_localizedTextSource = new MvxLanguageBinder("", GetType().Name));
+        public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ??= new MvxLanguageBinder("");
 
         #endregion
 
@@ -49,19 +47,6 @@
         #endregion
 
         #region Private
-
-        private string TryLocalize(string localizeKey)
-        {
-            try
-            {
-                return LocalizedTextSource.GetText(localizeKey);
-            }
-            catch
-            {
-                return "Key not found";
-            }
-        }
-
         #endregion
     }
 }

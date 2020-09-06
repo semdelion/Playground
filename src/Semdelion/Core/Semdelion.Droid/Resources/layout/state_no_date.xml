@@ -9,7 +9,6 @@
         android:layout_height                 ="0dp"
         local:lottie_autoPlay                 ="true"
         local:lottie_fileName                 ="state_no_data.json"
-        local:lottie_loop                     ="true"
         local:layout_constraintBottom_toTopOf ="@+id/state_no_data_guideline"
         local:layout_constraintEnd_toEndOf    ="parent"
         local:layout_constraintStart_toStartOf="parent"

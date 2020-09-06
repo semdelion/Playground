@@ -62,6 +62,9 @@ namespace Semdelion.Droid.Bindings
             if (viewGroup.Visibility == ViewStates.Gone)
                 viewGroup.Visibility = ViewStates.Visible;
 
+            if (view != null && view.Id == newView.Id)
+                return;
+
             if (view != null)
             {
                 view.StartAnimation(AnimationUtils.LoadAnimation(viewGroup.Context, Resource.Animation.abc_fade_out));

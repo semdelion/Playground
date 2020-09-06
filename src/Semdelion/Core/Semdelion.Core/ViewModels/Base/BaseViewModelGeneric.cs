@@ -13,8 +13,6 @@ namespace Semdelion.Core.ViewModels.Base
 
         public States State { get; set; }
 
-        public string StateMessage { get; set; }
-
         public IMvxCommand RefreshCommand { get; set; } = null;
 
         public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)

@@ -20,11 +20,6 @@ namespace Semdelion.Core.ViewModels.Interfaces
         /// <summary>
         ///     Сообщение о состояние ViewModel.
         /// </summary>
-        string StateMessage { get; set; }
-
-        /// <summary>
-        ///     Сообщение о состояние ViewModel.
-        /// </summary>
         IMvxCommand RefreshCommand { get; set; }
     }
 

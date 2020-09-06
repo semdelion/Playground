@@ -1,2 +1,9 @@
 MainViewModel:
   Title: MainViewModel
+State:
+  Error: Error
+  Loading: Loading...
+  NoDate: No date
+  NoInternet:
+    Message: No internet 
+    Button: Update
