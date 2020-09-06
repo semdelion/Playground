@@ -13,10 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Configs\config.yaml" />
     <None Remove="Locales\en-US.yaml" />
     <None Remove="Locales\ru-RU.yaml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Configs\config.yaml" />
     <EmbeddedResource Include="Locales\en-US.yaml" />
     <EmbeddedResource Include="Locales\ru-RU.yaml" />
   </ItemGroup>
