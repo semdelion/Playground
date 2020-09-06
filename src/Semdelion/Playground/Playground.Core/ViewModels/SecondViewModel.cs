@@ -1,6 +1,8 @@
-﻿using MvvmCross.Logging;
+﻿using MvvmCross.Commands;
+using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using Playground.Core.Providers;
+using Refit;
 using Semdelion.Core.Enums;
 using Semdelion.Core.Extensions;
 using Semdelion.Core.ViewModels.Base;
@@ -19,13 +21,23 @@ namespace Playground.Core.ViewModels
             ContactProvider = contactProvider;
         }
 
+
+        private MvxAsyncCommand _refreshCommand;
+        public override IMvxCommand RefreshCommand => _refreshCommand ??= new MvxAsyncCommand(async () => await Getdate());
+
+        public async Task Getdate()
+        {
+            State = States.Loading;
+            var requestResult = await ContactProvider.GetContacts(30, 1);
+
+            this.UpdateState(requestResult);
+        }
+
         public override async Task Initialize()
         {
             await base.Initialize();
-           
-            State = States.Loading;
-            var t = await ContactProvider.GetContacts(int.MaxValue, 10);
-            State = t.IsValid ? (t.Data == null ? States.NoData : States.Normal): StatesExtension.GetState(t.Exception); //TODO t.Data == null ?
+
+            await Getdate();
         }
     }
 }

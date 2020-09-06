@@ -1,5 +1,6 @@
 ﻿namespace Semdelion.Core.ViewModels.Base
 {
+    using MvvmCross.Commands;
     using MvvmCross.Localization;
     using MvvmCross.Logging;
     using MvvmCross.Navigation;
@@ -26,8 +27,11 @@
             set => SetProperty(ref _state, value);
         }
 
-        public string this[string localizeKey] => TryLocalize(localizeKey);
+        public virtual string StateMessage { get; set; }
 
+        public virtual IMvxCommand RefreshCommand { get; set; } = null;
+
+        public string this[string localizeKey] => TryLocalize(localizeKey);
         #endregion
 
         #region Services

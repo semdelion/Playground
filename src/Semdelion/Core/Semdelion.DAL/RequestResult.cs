@@ -1,28 +1,42 @@
-﻿
-using System;
+﻿using System;
 using System.Net;
-using System.Net.Http;
 
 namespace Semdelion.DAL
 {
-	public class RequestResult<T> where T : class
-	{
-		public readonly string Message;
-		public readonly HttpStatusCode StatusCode = HttpStatusCode.OK;
-		public readonly Exception Exception;
-		public readonly T Data;
-		public bool IsValid => StatusCode == HttpStatusCode.OK && Data != null && Exception == null;
 
-		public RequestResult(T data)
+	public class RequestResult<T> : RequestResult 
+	{
+		public readonly T Data;
+		public override bool IsValid => StatusCode == HttpStatusCode.OK && Data != null && Exception == null;
+
+		public RequestResult(T data):base()
 		{
 			Data = data;
 		}
 
-		public RequestResult(T data, HttpStatusCode statusCode, string message = null)
+		public RequestResult(Exception exception, string message = null) 
+			: base(exception, message)
 		{
-			Data = data;
-			StatusCode = statusCode;
-			Message = message;
+		}
+
+		public RequestResult(Exception exception, HttpStatusCode statusCode, string message) 
+			: base(exception, statusCode, message)
+		{
+		}
+
+		public override string ToString() { return $@"Result: {StatusCode}, Data: {Data}, Message: {Message}, Exception: {Exception}"; }
+	}
+
+	public class RequestResult
+	{
+		public readonly string Message;
+		public readonly HttpStatusCode StatusCode;
+		public readonly Exception Exception;
+		public virtual bool IsValid => StatusCode == HttpStatusCode.OK && Exception == null;
+
+		public RequestResult()
+		{
+			StatusCode = HttpStatusCode.OK;
 		}
 
 		public RequestResult(Exception exception, string message = null)
@@ -38,7 +52,6 @@ namespace Semdelion.DAL
 			Exception = exception ?? throw new ArgumentNullException(nameof(exception));
 		}
 
-		public override string ToString() { return $@"Result: {StatusCode}, Data: {Data}, Message: {Message}, Exception: {Exception}"; }
-
+		public override string ToString() { return $@"Result: {StatusCode}, Message: {Message}, Exception: {Exception}"; }
 	}
 }

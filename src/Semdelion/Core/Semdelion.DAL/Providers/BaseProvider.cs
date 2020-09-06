@@ -14,10 +14,6 @@ namespace Semdelion.DAL.Providers
             {
                 return await serviceFunc();
             }
-            catch(NetworkConnectionException ex)
-            {
-                return new RequestResult<TResult>(ex, ex.Message);
-            }
             catch (ApiException ex)
             {
                 return new RequestResult<TResult>(ex, ex.StatusCode, ex.Message);

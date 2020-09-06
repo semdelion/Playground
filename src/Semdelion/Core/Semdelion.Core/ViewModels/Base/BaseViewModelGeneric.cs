@@ -3,6 +3,7 @@ using Semdelion.Core.ViewModels.Interfaces;
 using Semdelion.Core.Enums;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using MvvmCross.Commands;
 
 namespace Semdelion.Core.ViewModels.Base
 {
@@ -12,10 +13,12 @@ namespace Semdelion.Core.ViewModels.Base
 
         public States State { get; set; }
 
+        public string StateMessage { get; set; }
+
+        public IMvxCommand RefreshCommand { get; set; } = null;
+
         public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
             : base(logProvider, navigationService)
-        {
-
-        }
+        { }
     }
 }

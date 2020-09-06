@@ -26,10 +26,11 @@
         android:layout_width                  ="0dp"
         android:layout_height                 ="wrap_content"
         android:gravity                       ="center"
-        android:text                          ="Нет данных"
         android:layout_marginBottom           ="16dp"
+        local:MvxLang                         ="Text State.NoDate"
         local:layout_constraintEnd_toEndOf    ="parent"
         local:layout_constraintHorizontal_bias="0.0"
         local:layout_constraintStart_toStartOf="parent"
-        local:layout_constraintTop_toTopOf    ="@+id/state_no_data_guideline" />
+        local:layout_constraintTop_toTopOf    ="@+id/state_no_data_guideline"
+        tools:text                            ="Нет данных"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
