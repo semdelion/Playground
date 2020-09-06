@@ -1,13 +1,31 @@
-﻿using System;
+﻿using Refit;
+using Semdelion.DAL.Exceptions;
+using System;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Semdelion.DAL.Providers
 {
     public abstract class BaseProvider
     {
-        protected Task<RequestResult<TResult>> RequestResult<TResult>(Func<Task<TResult>> apiFunc) where TResult : class
+        protected async Task<RequestResult<TResult>> PackageServiceResult<TResult>(Func<Task<RequestResult<TResult>>> serviceFunc) where TResult : class
         {
-            return null;
+            try
+            {
+                return await serviceFunc();
+            }
+            catch(NetworkConnectionException ex)
+            {
+                return new RequestResult<TResult>(ex, ex.Message);
+            }
+            catch (ApiException ex)
+            {
+                return new RequestResult<TResult>(ex, ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return new RequestResult<TResult>(ex, ex.Message);
+            }
         }
     }
 }

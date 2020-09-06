@@ -11,7 +11,7 @@ namespace Semdelion.DAL
 		public readonly HttpStatusCode StatusCode = HttpStatusCode.OK;
 		public readonly Exception Exception;
 		public readonly T Data;
-		public bool IsValid => StatusCode == HttpStatusCode.OK && Data != null;
+		public bool IsValid => StatusCode == HttpStatusCode.OK && Data != null && Exception == null;
 
 		public RequestResult(T data)
 		{
@@ -23,6 +23,12 @@ namespace Semdelion.DAL
 			Data = data;
 			StatusCode = statusCode;
 			Message = message;
+		}
+
+		public RequestResult(Exception exception, string message = null)
+		{
+			Message = message;
+			Exception = exception ?? throw new ArgumentNullException(nameof(exception));
 		}
 
 		public RequestResult(Exception exception, HttpStatusCode statusCode, string message)
