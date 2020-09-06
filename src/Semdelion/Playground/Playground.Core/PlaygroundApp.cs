@@ -1,4 +1,6 @@
 ﻿using MvvmCross;
+using MvvmCross.IoC;
+using Playground.Core.Providers;
 using Playground.Core.Services;
 using Playground.Core.ViewModels;
 using Semdelion.Core;
@@ -18,6 +20,7 @@ namespace Playground.Core
 
             Mvx.IoCProvider.RegisterSingleton<IServiceDecorator>(serviceDecorator);
 
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IContactProvider, ContactProvider>();
 
             RegisterAppStart<MainViewModel>();
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Playground.Core.Providers
 {
-    public class ContactProvider: BaseProvider
+    public class ContactProvider: BaseProvider, IContactProvider
     {
         private IContactService _connectionService;
         public ContactProvider(IContactService connectionService)

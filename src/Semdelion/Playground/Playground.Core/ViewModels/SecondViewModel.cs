@@ -1,49 +1,31 @@
-﻿using MvvmCross;
-using MvvmCross.Logging;
+﻿using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using Playground.Core.Services;
-using Refit;
+using Playground.Core.Providers;
 using Semdelion.Core.Enums;
+using Semdelion.Core.Extensions;
 using Semdelion.Core.ViewModels.Base;
-using Semdelion.DAL.Exceptions;
-using System;
 using System.Threading.Tasks;
 
 namespace Playground.Core.ViewModels
 {
     public class SecondViewModel : BaseViewModel
     {
+        protected IContactProvider ContactProvider { get; }
         public override string Title => "SecondViewModel";
-        public IContactService _contactService;
 
-        public SecondViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IContactService contactService)
+        public SecondViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IContactProvider contactProvider)
            : base(logProvider, navigationService)
         {
-            _contactService = contactService;
+            ContactProvider = contactProvider;
         }
 
         public override async Task Initialize()
         {
             await base.Initialize();
-            try
-            {
-                State = States.Loading;
-                var t = await _contactService.GetContacts(10, 1);
-                State = States.Normal;
-            }
-            catch (NetworkConnectionException ex)
-            {
-                State = States.NoInternet;
-            }
-            catch (ApiException ex)
-            {
-                State = States.Error;
-            }
-            catch (Exception ex)
-            {
-                State = States.Error;
-            }
-            //State = States.NoData;
+           
+            State = States.Loading;
+            var t = await ContactProvider.GetContacts(int.MaxValue, 10);
+            State = t.IsValid ? (t.Data == null ? States.NoData : States.Normal): StatesExtension.GetState(t.Exception); //TODO t.Data == null ?
         }
     }
 }
