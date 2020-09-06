@@ -1,17 +1,16 @@
 ﻿namespace Semdelion.Core
 {
-    using System;
-    using System.Globalization;
-    using System.Reflection;
     using MvvmCross;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
     using MvvmCross.ViewModels;
     using Plugin.Connectivity;
-    using Semdelion.Core.Helpers.Interfaces;
-    using Semdelion.Core.Helpers.Settings;
     using Semdelion.Core.Providers;
     using Semdelion.Core.Providers.Interfaces;
+    using Semdelion.DAL.Helpers.Interfaces;
+    using Semdelion.DAL.Helpers.Settings;
+    using System.Globalization;
+    using System.Reflection;
     using Xamarin.Yaml.Localization;
     using Xamarin.Yaml.Localization.Configs;
     using Xamarin.Yaml.Parser;

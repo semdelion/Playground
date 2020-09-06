@@ -12,8 +12,8 @@
     using MvvmCross.Plugin;
     using MvvmCross.ViewModels;
     using Semdelion.Core;
-    using Semdelion.Core.Helpers;
-    using Semdelion.Core.Helpers.Interfaces;
+    using Semdelion.DAL.Helpers;
+    using Semdelion.DAL.Helpers.Interfaces;
     using Semdelion.DAL.Services;
     using Semdelion.iOS.Bindings;
     using UIKit;

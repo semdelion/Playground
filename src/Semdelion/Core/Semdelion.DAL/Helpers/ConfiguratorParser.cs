@@ -1,6 +1,6 @@
-﻿namespace Semdelion.Core.Helpers
+﻿namespace Semdelion.DAL.Helpers
 {
-    using Semdelion.Core.Helpers.Interfaces;
+    using Semdelion.DAL.Helpers.Interfaces;
     using System.IO;
     using YamlDotNet.Serialization;
 

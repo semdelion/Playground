@@ -1,4 +1,4 @@
-﻿namespace Semdelion.Core.Helpers.Interfaces
+﻿namespace Semdelion.DAL.Helpers.Interfaces
 {
     /// <summary>
     ///     Application settings.

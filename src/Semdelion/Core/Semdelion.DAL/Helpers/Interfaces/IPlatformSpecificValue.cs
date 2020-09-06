@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Semdelion.Core.Helpers.Interfaces
+﻿namespace Semdelion.DAL.Helpers.Interfaces
 {
     public interface IPlatformSpecificValue
     {

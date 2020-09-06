@@ -1,7 +1,7 @@
-﻿namespace Semdelion.Core.Helpers.Settings
+﻿namespace Semdelion.DAL.Helpers.Settings
 {
     using Newtonsoft.Json;
-    using Semdelion.Core.Helpers.Interfaces;
+    using Semdelion.DAL.Helpers.Interfaces;
 
     public class Environment : IEnvironment
     {

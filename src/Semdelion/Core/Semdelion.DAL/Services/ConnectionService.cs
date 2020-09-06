@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Semdelion.DAL.Helpers.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -9,17 +10,15 @@ namespace Semdelion.DAL.Services
 {
     public class ConnectionService : IConnectionService
     {
-       // private readonly Uri _baseUri = new Uri("https://randomuser.me/api/");  
-        private readonly Uri _baseUri = new Uri("https://magnolia-stg.loymax.tech/");
-
         public Lazy<HttpClient> _lazyHttpClient { get; }
 
         public IDictionary<string, IEnumerable<string>> Headers { get; }
 
         public ConnectionService(Func<HttpMessageHandler> httpHandlerFunc)
         {
+            var url = (new Lazy<IAppSettings>(MvvmCross.Mvx.IoCProvider.Resolve<IAppSettings>)).Value.Environment.BaseUrl;
             _lazyHttpClient = new Lazy<HttpClient>(() => new HttpClient(httpHandlerFunc()));
-            _lazyHttpClient.Value.BaseAddress = _baseUri;
+            _lazyHttpClient.Value.BaseAddress = new Uri(url);
             Headers = new Dictionary<string, IEnumerable<string>>();
         }
 

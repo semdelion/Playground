@@ -1,7 +1,7 @@
-﻿namespace Semdelion.Core.Helpers.Settings
+﻿namespace Semdelion.DAL.Helpers.Settings
 {
     using MvvmCross;
-    using Semdelion.Core.Helpers.Interfaces;
+    using Semdelion.DAL.Helpers.Interfaces;
 
     /// <summary>
     ///    Aplication settings.

@@ -1,6 +1,6 @@
-﻿namespace Semdelion.Core.Helpers.Settings
+﻿namespace Semdelion.DAL.Helpers.Settings
 {
-    using Semdelion.Core.Helpers.Interfaces;
+    using Semdelion.DAL.Helpers.Interfaces;
     using System.Reflection;
 
     public class EnvironmentSettings : IEnvironmentSettings

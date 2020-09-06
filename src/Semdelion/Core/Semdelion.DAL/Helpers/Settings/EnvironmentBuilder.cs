@@ -1,6 +1,6 @@
-﻿namespace Semdelion.Core.Helpers.Settings
+﻿namespace Semdelion.DAL.Helpers.Settings
 {
-    using Semdelion.Core.Helpers.Interfaces;
+    using Semdelion.DAL.Helpers.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -42,7 +42,7 @@
             using (var reader = new StringReader(content))
             {
                 var deserializer = new DeserializerBuilder().WithTypeConverter(new EnvironmentYamlInspector()).Build();
-                var environmentDocument = deserializer.Deserialize<Dictionary<string, Environment>>(new MergingParser(new Parser(reader)));
+                var environmentDocument = deserializer.Deserialize<Dictionary<string, Environment >>(new MergingParser(new Parser(reader)));
                 if (environmentDocument.TryGetValue(settings.Folder.ToString(), out var currentEnvironment))
                     return currentEnvironment;
             }

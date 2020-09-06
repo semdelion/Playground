@@ -1,13 +1,10 @@
-﻿
-using Refit;
+﻿using Refit;
 using Semdelion.API.Interfaces;
 using Semdelion.API.Models;
-using Semdelion.Core.Helpers.Interfaces;
 using Semdelion.DAL;
 using Semdelion.DAL.Models;
 using Semdelion.DAL.Services;
 using Semdelion.DAL.Services.Decorators;
-using System;
 using System.Threading.Tasks;
 
 namespace Playground.Core.Services
