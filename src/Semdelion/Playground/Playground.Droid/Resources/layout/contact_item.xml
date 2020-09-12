@@ -6,7 +6,12 @@
     android:layout_width  ="match_parent"
 	android:paddingLeft	  ="10dp"
     android:layout_height ="80dp">
-
+    <ffimageloading.cross.MvxCachedImageView
+		android:id				="@+id/imagelow"
+		android:src				="@drawable/abc_ab_share_pack_mtrl_alpha"
+		local:MvxBind			="ImagePath Photo.Thumbnail"
+        android:layout_width    ="60dp"
+        android:layout_height	="60dp" />
 	<TextView
 		android:text			    ="FullName"
 		android:textSize			="20dp"
