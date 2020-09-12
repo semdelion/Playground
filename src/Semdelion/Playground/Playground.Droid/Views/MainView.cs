@@ -8,7 +8,7 @@ using Android.Widget;
 using System;
 using AndroidX.AppCompat.App;
 
-namespace Playground.Droid.View
+namespace Playground.Droid.Views
 {
     [MvxFragmentPresentation(typeof(MainFragmentHostViewModel), Resource.Id.main_layoutContent, false)]
     [Register(nameof(MainView))]

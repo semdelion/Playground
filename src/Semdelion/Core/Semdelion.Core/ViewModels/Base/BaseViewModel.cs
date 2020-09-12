@@ -11,14 +11,11 @@
     public abstract class BaseViewModel : MvxNavigationViewModel, IBaseViewModel, IMvxLocalizedTextSourceOwner
     {
         #region Fields
-
         private IMvxLanguageBinder _localizedTextSource;
         private States _state;
-
         #endregion
 
         #region Properties
-
         public virtual string Title { get; set; } = string.Empty;
 
         public States State
@@ -33,20 +30,12 @@
         #endregion
 
         #region Services
-
         public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ??= new MvxLanguageBinder("");
-
         #endregion
 
         #region Constructor
-
-        protected BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
-        {
-        }
-
-        #endregion
-
-        #region Private
+        protected BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
+            : base(logProvider, navigationService) { }
         #endregion
     }
 }

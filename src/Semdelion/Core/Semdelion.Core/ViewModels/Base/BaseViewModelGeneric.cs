@@ -17,6 +17,8 @@ namespace Semdelion.Core.ViewModels.Base
 
         public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
             : base(logProvider, navigationService)
-        { }
+        {
+
+        }
     }
 }

@@ -1,17 +1,23 @@
-
 <RelativeLayout
     xmlns:android            ="http://schemas.android.com/apk/res/android"
     xmlns:local              ="http://schemas.android.com/apk/res-auto"
     xmlns:tools              ="http://schemas.android.com/tools"
     android:layout_width     ="match_parent"
     android:layout_height    ="match_parent">
-    <Button
-        style                    ="@style/Semdelion.Widget.Button.Contained"
-        android:layout_width     ="match_parent"
-        android:layout_height    ="wrap_content"
-        android:layout_margin    ="16dp"
-        android:text             ="кнопка"/>
-     <FrameLayout
+    <MvvmCross.DroidX.MvxSwipeRefreshLayout
+		android:layout_height	     ="match_parent"
+		android:layout_width	     ="match_parent"
+        android:layout_centerInParent="true"
+        local:MvxBind			     ="RefreshCommand RefreshCommand; Refreshing IsRefreshing">
+		<MvvmCross.DroidX.RecyclerView.MvxRecyclerView
+			local:MvxBind			="ItemsSource Items; ItemClick ItemClickCommand"
+			local:MvxItemTemplate	="@layout/contact_item"
+			android:id				="@+id/recyclerView"
+			android:orientation		="vertical"
+			android:layout_width	="match_parent"
+			android:layout_height	="match_parent"/>
+	</MvvmCross.DroidX.MvxSwipeRefreshLayout>
+    <FrameLayout
         android:id               ="@+id/state_frage_layout"
         android:layout_width     ="match_parent"
         android:layout_height    ="match_parent"
