@@ -66,9 +66,6 @@ namespace Semdelion.Core.ViewModels.Base
         {
             var items = await LoadOnDemandItems(cancellationToken);
 
-            if ((items == null || items.Count == 0) && State == Enums.States.Normal)
-                State = Enums.States.NoData;
-
             SetItems(items);
         }
 

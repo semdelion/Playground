@@ -1,6 +1,7 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using Playground.Core.Providers;
 using Refit;
 using Semdelion.API.Models;
@@ -13,11 +14,11 @@ using System.Threading.Tasks;
 
 namespace Playground.Core.ViewModels
 {
-    public class SecondViewModel : BaseCollectionViewModel<Contact>
+    public class SecondViewModel : BasePageCollectionViewModel<Contact>
     {
         protected IContactProvider ContactProvider { get; }
         public int _page = 1;
-        public int _pageSize = 5;
+        public int _pageSize = 10;
 
         public override string Title => "SecondViewModel";
 
@@ -27,14 +28,18 @@ namespace Playground.Core.ViewModels
             ContactProvider = contactProvider;
         }
 
+        public IMvxAsyncCommand LoadNextPage => new MvxAsyncCommand(ReloadItems);
+
         protected override async Task<IList<Contact>> LoadOnDemandItems(CancellationToken ct = default)
         {
-            State = States.Loading;
+            if(Items == null)
+                State = States.Loading;
+
             var requestResult = await ContactProvider.GetContacts(_pageSize, _page++);
 
             this.UpdateState(requestResult);
 
-            return requestResult.Data.Contacts;
+            return requestResult?.Data?.Contacts;
         }
 
         protected override async Task DoItemClickCommand(Contact item)

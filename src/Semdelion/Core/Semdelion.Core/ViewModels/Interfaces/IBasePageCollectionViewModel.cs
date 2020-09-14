@@ -13,6 +13,6 @@ namespace Semdelion.Core.ViewModels.Interfaces
 		/// <summary>
 		/// 	Количество элементов всего.
 		/// </summary>
-		int? TotalCount { get; }
+		//int? TotalCount { get; }
 	}
 }

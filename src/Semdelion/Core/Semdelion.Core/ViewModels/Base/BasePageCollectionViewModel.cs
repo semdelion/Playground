@@ -11,7 +11,7 @@ namespace Semdelion.Core.ViewModels.Base
     public abstract class BasePageCollectionViewModel<TItem> : BaseCollectionViewModel<TItem>, IBasePageCollectionViewModel<TItem>
     {
         /// <inheritdoc />
-        public abstract int? TotalCount { get; set; }
+       // public abstract int? TotalCount { get; set; }
 
         protected int CurrentCount => IsRefreshing ? 0 : (Items?.Count ?? 0);
 
@@ -21,8 +21,16 @@ namespace Semdelion.Core.ViewModels.Base
 
         protected override Task DoRefreshCommand()
         {
-            TotalCount = null;
+            //TotalCount = null;
             return base.DoRefreshCommand();
+        }
+
+        protected override void SetItems(IList<TItem> items)
+        {
+            if (Items == null)
+                base.SetItems(items);
+            else if (items != null)
+                Items.AddRange(items);
         }
     }
 }
