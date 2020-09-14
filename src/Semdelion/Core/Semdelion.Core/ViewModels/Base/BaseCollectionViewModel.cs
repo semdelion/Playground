@@ -61,16 +61,22 @@ namespace Semdelion.Core.ViewModels.Base
         {
             await ReloadItems(CreateCancellationToken());
         }
+
         protected virtual async Task ReloadItems(CancellationToken cancellationToken)
         {
             var items = await LoadOnDemandItems(cancellationToken);
+
             if ((items == null || items.Count == 0) && State == Enums.States.Normal)
-            {
                 State = Enums.States.NoData;
-                Items = new MvxObservableCollection<TItem>();
-            }
-            else
-                Items = new MvxObservableCollection<TItem>(items);
+
+            SetItems(items);
+        }
+
+        protected virtual void SetItems(IList<TItem> newItems)
+        {
+            Items = newItems == null
+                ? new MvxObservableCollection<TItem>()
+                : new MvxObservableCollection<TItem>(newItems);
         }
 
         protected virtual CancellationToken CreateCancellationToken()
@@ -94,7 +100,6 @@ namespace Semdelion.Core.ViewModels.Base
             get => _isRefreshing;
             set => SetProperty(ref _isRefreshing, value);
         }
-
 
         public override async Task Initialize()
         {

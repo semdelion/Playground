@@ -16,6 +16,9 @@ namespace Playground.Core.ViewModels
     public class SecondViewModel : BaseCollectionViewModel<Contact>
     {
         protected IContactProvider ContactProvider { get; }
+        public int _page = 1;
+        public int _pageSize = 5;
+
         public override string Title => "SecondViewModel";
 
         public SecondViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IContactProvider contactProvider)
@@ -27,7 +30,7 @@ namespace Playground.Core.ViewModels
         protected override async Task<IList<Contact>> LoadOnDemandItems(CancellationToken ct = default)
         {
             State = States.Loading;
-            var requestResult = await ContactProvider.GetContacts(30, 1);
+            var requestResult = await ContactProvider.GetContacts(_pageSize, _page++);
 
             this.UpdateState(requestResult);
 

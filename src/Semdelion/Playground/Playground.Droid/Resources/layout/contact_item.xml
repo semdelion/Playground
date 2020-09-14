@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android         ="http://schemas.android.com/apk/res/android"
-    xmlns:local           ="http://schemas.android.com/apk/res-auto"
-	xmlns:tools           ="http://schemas.android.com/tools"
-    android:layout_width  ="match_parent"
-	android:paddingLeft	  ="10dp"
-    android:layout_height ="80dp">
-    <ffimageloading.cross.MvxCachedImageView
-		android:id				="@+id/imagelow"
-		android:src				="@drawable/abc_ab_share_pack_mtrl_alpha"
-		local:MvxBind			="ImagePath Photo.Thumbnail"
-        android:layout_width    ="60dp"
-        android:layout_height	="60dp" />
-	<TextView
-		android:text			    ="FullName"
-		android:textSize			="20dp"
-		android:layout_height		="wrap_content"
-		android:layout_width		="wrap_content"
-		android:paddingLeft			="10dp"
-		android:layout_toRightOf	="@+id/imagelow"
-		android:layout_marginTop	="20dp" />
-</RelativeLayout>
+<androidx.cardview.widget.CardView
+	xmlns:android              ="http://schemas.android.com/apk/res/android"
+    xmlns:local                ="http://schemas.android.com/apk/res-auto"
+	xmlns:tools                ="http://schemas.android.com/tools"
+	style                      ="@style/Semdelion.Widget.CardView"
+	android:layout_marginLeft  ="8dp"
+	android:layout_marginRight ="8dp"
+	android:layout_marginBottom="4dp"
+	android:layout_marginTop   ="4dp"
+    android:layout_width       ="match_parent"
+    android:layout_height      ="wrap_content"
+	local:cardCornerRadius     ="8dp">
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width  ="match_parent"
+		android:layout_height ="wrap_content">
+		<ffimageloading.cross.MvxCachedImageView
+			android:id				                ="@+id/imagelow"
+			android:src				                ="@drawable/abc_ab_share_pack_mtrl_alpha"
+			android:layout_width                    ="64dp"
+			android:layout_height	                ="64dp"
+			local:MvxBind			                ="ImagePath Photo.Thumbnail"
+			local:layout_constraintBottom_toBottomOf="parent"
+			local:layout_constraintStart_toStartOf  ="parent"
+			local:layout_constraintTop_toTopOf      ="parent"/>
+		<TextView
+			style                                   ="@style/Semdelion.TextAppearance.Subtitle.S1"
+			android:layout_height		            ="0dp"
+			android:layout_width		            ="wrap_content"
+			android:gravity                         ="center_vertical"
+			local:layout_constraintBottom_toBottomOf="parent"
+			local:layout_constraintEnd_toEndOf      ="parent"
+			local:layout_constraintStart_toEndOf    ="@+id/imagelow"
+			local:layout_constraintTop_toTopOf      ="parent"
+			local:MvxBind    		                ="Text Name.First"
+			tools:test                              ="Имя"/>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
