@@ -2,11 +2,12 @@
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Views;
 using Playground.Core.ViewModels;
+using Semdelion.iOS.Views.Base;
 using UIKit;
 
 namespace Playground.iOS.Views
 {
-    public partial class MainView : MvxViewController<MainViewModel>
+    public partial class MainView : BaseViewController<MainViewModel>
     {
         [Outlet]
         public UIButton NextButton { get; set; }
@@ -17,15 +18,11 @@ namespace Playground.iOS.Views
         public MainView() : base(nameof(MainView), null)
         {
         }
-
-        public override void ViewDidLoad()
+        protected override void Binding()
         {
-            base.ViewDidLoad();
+            base.Binding();
             var set = this.CreateBindingSet<MainView, MainViewModel>();
-            set.Bind().For(v => v.Title).To(vm => vm.Title);
             set.Bind(NextButton).To(vm => vm.ToSecondView);
-            //set.Bind(NextButton).For("Title").ToFlyLocalizationId("MainViewModel.Title");
-            //set.Bind(ContentView).For(StatesTargetBinding.Key).To(vm => vm.State);
             set.Apply();
         }
     }

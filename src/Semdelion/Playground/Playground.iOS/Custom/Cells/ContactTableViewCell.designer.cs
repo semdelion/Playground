@@ -7,31 +7,30 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
-namespace Playground.iOS.Views
+namespace Playground.iOS.Custom.Cells
 {
-    [Register ("SecondView")]
-    partial class SecondView
+    [Register ("ContactTableViewCell")]
+    partial class ContactTableViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView ContentView { get; set; }
+        FFImageLoading.Cross.MvxCachedImageView Image { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView TableView { get; set; }
+        UIKit.UILabel NameLabel { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (ContentView != null) {
-                ContentView.Dispose ();
-                ContentView = null;
+            if (Image != null) {
+                Image.Dispose ();
+                Image = null;
             }
 
-            if (TableView != null) {
-                TableView.Dispose ();
-                TableView = null;
+            if (NameLabel != null) {
+                NameLabel.Dispose ();
+                NameLabel = null;
             }
         }
     }
