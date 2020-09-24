@@ -4,6 +4,8 @@ namespace Semdelion.iOS.Views.States
     using Airbnb.Lottie;
     using CoreGraphics;
     using Foundation;
+    using MvvmCross.Commands;
+    using Semdelion.Core.Helpers;
     using Semdelion.iOS.Extensions;
     using UIKit;
 
@@ -12,9 +14,10 @@ namespace Semdelion.iOS.Views.States
         public UIView ContentView { get; private set; }
 
         public override CGSize IntrinsicContentSize => base.IntrinsicContentSize;
-
-        public NoInternetView(CGRect frame) : base(frame)
+        IMvxCommand RefreshCommand { get; set; }
+        public NoInternetView(CGRect frame, IMvxCommand command) : base(frame)
         {
+            RefreshCommand = command;
             CommonInit();
         }
 
@@ -30,13 +33,12 @@ namespace Semdelion.iOS.Views.States
         {
             ContentView = ViewFromNib();
             ContentView.Frame = Frame;
-            ContentView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight & UIViewAutoresizing.FlexibleWidth;
-            AutoresizingMask = UIViewAutoresizing.FlexibleHeight & UIViewAutoresizing.FlexibleWidth;
 
+            NoInternetLabel.Text = Localize.GetText("State.NoInternet.Message");
+            UpdateButton.TouchUpInside += (sender, e) => {
+                RefreshCommand.Execute();
+            };
             AddSubview(ContentView);
-
-           TranslatesAutoresizingMaskIntoConstraints = false;
-            ContentView.TranslatesAutoresizingMaskIntoConstraints = false;
 
             ContentView.LeadingAnchor.ConstraintEqualTo(LeadingAnchor).Active = true;
             ContentView.TrailingAnchor.ConstraintEqualTo(TrailingAnchor).Active = true;
@@ -46,12 +48,11 @@ namespace Semdelion.iOS.Views.States
             LOTAnimationView lottie = LOTAnimationView.AnimationNamed("no-internet-connection");
             lottie.ContentMode = UIViewContentMode.ScaleAspectFit;
             LottieView.Frame = new CGRect(LottieView.Frame.X, LottieView.Frame.Y, Frame.Width, Frame.Width);
-            lottie.Frame = LottieView.Frame;
+          
             LottieView.AddSubview(lottie);
-
+            lottie.Frame = LottieView.Bounds;
             lottie.SetFillXContraintTo(LottieView);
-            lottie.SetBottomContraintTo(LottieView, 0, NSLayoutRelation.GreaterThanOrEqual);
-            AddConstraint(NSLayoutConstraint.Create(lottie, NSLayoutAttribute.CenterY, NSLayoutRelation.Equal, this, NSLayoutAttribute.CenterY, 1, 0));
+            lottie.LoopAnimation = true;
             lottie.Play();
         }
 

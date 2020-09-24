@@ -16,6 +16,7 @@
     using Semdelion.DAL.Helpers.Interfaces;
     using Semdelion.DAL.Services;
     using Semdelion.iOS.Bindings;
+    using Semdelion.iOS.Custom;
     using UIKit;
 
     public abstract  class BaseIosSetup : MvxIosSetup
@@ -24,7 +25,7 @@
 
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
-            registry.RegisterCustomBindingFactory<UIView>(StatesTargetBinding.Key, view => new StatesTargetBinding(view));
+            registry.RegisterCustomBindingFactory<EmptyDataSet>(StatesTargetBinding.Key, view => new StatesTargetBinding(view));
             base.FillTargetFactories(registry);
         }
 

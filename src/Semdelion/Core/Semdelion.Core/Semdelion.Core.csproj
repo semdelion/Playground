@@ -19,6 +19,7 @@
     <Folder Include="Providers\Interfaces\" />
     <Folder Include="Extensions\" />
     <Folder Include="Locales\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Locales\en-US.yaml" />

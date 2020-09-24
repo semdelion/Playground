@@ -62,6 +62,9 @@
       <DependentUpon>LoadingView.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseAppDelegate.cs" />
+    <Compile Include="Custom\EmptyDataSet.cs" />
+    <Compile Include="Views\Base\BaseViewController.cs" />
+    <Compile Include="Views\Interfaces\IBindingTitleViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Semdelion.Core\Semdelion.Core.csproj">
@@ -94,6 +97,11 @@
     <InterfaceDefinition Include="Views\States\NoInternetView.xib" />
     <InterfaceDefinition Include="Views\States\ErrorView.xib" />
     <InterfaceDefinition Include="Views\States\LoadingView.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Custom\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
