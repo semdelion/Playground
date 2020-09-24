@@ -15,7 +15,7 @@ namespace Playground.Droid.Adapters
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             base.OnBindViewHolder(holder, position);
-            if (position >= ItemCount - 3 && CommandGetContacts.CanExecute(null))
+            if (position >= ItemCount - 1 && CommandGetContacts.CanExecute(null))
                 CommandGetContacts.Execute(null);
         }
     }

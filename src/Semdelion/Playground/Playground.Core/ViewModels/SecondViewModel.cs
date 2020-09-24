@@ -39,8 +39,30 @@ namespace Playground.Core.ViewModels
 
             this.UpdateState(requestResult);
 
+            //State = States.NoInternet;
+            //await Task.Delay(2000);
+            //State = States.Error;
+            //await Task.Delay(2000);
+            //State = States.NoData;
+            //await Task.Delay(2000);
+            //State = States.Normal;
+            //await Task.Delay(2000);
+            //State = States.NoInternet;
+            //await Task.Delay(2000);
+            //State = States.Error;
+            //await Task.Delay(2000);
+            //State = States.NoData;
+
             return requestResult?.Data?.Contacts;
         }
+
+        protected override Task DoRefreshCommand()
+        {
+            _page = 1;
+            Items.Clear();
+            return base.DoRefreshCommand();
+        }
+
 
         protected override async Task DoItemClickCommand(Contact item)
         {

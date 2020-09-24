@@ -2,6 +2,8 @@
 using Android.Views;
 using Android.Views.Animations;
 using MvvmCross.Binding;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Binding.Target;
 using MvvmCross.Platforms.Android.Binding.Views;
 using Semdelion.Core.Enums;
@@ -17,18 +19,22 @@ namespace Semdelion.Droid.Bindings
         }
         public override MvxBindingMode DefaultMode => MvxBindingMode.OneWay;
 
+        object ob = new object();
+
         public override Type TargetType => typeof(ViewGroup);
 
         public View CurrentView { get; set; }
 
         protected override void SetValueImpl(object target, object value)
         {
+            
             try
             {
+
+                MvxLayoutInflater.Debug = true;
                 if (!(target is ViewGroup view) || value == null) 
                     return;
                 var inflater = new MvxLayoutInflater(view.Context);
-
                 States state = (States)Enum.Parse(typeof(States), value.ToString());
 
                 switch (state)
@@ -49,12 +55,12 @@ namespace Semdelion.Droid.Bindings
                         ViewStateError(inflater, view);
                         break;
                 }
-              
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
             }
+            
         }
 
         protected virtual void ViewAppearing(ViewGroup viewGroup, View view, View newView)
@@ -72,21 +78,24 @@ namespace Semdelion.Droid.Bindings
             }
 
             CurrentView = newView;
-            newView.StartAnimation(AnimationUtils.LoadAnimation(viewGroup.Context, Resource.Animation.abc_fade_in));
+            CurrentView.StartAnimation(AnimationUtils.LoadAnimation(viewGroup.Context, Resource.Animation.abc_fade_in));
             viewGroup.AddView(CurrentView);
         }
 
         protected virtual void ViewDisappearing(ViewGroup viewGroup)
         {
-            var animFade = AnimationUtils.LoadAnimation(viewGroup.Context, Resource.Animation.abc_fade_out);
-            viewGroup.StartAnimation(animFade);
+            viewGroup.StartAnimation(AnimationUtils.LoadAnimation(viewGroup.Context, Resource.Animation.abc_fade_out));
             viewGroup.Animation.AnimationEnd += (o, s) =>
             {
                 if (CurrentView != null)
+                {
                     viewGroup.RemoveView(CurrentView);
-
+                    CurrentView.Dispose();
+                    CurrentView = null;
+                }
                 viewGroup.Visibility = ViewStates.Gone;
             };
+           
         }
 
         protected virtual void ViewStateNoraml(MvxLayoutInflater inflater, ViewGroup view)
@@ -96,22 +105,22 @@ namespace Semdelion.Droid.Bindings
 
         protected virtual void ViewStateLoading(MvxLayoutInflater inflater, ViewGroup view)
         {
-            ViewAppearing(view, CurrentView, inflater.Inflate(Resource.Layout.state_loading, null, false));
+            ViewAppearing(view, CurrentView, inflater.Inflate(Resource.Layout.state_loading, view, false));
         }
 
         protected virtual void ViewStateNoData(MvxLayoutInflater inflater, ViewGroup view)
         {
-            ViewAppearing(view, CurrentView, inflater.Inflate(Resource.Layout.state_no_date, null, false));
+            ViewAppearing(view, CurrentView, inflater.Inflate(Resource.Layout.state_no_date, view, false));
         }
 
         protected virtual void ViewStateNoInternet(MvxLayoutInflater inflater, ViewGroup view)
         {
-            ViewAppearing(view, CurrentView, inflater.Inflate(Resource.Layout.state_no_internet, null, false));
+            ViewAppearing(view, CurrentView, inflater.Inflate(Resource.Layout.state_no_internet, view, false));
         }
 
         protected virtual void ViewStateError(MvxLayoutInflater inflater, ViewGroup view)
         {
-            ViewAppearing(view, CurrentView, inflater.Inflate(Resource.Layout.state_error, null, false));
+            ViewAppearing(view, CurrentView, inflater.Inflate(Resource.Layout.state_error, view, false));
         }
     }
 }

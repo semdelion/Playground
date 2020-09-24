@@ -25,14 +25,39 @@
 			local:layout_constraintTop_toTopOf      ="parent"/>
 		<TextView
 			style                                   ="@style/Semdelion.TextAppearance.Subtitle.S1"
-			android:layout_height		            ="0dp"
-			android:layout_width		            ="wrap_content"
-			android:gravity                         ="center_vertical"
-			local:layout_constraintBottom_toBottomOf="parent"
+			android:layout_height		            ="wrap_content"
+			android:layout_width		            ="0dp"
+			android:layout_marginStart              ="16dp"
+            android:layout_marginLeft               ="16dp"
+            android:layout_marginEnd                ="16dp"
+            android:layout_marginRight              ="16dp"
+			local:layout_constraintBottom_toTopOf   ="@+id/guideline"
 			local:layout_constraintEnd_toEndOf      ="parent"
+			local:layout_constraintHorizontal_bias  ="0.5"
 			local:layout_constraintStart_toEndOf    ="@+id/imagelow"
-			local:layout_constraintTop_toTopOf      ="parent"
 			local:MvxBind    		                ="Text Name.First"
-			tools:test                              ="Имя"/>
+			tools:text                              ="Имя"/>
+		<androidx.constraintlayout.widget.Guideline
+			android:id                              ="@+id/guideline"
+			android:layout_width                    ="wrap_content"
+			android:layout_height                   ="wrap_content"
+			android:orientation                     ="horizontal"
+			local:layout_constraintGuide_percent    ="0.5" />
+		<TextView
+			style                                   ="@style/Semdelion.TextAppearance.Subtitle.S1"
+			android:id                              ="@+id/phone_textView"
+			android:layout_width                    ="0dp"
+			android:layout_height                   ="wrap_content"
+		    android:layout_marginStart              ="16dp"
+            android:layout_marginLeft               ="16dp"
+            android:layout_marginEnd                ="16dp"
+            android:layout_marginRight              ="16dp"
+			local:layout_constraintEnd_toEndOf      ="parent"
+			local:layout_constraintHorizontal_bias  ="0.5"
+			local:layout_constraintStart_toEndOf    ="@+id/imagelow"
+			local:layout_constraintTop_toTopOf      ="@+id/guideline"
+			local:MvxBind    		                ="Text Phone"
+			tools:text                              ="TextView"/>
+
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
