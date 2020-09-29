@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android              ="http://schemas.android.com/apk/res/android"
+    xmlns:local                ="http://schemas.android.com/apk/res-auto"
+	xmlns:tools                ="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ffimageloading.cross.MvxCachedImageView
+			android:id				                ="@+id/imagelow"
+			android:src				                ="@drawable/abc_ab_share_pack_mtrl_alpha"
+			android:layout_width                    ="match_parent"
+			android:layout_height	                ="wrap_content"
+			local:MvxBind			                ="ImagePath Photo.Thumbnail"/>
+</LinearLayout>

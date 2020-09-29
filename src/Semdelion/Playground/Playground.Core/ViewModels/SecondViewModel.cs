@@ -2,6 +2,7 @@
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Playground.Core.Navigation;
 using Playground.Core.Providers;
 using Refit;
 using Semdelion.API.Models;
@@ -66,7 +67,7 @@ namespace Playground.Core.ViewModels
 
         protected override async Task DoItemClickCommand(Contact item)
         {
-            
+            await NavigationService.Navigate<ContactDetailsViewModel, ContactNavParams>( new ContactNavParams(item));
         }
     }
 }

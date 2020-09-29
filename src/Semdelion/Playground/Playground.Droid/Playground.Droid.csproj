@@ -72,6 +72,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Views\ContactDetailsView.cs" />
     <Compile Include="Views\MainView.cs" />
     <Compile Include="Views\SecondView.cs" />
   </ItemGroup>
@@ -203,6 +204,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\contact_item.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\contact_details_view.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
