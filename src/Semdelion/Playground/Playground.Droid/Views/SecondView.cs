@@ -20,10 +20,21 @@ namespace Playground.Droid.Views
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
-            var recyclerAdapter = new AdapterContacts((IMvxAndroidBindingContext)BindingContext);
+            var recyclerAdapter = new ContactsAdapter((IMvxAndroidBindingContext)BindingContext);
             recyclerAdapter.CommandGetContacts = ViewModel.LoadNextPage;
+            //recyclerAdapter.OnItemClick += Adapter_OnItemClick;
             view.FindViewById<MvxRecyclerView>(Resource.Id.recyclerView).Adapter = recyclerAdapter;
             return view;
         }
+        //private void Adapter_OnItemClick(object sender, SelectedItemRecyclerAdapter.SelectedItemEventArgs e)
+        //{
+        //    Toast.MakeText(Activity, $"Selected item {e.Position + 1}", ToastLength.Short)
+        //        .Show();
+
+        //    ImageView itemLogo = e.View.FindViewById<ImageView>(Resource.Id.img_logo);
+        //    itemLogo.Tag = Activity.Resources.GetString(Resource.String.transition_list_item_icon);
+
+        //    ViewModel.SelectItemExecution(e.DataContext as ListItemViewModel);
+        //}
     }
 }

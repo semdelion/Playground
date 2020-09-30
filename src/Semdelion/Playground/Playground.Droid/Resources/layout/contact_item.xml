@@ -15,7 +15,7 @@
 		android:layout_width  ="match_parent"
 		android:layout_height ="wrap_content">
 		<ffimageloading.cross.MvxCachedImageView
-			android:id				                ="@+id/imagelow"
+			android:id				                ="@+id/photo_contact_image"
 			android:src				                ="@drawable/abc_ab_share_pack_mtrl_alpha"
 			android:layout_width                    ="64dp"
 			android:layout_height	                ="64dp"
