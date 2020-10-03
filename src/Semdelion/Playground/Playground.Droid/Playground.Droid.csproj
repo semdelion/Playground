@@ -134,6 +134,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\API\Semdelion.API\Semdelion.API.csproj">
+      <Project>{9E299D64-B1C2-4AC9-82EA-7C81DC55795D}</Project>
+      <Name>Semdelion.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Core\Semdelion.Droid\Semdelion.Droid.csproj">
       <Project>{FB785ACE-16C5-4500-BFB3-0F8FEDC4DB62}</Project>
       <Name>Semdelion.Droid</Name>

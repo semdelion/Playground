@@ -1,12 +1,15 @@
 ﻿using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using AndroidX.RecyclerView.Widget;
+using FFImageLoading.Cross;
 using MvvmCross.Commands;
 using MvvmCross.DroidX.RecyclerView;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
 using Playground.Droid.Adapters;
+using Semdelion.API.Models;
 using Semdelion.Droid.Views;
 
 namespace Playground.Droid.Views
@@ -21,20 +24,18 @@ namespace Playground.Droid.Views
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             var recyclerAdapter = new ContactsAdapter((IMvxAndroidBindingContext)BindingContext);
+            recyclerAdapter.OnItemClick += Adapter_OnItemClick;
             recyclerAdapter.CommandGetContacts = ViewModel.LoadNextPage;
-            //recyclerAdapter.OnItemClick += Adapter_OnItemClick;
             view.FindViewById<MvxRecyclerView>(Resource.Id.recyclerView).Adapter = recyclerAdapter;
             return view;
         }
-        //private void Adapter_OnItemClick(object sender, SelectedItemRecyclerAdapter.SelectedItemEventArgs e)
-        //{
-        //    Toast.MakeText(Activity, $"Selected item {e.Position + 1}", ToastLength.Short)
-        //        .Show();
 
-        //    ImageView itemLogo = e.View.FindViewById<ImageView>(Resource.Id.img_logo);
-        //    itemLogo.Tag = Activity.Resources.GetString(Resource.String.transition_list_item_icon);
+        private void Adapter_OnItemClick(object sender, ContactsAdapter.SelectedItemEventArgs e)
+        {
+            MvxCachedImageView itemLogo = e.View.FindViewById<MvxCachedImageView>(Resource.Id.photo_contact_image);
+            itemLogo.Tag = Activity.Resources.GetString(Resource.String.transition_list_item_icon);
 
-        //    ViewModel.SelectItemExecution(e.DataContext as ListItemViewModel);
-        //}
+            ViewModel.ItemClickCommand.Execute(e.DataContext as Contact);
+        }
     }
 }
