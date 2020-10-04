@@ -30,7 +30,7 @@
         #endregion
 
         #region Services
-        public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ??= new MvxLanguageBinder("");
+        public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ??= new MvxLanguageBinder(string.Empty);
         #endregion
 
         #region Constructor

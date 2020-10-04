@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Playground.Droid</string>
     <string name="action_settings">Settings</string>
-    <string name="transition_list_item_icon">anim_image</string>
+    <string name="transition_contact_photo">contact_photo</string>
+    <string name="transition_contact_phone">contact_phone</string>
+    <string name="transition_contact_full_name">contact_full_name</string>
 </resources>

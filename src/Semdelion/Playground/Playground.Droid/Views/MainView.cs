@@ -28,13 +28,9 @@ namespace Playground.Droid.Views
         private void ChangeTheme(object o, EventArgs e)
         {
             if (AppCompatDelegate.DefaultNightMode == AppCompatDelegate.ModeNightYes)
-            {
                 AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
-            }
             else
-            {
                 AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightYes;
-            }
         }
     }
 }

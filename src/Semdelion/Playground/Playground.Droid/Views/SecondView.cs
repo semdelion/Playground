@@ -1,15 +1,13 @@
 ﻿using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using AndroidX.RecyclerView.Widget;
+using Android.Widget;
 using FFImageLoading.Cross;
-using MvvmCross.Commands;
 using MvvmCross.DroidX.RecyclerView;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
 using Playground.Droid.Adapters;
-using Semdelion.API.Models;
 using Semdelion.Droid.Views;
 
 namespace Playground.Droid.Views
@@ -32,10 +30,14 @@ namespace Playground.Droid.Views
 
         private void Adapter_OnItemClick(object sender, ContactsAdapter.SelectedItemEventArgs e)
         {
-            MvxCachedImageView itemLogo = e.View.FindViewById<MvxCachedImageView>(Resource.Id.photo_contact_image);
-            itemLogo.Tag = Activity.Resources.GetString(Resource.String.transition_list_item_icon);
+            var itemLogo = e.View.FindViewById<MvxCachedImageView>(Resource.Id.contact_photo_image_view);
+            itemLogo.Tag = Activity.Resources.GetString(Resource.String.transition_contact_photo);
 
-            ViewModel.ItemClickCommand.Execute(e.DataContext as Contact);
+            var itemName = e.View.FindViewById<TextView>(Resource.Id.contact_full_name);
+            itemName.Tag = Activity.Resources.GetString(Resource.String.transition_contact_full_name);
+
+            var itemPhone = e.View.FindViewById<TextView>(Resource.Id.contact_phone_number);
+            itemPhone.Tag = Activity.Resources.GetString(Resource.String.transition_contact_phone);
         }
     }
 }

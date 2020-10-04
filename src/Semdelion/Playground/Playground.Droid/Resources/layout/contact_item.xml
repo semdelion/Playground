@@ -15,15 +15,16 @@
 		android:layout_width  ="match_parent"
 		android:layout_height ="wrap_content">
 		<ffimageloading.cross.MvxCachedImageView
-			android:id				                ="@+id/photo_contact_image"
+			android:id				                ="@+id/contact_photo_image_view"
 			android:src				                ="@drawable/abc_ab_share_pack_mtrl_alpha"
 			android:layout_width                    ="64dp"
 			android:layout_height	                ="64dp"
-			local:MvxBind			                ="ImagePath Photo.Thumbnail"
+			local:MvxBind			                ="ImagePath PhotoUri"
 			local:layout_constraintBottom_toBottomOf="parent"
 			local:layout_constraintStart_toStartOf  ="parent"
 			local:layout_constraintTop_toTopOf      ="parent"/>
 		<TextView
+			android:id                              ="@+id/contact_full_name"
 			style                                   ="@style/Semdelion.TextAppearance.Subtitle.S1"
 			android:layout_height		            ="wrap_content"
 			android:layout_width		            ="0dp"
@@ -34,8 +35,8 @@
 			local:layout_constraintBottom_toTopOf   ="@+id/guideline"
 			local:layout_constraintEnd_toEndOf      ="parent"
 			local:layout_constraintHorizontal_bias  ="0.5"
-			local:layout_constraintStart_toEndOf    ="@+id/imagelow"
-			local:MvxBind    		                ="Text Name.First"
+			local:layout_constraintStart_toEndOf    ="@+id/contact_photo_image_view"
+			local:MvxBind    		                ="Text FullName"
 			tools:text                              ="Имя"/>
 		<androidx.constraintlayout.widget.Guideline
 			android:id                              ="@+id/guideline"
@@ -45,7 +46,7 @@
 			local:layout_constraintGuide_percent    ="0.5" />
 		<TextView
 			style                                   ="@style/Semdelion.TextAppearance.Subtitle.S1"
-			android:id                              ="@+id/phone_textView"
+			android:id                              ="@+id/contact_phone_number"
 			android:layout_width                    ="0dp"
 			android:layout_height                   ="wrap_content"
 		    android:layout_marginStart              ="16dp"
@@ -54,10 +55,10 @@
             android:layout_marginRight              ="16dp"
 			local:layout_constraintEnd_toEndOf      ="parent"
 			local:layout_constraintHorizontal_bias  ="0.5"
-			local:layout_constraintStart_toEndOf    ="@+id/imagelow"
+			local:layout_constraintStart_toEndOf    ="@+id/contact_photo_image_view"
 			local:layout_constraintTop_toTopOf      ="@+id/guideline"
 			local:MvxBind    		                ="Text Phone"
-			tools:text                              ="TextView"/>
+			tools:text                              ="+7 923 417 31 91"/>
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

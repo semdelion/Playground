@@ -7,3 +7,7 @@ State:
   NoInternet:
     Message: No internet 
     Button: Update
+ContactDetailsViewModel:
+  Texts:
+    Email: "Email:"
+    Phone: "Phone:"

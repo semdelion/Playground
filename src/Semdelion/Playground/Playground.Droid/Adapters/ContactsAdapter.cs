@@ -1,4 +1,5 @@
 ﻿using Android.Views;
+using Android.Widget;
 using AndroidX.Core.View;
 using AndroidX.RecyclerView.Widget;
 using FFImageLoading.Cross;
@@ -11,6 +12,10 @@ namespace Playground.Droid.Adapters
 {
     public class ContactsAdapter : MvxRecyclerAdapter
     {
+        private const string _photoTransitionName = "_photoTransitionName";
+        private const string _fullNameTransitionName = "_fullNameTransitionName";
+        private const string _phoneTransitionName = "_phoneTransitionName";
+
         public event EventHandler<SelectedItemEventArgs> OnItemClick;
 
         public ICommand CommandGetContacts { get; set; }
@@ -31,8 +36,12 @@ namespace Playground.Droid.Adapters
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            var itemLogo = holder.ItemView.FindViewById<MvxCachedImageView>(Resource.Id.photo_contact_image);
-            ViewCompat.SetTransitionName(itemLogo, "Transition_Name_Image" + position);
+            var photo = holder.ItemView.FindViewById<MvxCachedImageView>(Resource.Id.contact_photo_image_view);
+            ViewCompat.SetTransitionName(photo, _photoTransitionName + position);
+            var phone = holder.ItemView.FindViewById<TextView>(Resource.Id.contact_phone_number);
+            ViewCompat.SetTransitionName(phone, _fullNameTransitionName + position);
+            var name = holder.ItemView.FindViewById<TextView>(Resource.Id.contact_full_name);
+            ViewCompat.SetTransitionName(name, _phoneTransitionName + position);
 
             base.OnBindViewHolder(holder, position);
             if (position >= ItemCount - 1 && CommandGetContacts.CanExecute(null))

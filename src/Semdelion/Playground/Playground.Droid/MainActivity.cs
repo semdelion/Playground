@@ -45,9 +45,17 @@ namespace Playground.Droid
         {
             IDictionary<string, View> sharedElements = new Dictionary<string, View>();
 
-            KeyValuePair<string, View>? iconAnim = CreateSharedElementPair(Resource.String.transition_list_item_icon);
-            if (iconAnim != null)
-                sharedElements.Add(iconAnim.GetValueOrDefault());
+            KeyValuePair<string, View>? photo = CreateSharedElementPair(Resource.String.transition_contact_photo);
+            if (photo != null)
+                sharedElements.Add(photo.GetValueOrDefault());
+
+            KeyValuePair<string, View>? phone = CreateSharedElementPair(Resource.String.transition_contact_phone);
+            if (phone != null)
+                sharedElements.Add(phone.GetValueOrDefault());
+
+            KeyValuePair<string, View>? name = CreateSharedElementPair(Resource.String.transition_contact_full_name);
+            if (name != null)
+                sharedElements.Add(name.GetValueOrDefault());
 
             return sharedElements;
         }

@@ -15,10 +15,6 @@ namespace Playground.Droid.Views
     [Register(nameof(ContactDetailsView))]
     public class ContactDetailsView : BaseFragment<ContactDetailsViewModel>
     {
-        public ContactDetailsView()
-        {
-        }
-
         protected override int FragmentId => Resource.Layout.contact_details_view;
 
         public override void OnCreate(Bundle savedInstanceState)

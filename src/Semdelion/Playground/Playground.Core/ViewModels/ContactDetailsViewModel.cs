@@ -7,7 +7,7 @@ namespace Playground.Core.ViewModels
 {
     public class ContactDetailsViewModel : BaseViewModel<ContactNavParams>
     {
-        public string Photo { get; set; } 
+        public string PhotoUri { get; set; } 
 
         public string FullName { get; set; }
 
@@ -15,15 +15,15 @@ namespace Playground.Core.ViewModels
 
         public string Phone { get; set; }
 
-        public ContactDetailsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
-        {
-
-        }
+        public ContactDetailsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) 
+            : base(logProvider, navigationService) { }
 
         public override void Prepare(ContactNavParams parameter)
         {
-            Photo = parameter.ContactModel.Photo.Large;
-            FullName = parameter.ContactModel.Name.Last + " " + parameter.ContactModel.Name.First;
+            if (parameter == null || parameter.ContactModel == null)
+                return;
+            PhotoUri = parameter.ContactModel.PhotoUri;
+            FullName = parameter.ContactModel.FullName;
             Phone = parameter.ContactModel.Phone;
             Email = parameter.ContactModel.Email;
         }
