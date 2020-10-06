@@ -25,6 +25,15 @@ namespace Playground.iOS.Views
             set.Bind(NextButton).To(vm => vm.ToSecondView);
             set.Apply();
         }
+
+        protected override void ConfigureViews()
+        {
+            base.ConfigureViews();
+            NavigationController.NavigationBar.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+            NavigationController.NavigationBar.ShadowImage = new UIImage();
+            NavigationController.NavigationBar.Translucent = true;
+            NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
+        }
     }
 }
 

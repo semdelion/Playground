@@ -56,7 +56,7 @@ namespace Playground.Core.ViewModels
 
         protected override async Task DoItemClickCommand(ContactCellElement item)
         {
-            await NavigationService.Navigate<ContactDetailsViewModel, ContactNavParams>( new ContactNavParams(item));
+            await NavigationService.Navigate<ContactDetailsViewModel, ContactNavParams>(new ContactNavParams(item));
         }
     }
 }
