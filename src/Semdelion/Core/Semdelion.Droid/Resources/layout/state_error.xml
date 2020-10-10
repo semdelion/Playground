@@ -1,9 +1,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android            ="http://schemas.android.com/apk/res/android"
-    xmlns:local              ="http://schemas.android.com/apk/res-auto"
-    xmlns:tools              ="http://schemas.android.com/tools"
-    android:layout_width     ="match_parent"
-    android:layout_height    ="match_parent">
+    android:id           ="@+id/state_error_view"
+    xmlns:android        ="http://schemas.android.com/apk/res/android"
+    xmlns:local          ="http://schemas.android.com/apk/res-auto"
+    xmlns:tools          ="http://schemas.android.com/tools"
+    android:layout_width ="match_parent"
+    android:layout_height="match_parent">
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width                  ="0dp"
         android:layout_height                 ="0dp"
@@ -26,9 +27,10 @@
         android:layout_width                  ="0dp"
         android:layout_height                 ="wrap_content"
         android:gravity                       ="center"
-        android:text                          ="Ошибка"
+        local:MvxLang                         ="Text State.Error"
         local:layout_constraintEnd_toEndOf    ="parent"
         local:layout_constraintHorizontal_bias="0.0"
         local:layout_constraintStart_toStartOf="parent"
-        local:layout_constraintTop_toTopOf    ="@+id/state_error_guideline" />
+        local:layout_constraintTop_toTopOf    ="@+id/state_error_guideline"
+        tools:text                            ="Ошибка"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

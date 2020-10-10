@@ -78,11 +78,21 @@
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup.cs" />
-    <InterfaceDefinition Include="Views\SecondView.xib" />
-    <Compile Include="Views\SecondView.cs" />
-    <Compile Include="Views\SecondView.designer.cs">
-      <DependentUpon>SecondView.cs</DependentUpon>
+    <Compile Include="Views\PhoneBook\ContactsView.cs" />
+    <Compile Include="Views\PhoneBook\ContactsView.designer.cs">
+      <DependentUpon>ContactsView.cs</DependentUpon>
     </Compile>
+    <InterfaceDefinition Include="Views\PhoneBook\ContactsView.xib" />
+    <InterfaceDefinition Include="Views\PhoneBook\ContactDetailsView.xib" />
+    <Compile Include="Views\PhoneBook\ContactDetailsView.cs" />
+    <Compile Include="Views\PhoneBook\ContactDetailsView.designer.cs">
+      <DependentUpon>ContactDetailsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhoneBook\Cells\ContactTableViewCell.cs" />
+    <Compile Include="Views\PhoneBook\Cells\ContactTableViewCell.designer.cs">
+      <DependentUpon>ContactTableViewCell.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\PhoneBook\Cells\ContactTableViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -97,6 +107,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="MvvmCross">
       <Version>7.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.11.982</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -152,21 +165,25 @@
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_moon.imageset\" />
     <Folder Include="Resources\" />
+    <Folder Include="Views\PhoneBook\" />
+    <Folder Include="Views\PhoneBook\Cells\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">
       <Project>{EA2234AA-4F99-4CC1-9BBA-C5D29E730AE6}</Project>
       <Name>Playground.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\Semdelion.iOS\Semdelion.iOS.csproj">
-      <Project>{CC16DB5A-F214-45D6-A60B-E9A10BF157E2}</Project>
-      <Name>Semdelion.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
     <ProjectReference Include="..\..\Core\Semdelion.Core\Semdelion.Core.csproj">
       <Project>{B7553A2A-B408-4FE4-A594-D879EE20188D}</Project>
       <Name>Semdelion.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\API\Semdelion.API\Semdelion.API.csproj">
+      <Project>{9E299D64-B1C2-4AC9-82EA-7C81DC55795D}</Project>
+      <Name>Semdelion.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Semdelion.iOS\Semdelion.iOS.csproj">
+      <Project>{CC16DB5A-F214-45D6-A60B-E9A10BF157E2}</Project>
+      <Name>Semdelion.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

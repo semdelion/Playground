@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ffimageloading.cross.MvxCachedImageView
+        android:id                            ="@+id/contact_details_photo_imageview"
+        android:layout_width                  ="0dp"
+        android:layout_height                 ="0dp"
+        android:src                           ="@drawable/abc_ab_share_pack_mtrl_alpha"
+        android:tag                           ="@string/transition_contact_photo"
+        local:MvxBind                         ="ImagePath PhotoUri"
+        local:layout_constraintDimensionRatio ="1:1"
+        local:layout_constraintTop_toTopOf    ="parent"
+        local:layout_constraintStart_toStartOf="parent"
+        local:layout_constraintEnd_toEndOf    ="parent" />
+    <TextView
+        style                                 ="@style/Semdelion.TextAppearance.Headline.H3"
+        android:id                            ="@+id/concatc_details_full_name_textview"
+        android:layout_width                  ="wrap_content"
+        android:layout_height                 ="wrap_content"
+        android:layout_marginTop              ="16dp"
+        android:tag                           ="@string/transition_contact_full_name"
+        local:layout_constraintEnd_toEndOf    ="parent"
+        local:layout_constraintStart_toStartOf="parent"
+        local:layout_constraintTop_toBottomOf ="@+id/contact_details_photo_imageview"
+        local:MvxBind                         ="Text FullName"
+        tools:text                            ="Ivan Ivanovich"/>
+    <TextView
+        style                                 ="@style/Semdelion.TextAppearance.Subtitle.S1"
+        android:id                            ="@+id/contact_details_phone_number_text"
+        android:layout_width                  ="wrap_content"
+        android:layout_height                 ="wrap_content"
+        android:layout_marginStart            ="16dp"
+        android:layout_marginLeft             ="16dp"
+        android:layout_marginTop              ="16dp"
+        tools:text                            ="Phone number:"
+        local:layout_constraintStart_toStartOf="parent"
+        local:layout_constraintTop_toBottomOf ="@+id/concatc_details_full_name_textview"
+        local:MvxLang                         ="Text ContactDetailsViewModel.Texts.Phone"/>
+    <TextView
+        style                                 ="@style/Semdelion.TextAppearance.Subtitle.S1"
+        android:id                            ="@+id/contact_phone_number"
+        android:layout_width                  ="0dp"
+        android:layout_height                 ="wrap_content"
+        android:layout_marginStart            ="8dp"
+        android:layout_marginLeft             ="8dp"
+        android:layout_marginTop              ="16dp"
+        android:tag                           ="@string/transition_contact_phone"
+        local:layout_constraintEnd_toEndOf    ="parent"
+        local:layout_constraintStart_toEndOf  ="@+id/contact_details_phone_number_text"
+        local:layout_constraintTop_toBottomOf ="@+id/concatc_details_full_name_textview"
+        local:MvxBind                         ="Text Phone"
+        tools:text                            ="+7 923 417 31 91"/>
+    <TextView
+        style                                 ="@style/Semdelion.TextAppearance.Subtitle.S1"
+        android:id                            ="@+id/contact_details_email_text"
+        android:layout_width                  ="wrap_content"
+        android:layout_height                 ="wrap_content"
+        android:layout_marginStart            ="16dp"
+        android:layout_marginLeft             ="16dp"
+        tools:text                            ="Email:"
+        local:layout_constraintStart_toStartOf="parent"
+        local:layout_constraintTop_toBottomOf ="@+id/contact_details_phone_number_text"
+        local:MvxLang                         ="Text ContactDetailsViewModel.Texts.Email"/>
+    <TextView
+        style                                 ="@style/Semdelion.TextAppearance.Subtitle.S1"
+        android:id                            ="@+id/contact_details_email"
+        android:layout_width                  ="0dp"
+        android:layout_height                 ="wrap_content"
+        android:layout_marginStart            ="8dp"
+        android:layout_marginLeft             ="8dp"
+        local:layout_constraintEnd_toEndOf    ="parent"
+        local:layout_constraintStart_toEndOf  ="@+id/contact_details_email_text"
+        local:layout_constraintTop_toBottomOf ="@+id/contact_phone_number"
+        local:MvxBind                         ="Text Email"
+        tools:text                            ="semmaster@gmail.com"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

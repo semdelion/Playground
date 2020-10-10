@@ -1,13 +1,10 @@
-using System;
-using System.Linq;
-using Airbnb.Lottie;
-using CoreGraphics;
-using Foundation;
-using Semdelion.iOS.Extensions;
-using UIKit;
-
 namespace Semdelion.iOS.Views.States
 {
+    using System.Linq;
+    using CoreGraphics;
+    using Foundation;
+    using UIKit;
+
     public partial class LoadingView : UIView
     {
         public UIView ContentView { get; private set; }

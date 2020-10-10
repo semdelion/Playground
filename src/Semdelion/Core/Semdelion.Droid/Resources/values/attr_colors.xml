@@ -91,4 +91,8 @@
     <attr
         name  ="semdelion_text_color_disabled_button_text"
         format="reference|color" />
+
+    <attr
+        name  ="semdelion_background_cardview"
+        format="reference|color" />
 </resources>

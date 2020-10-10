@@ -4,6 +4,7 @@
     using CoreGraphics;
     using MvvmCross.Binding.Bindings.Target;
     using Semdelion.Core.Enums;
+    using Semdelion.iOS.Custom;
     using Semdelion.iOS.Extensions;
     using Semdelion.iOS.Views.States;
     using UIKit;
@@ -12,7 +13,7 @@
     {
         public const string Key = "StatesTargetBinding";
         
-        public StatesTargetBinding(UIView view) : base(view)
+        public StatesTargetBinding(EmptyDataSet view) : base(view)
         {
         }
 
@@ -22,7 +23,7 @@
         {
             try
             {
-                if (!(target is UIView contentView) || value == null) return;
+                if (!(target is EmptyDataSet emptyDataSet) || value == null) return;
                
                 States state = (States)Enum.Parse(typeof(States), value.ToString());
                 UIView stateView = new UIView()
@@ -30,16 +31,16 @@
                     TranslatesAutoresizingMaskIntoConstraints = false
                 };
 
-                foreach (UIView view in contentView.Subviews)
+                foreach (UIView view in emptyDataSet.ContentView.Subviews)
                     view.RemoveFromSuperview();
 
-                contentView.Alpha = 1f;
+                emptyDataSet.ContentView.Alpha = 1f;
                 var _frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
 
                 switch (state)
                 {
                     case States.Normal:
-                        contentView.Alpha = 0f;
+                        emptyDataSet.ContentView.Alpha = 0f;
                         break;
                     case States.Loading:
                         stateView = new LoadingView(_frame);
@@ -48,18 +49,16 @@
                         stateView = new NoDataView(_frame);
                         break;
                     case States.NoInternet:
-                        stateView = new NoInternetView(_frame);
+                        stateView = new NoInternetView(_frame, emptyDataSet.RefreshCommand);
                         break;
                     case States.Error:
                         stateView = new ErrorView(_frame);
                         break;
                 }
-                contentView.AddSubview(stateView);
-                stateView.SetCenterContraintTo(contentView);// SetFillYContraintTo(contentView, 16);
-                stateView.SetLeftContraintTo(contentView, 0);
-                stateView.SetRightContraintTo(contentView, 0);
-                contentView.SetNeedsUpdateConstraints();
-                contentView.LayoutIfNeeded();
+                emptyDataSet.ContentView.AddSubview(stateView);
+                stateView.SetCenterContraintTo(emptyDataSet.ContentView);
+                stateView.SetLeftContraintTo(emptyDataSet.ContentView, 0);
+                stateView.SetRightContraintTo(emptyDataSet.ContentView, 0);
             }
             catch (Exception ex)
             {

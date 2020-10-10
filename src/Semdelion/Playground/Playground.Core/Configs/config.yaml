@@ -1,0 +1,2 @@
+Configs: &Default
+  BaseUrl: "https://randomuser.me/api/"

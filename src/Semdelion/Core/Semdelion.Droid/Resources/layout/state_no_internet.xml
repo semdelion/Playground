@@ -1,4 +1,5 @@
 <androidx.constraintlayout.widget.ConstraintLayout 
+    android:id           ="@+id/state_no_internet_view"
     xmlns:android        ="http://schemas.android.com/apk/res/android"
     xmlns:local          ="http://schemas.android.com/apk/res-auto"
     xmlns:tools          ="http://schemas.android.com/tools"
@@ -27,17 +28,20 @@
         android:layout_width                  ="0dp"
         android:layout_height                 ="wrap_content"
         android:gravity                       ="center"
-        android:text                          ="Нет инернета"
+        local:MvxLang                         ="Text State.NoInternet.Message"
         local:layout_constraintEnd_toEndOf    ="parent"
         local:layout_constraintHorizontal_bias="0.0"
         local:layout_constraintStart_toStartOf="parent"
-        local:layout_constraintTop_toTopOf    ="@+id/state_no_internet_guideline" />
+        local:layout_constraintTop_toTopOf    ="@+id/state_no_internet_guideline" 
+        tools:text                            ="Нет инернета"/>
     <Button
         style                                 ="@style/Semdelion.Widget.Button.Text"
         android:id                            ="@+id/state_no_internet_button"
         android:layout_width                  ="match_parent"
         android:layout_height                 ="wrap_content"
         android:layout_margin                 ="16dp"
-        android:text                          ="Обновить"
-        local:layout_constraintTop_toBottomOf ="@+id/state_no_internet_textView" />
+        local:MvxLang                         ="Text State.NoInternet.Button"
+        local:MvxBind                         ="Click RefreshCommand"
+        local:layout_constraintTop_toBottomOf ="@+id/state_no_internet_textView"
+        tools:text                            ="Обновить"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

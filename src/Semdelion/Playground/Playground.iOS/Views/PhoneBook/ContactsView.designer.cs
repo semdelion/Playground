@@ -9,20 +9,29 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Playground.iOS.Views
+namespace Playground.iOS.Views.PhoneBook
 {
-    [Register ("SecondView")]
-    partial class SecondView
+    [Register ("ContactsView")]
+    partial class ContactsView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView ContentView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView TableView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
             if (ContentView != null) {
                 ContentView.Dispose ();
                 ContentView = null;
+            }
+
+            if (TableView != null) {
+                TableView.Dispose ();
+                TableView = null;
             }
         }
     }
