@@ -4,6 +4,7 @@ namespace Semdelion.iOS.Views.States
     using Airbnb.Lottie;
     using CoreGraphics;
     using Foundation;
+    using Semdelion.Core.Helpers;
     using Semdelion.iOS.Extensions;
     using UIKit;
 
@@ -29,6 +30,9 @@ namespace Semdelion.iOS.Views.States
         private void CommonInit()
         {
             ContentView = ViewFromNib();
+
+            ErrorLabel.Text = Localize.GetText("State.Error");
+
             ContentView.Frame = Frame;
             ContentView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight & UIViewAutoresizing.FlexibleWidth;
             AutoresizingMask = UIViewAutoresizing.FlexibleHeight & UIViewAutoresizing.FlexibleWidth;
@@ -52,6 +56,7 @@ namespace Semdelion.iOS.Views.States
             lottie.SetFillYContraintTo(LottieView, 16);
             lottie.SetBottomContraintTo(LottieView, 0, NSLayoutRelation.GreaterThanOrEqual);
             AddConstraint(NSLayoutConstraint.Create(lottie, NSLayoutAttribute.CenterY, NSLayoutRelation.Equal, this, NSLayoutAttribute.CenterY, 1, 0));
+            lottie.LoopAnimation = true;
             lottie.Play();
         }
 

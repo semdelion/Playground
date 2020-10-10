@@ -1,20 +1,32 @@
 ﻿namespace Semdelion.Core
 {
-    using System.Globalization;
-    using System.Reflection;
     using MvvmCross;
+    using MvvmCross.IoC;
     using MvvmCross.Localization;
     using MvvmCross.ViewModels;
+    using Plugin.Connectivity;
     using Semdelion.Core.Providers;
     using Semdelion.Core.Providers.Interfaces;
+    using Semdelion.DAL.Helpers.Interfaces;
+    using Semdelion.DAL.Helpers.Settings;
+    using System.Globalization;
+    using System.Reflection;
     using Xamarin.Yaml.Localization;
     using Xamarin.Yaml.Localization.Configs;
     using Xamarin.Yaml.Parser;
 
     public class App : MvxApplication
     {
+        public IEnvironment Environment { get; private set; }
+
+        protected virtual IEnvironmentSettings CreateSettings() => new EnvironmentSettings(GetType().Assembly);
+
         public override void Initialize()
         {
+            base.Initialize();
+
+            Environment = new EnvironmentBuilder().SetSettings(CreateSettings()).Build();
+
             var assemblyConfig = new AssemblyContentConfig(GetType().GetTypeInfo().Assembly)
             {
                 ResourceFolder = "Locales",
@@ -30,6 +42,8 @@
 
             Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(textProvider);
             Mvx.IoCProvider.RegisterSingleton<IMvxLocalizationProvider>(textProvider);
+            Mvx.IoCProvider.RegisterSingleton<IAppSettings>(new AppSettings(Environment));
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton(() => CrossConnectivity.Current);
 
         }
 

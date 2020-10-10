@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <style
+      name  ="Semdelion.Widget.CardView"
+      parent="">
+      <item
+          name="cardElevation">@dimen/semdelion_cardview_elevation</item>
+      <item
+          name="cardBackgroundColor">?attr/semdelion_background_cardview</item>
+      <item
+          name="cardCornerRadius">@dimen/semdelion_cardview_corner_radius</item>
+  </style>
+</resources>

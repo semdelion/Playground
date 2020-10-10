@@ -67,12 +67,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\ContactsAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="View\MainView.cs" />
-    <Compile Include="View\SecondView.cs" />
+    <Compile Include="Views\ContactDetailsView.cs" />
+    <Compile Include="Views\MainView.cs" />
+    <Compile Include="Views\SecondView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -109,17 +111,33 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">
-      <Version>7.0.0</Version>
+      <Version>7.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.DroidX.RecyclerView">
+      <Version>7.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.DroidX.SwipeRefreshLayout">
+      <Version>7.0.1</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Json">
-      <Version>7.0.0</Version>
+      <Version>7.0.1</Version>
     </PackageReference>
     <PackageReference Include="Plugin.Permissions">
       <Version>6.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.SwipeRefreshLayout">
+      <Version>1.0.0.5</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\API\Semdelion.API\Semdelion.API.csproj">
+      <Project>{9E299D64-B1C2-4AC9-82EA-7C81DC55795D}</Project>
+      <Name>Semdelion.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Core\Semdelion.Droid\Semdelion.Droid.csproj">
       <Project>{FB785ACE-16C5-4500-BFB3-0F8FEDC4DB62}</Project>
       <Name>Semdelion.Droid</Name>
@@ -187,6 +205,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAotProfile Include="$(MSBuildThisFileDirectory)custom.aprof" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\contact_item.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\contact_details_view.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

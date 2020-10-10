@@ -8,7 +8,7 @@ using Android.Widget;
 using System;
 using AndroidX.AppCompat.App;
 
-namespace Playground.Droid.View
+namespace Playground.Droid.Views
 {
     [MvxFragmentPresentation(typeof(MainFragmentHostViewModel), Resource.Id.main_layoutContent, false)]
     [Register(nameof(MainView))]
@@ -28,13 +28,9 @@ namespace Playground.Droid.View
         private void ChangeTheme(object o, EventArgs e)
         {
             if (AppCompatDelegate.DefaultNightMode == AppCompatDelegate.ModeNightYes)
-            {
                 AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
-            }
             else
-            {
                 AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightYes;
-            }
         }
     }
 }

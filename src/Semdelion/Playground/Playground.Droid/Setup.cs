@@ -4,7 +4,7 @@ using Semdelion.Droid;
 
 namespace Playground.Droid
 {
-    public class Setup : BaseDroidSetup// MvxAndroidSetup <PlaygroundApp>
+    public class Setup : BaseDroidSetup
     {
         protected override App CreateSemApp() => new PlaygroundApp();
     }

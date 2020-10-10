@@ -1,5 +1,6 @@
 ﻿namespace Semdelion.Core.ViewModels.Base
 {
+    using MvvmCross.Commands;
     using MvvmCross.Localization;
     using MvvmCross.Logging;
     using MvvmCross.Navigation;
@@ -10,14 +11,11 @@
     public abstract class BaseViewModel : MvxNavigationViewModel, IBaseViewModel, IMvxLocalizedTextSourceOwner
     {
         #region Fields
-
         private IMvxLanguageBinder _localizedTextSource;
         private States _state;
-
         #endregion
 
         #region Properties
-
         public virtual string Title { get; set; } = string.Empty;
 
         public States State
@@ -26,38 +24,18 @@
             set => SetProperty(ref _state, value);
         }
 
-        public string this[string localizeKey] => TryLocalize(localizeKey);
+        public virtual IMvxCommand RefreshCommand { get; set; } = null;
 
+        public string this[string localizeKey] => LocalizedTextSource.GetText(localizeKey);
         #endregion
 
         #region Services
-
-        public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ?? (_localizedTextSource = new MvxLanguageBinder("", this.GetType().Name));
-
+        public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ??= new MvxLanguageBinder(string.Empty);
         #endregion
 
         #region Constructor
-
-        protected BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
-        {
-        }
-
-        #endregion
-
-        #region Private
-
-        private string TryLocalize(string localizeKey)
-        {
-            try
-            {
-                return LocalizedTextSource.GetText(localizeKey);
-            }
-            catch
-            {
-                return "Key not found";
-            }
-        }
-
+        protected BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
+            : base(logProvider, navigationService) { }
         #endregion
     }
 }
