@@ -6,7 +6,7 @@ using UIKit;
 
 namespace Playground.iOS.Views
 {
-    public partial class MainView : BaseViewController<MainViewModel>
+   /* public partial class MainView : BaseViewController<MainViewModel>
     {
         [Outlet]
         public UIButton NextButton { get; set; }
@@ -34,6 +34,6 @@ namespace Playground.iOS.Views
             NavigationController.NavigationBar.Translucent = true;
             NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
         }
-    }
+    }*/
 }
 

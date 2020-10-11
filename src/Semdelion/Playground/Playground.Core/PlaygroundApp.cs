@@ -22,7 +22,7 @@ namespace Playground.Core
 
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IContactProvider, ContactProvider>();
 
-            RegisterAppStart<TabsRootViewModel>();
+            RegisterAppStart<MainViewModel>();
         }
     }
 }
