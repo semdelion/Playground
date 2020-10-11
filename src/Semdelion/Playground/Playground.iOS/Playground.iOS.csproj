@@ -82,29 +82,9 @@
     <Compile Include="Views\PhoneBook\ContactsView.designer.cs">
       <DependentUpon>ContactsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Tabs\Tab1View.cs" />
-    <Compile Include="Views\Tabs\Tab1View.designer.cs">
-      <DependentUpon>Tab1View.cs</DependentUpon>
-    </Compile>
-    <InterfaceDefinition Include="Views\Tabs\Tab1View.xib" />
-    <Compile Include="Views\Tabs\Tab2View.cs" />
-    <Compile Include="Views\Tabs\Tab2View.designer.cs">
-      <DependentUpon>Tab2View.cs</DependentUpon>
-    </Compile>
-    <InterfaceDefinition Include="Views\Tabs\Tab2View.xib" />
-    <Compile Include="Views\Tabs\TabsRootView.cs" />
-    <Compile Include="Views\Tabs\TabsRootView.designer.cs">
-      <DependentUpon>TabsRootView.cs</DependentUpon>
-    </Compile>
-    <InterfaceDefinition Include="Views\Tabs\TabsRootView.xib" />
     <Compile Include="Custom\ScrollablePage\ScrollablePageViewController.cs" />
     <Compile Include="Custom\ScrollablePage\IPageViewControllerDataSource.cs" />
     <Compile Include="Custom\ScrollablePage\ScrollablePageDataSource.cs" />
-    <InterfaceDefinition Include="Views\Pager\PagerView.xib" />
-    <Compile Include="Views\Pager\PagerView.cs" />
-    <Compile Include="Views\Pager\PagerView.designer.cs">
-      <DependentUpon>PagerView.cs</DependentUpon>
-    </Compile>
     <InterfaceDefinition Include="Custom\Pages\Page1View.xib" />
     <Compile Include="Custom\Pages\Page1View.cs" />
     <Compile Include="Custom\Pages\Page1View.designer.cs">
@@ -116,13 +96,6 @@
       <DependentUpon>Page2View.cs</DependentUpon>
     </Compile>
     <Compile Include="Custom\Pages\PageViewController.cs" />
-    <Compile Include="Views\Pager\PagesRootView.cs" />
-    <Compile Include="Views\Pager\Page2View.cs" />
-    <Compile Include="Views\Pager\Page3View.cs" />
-    <Compile Include="MvxPageViewController.cs" />
-    <Compile Include="MvxPageViewController.designer.cs">
-      <DependentUpon>MvxPageViewController.cs</DependentUpon>
-    </Compile>
     <InterfaceDefinition Include="Views\PhoneBook\ContactsView.xib" />
     <InterfaceDefinition Include="Views\PhoneBook\ContactDetailsView.xib" />
     <Compile Include="Views\PhoneBook\ContactDetailsView.cs" />
@@ -134,6 +107,26 @@
       <DependentUpon>ContactTableViewCell.cs</DependentUpon>
     </Compile>
     <InterfaceDefinition Include="Views\PhoneBook\Cells\ContactTableViewCell.xib" />
+    <Compile Include="Views\Map\MapTabView.cs" />
+    <Compile Include="Views\Map\MapTabView.designer.cs">
+      <DependentUpon>MapTabView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Map\MapTabView.xib" />
+    <Compile Include="Views\Settings\SettingsTabView.cs" />
+    <Compile Include="Views\Settings\SettingsTabView.designer.cs">
+      <DependentUpon>SettingsTabView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Settings\SettingsTabView.xib" />
+    <Compile Include="Views\Firebase\FirebaseTabView.cs" />
+    <Compile Include="Views\Firebase\FirebaseTabView.designer.cs">
+      <DependentUpon>FirebaseTabView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Firebase\FirebaseTabView.xib" />
+    <Compile Include="Views\TabsRootView.cs" />
+    <Compile Include="Views\TabsRootView.designer.cs">
+      <DependentUpon>TabsRootView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\TabsRootView.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -206,13 +199,14 @@
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_moon.imageset\" />
     <Folder Include="Resources\" />
-    <Folder Include="Views\Tabs\" />
     <Folder Include="Custom\" />
     <Folder Include="Custom\ScrollablePage\" />
-    <Folder Include="Views\Pager\" />
     <Folder Include="Custom\Pages\" />
     <Folder Include="Views\PhoneBook\" />
     <Folder Include="Views\PhoneBook\Cells\" />
+    <Folder Include="Views\Settings\" />
+    <Folder Include="Views\Map\" />
+    <Folder Include="Views\Firebase\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">

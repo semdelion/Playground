@@ -7,6 +7,7 @@ using MvvmCross.DroidX.RecyclerView;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
+using Playground.Core.ViewModels.Phonebook;
 using Playground.Droid.Adapters;
 using Semdelion.Droid.Views;
 
@@ -14,7 +15,7 @@ namespace Playground.Droid.Views
 {
     [MvxFragmentPresentation(typeof(MainFragmentHostViewModel), Resource.Id.main_layoutContent, true)]
     [Register(nameof(SecondView))]
-    public class SecondView : BaseFragment<SecondViewModel>
+    public class SecondView : BaseFragment<ContactsViewModel>
     {
         protected override int FragmentId => Resource.Layout.second_view;
 

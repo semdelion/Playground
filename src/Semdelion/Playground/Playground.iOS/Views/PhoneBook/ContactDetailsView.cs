@@ -1,6 +1,6 @@
-﻿using Playground.Core.ViewModels;
+﻿using MvvmCross.Binding.BindingContext;
+using Playground.Core.ViewModels.Phonebook;
 using Semdelion.iOS.Views.Base;
-using MvvmCross.Binding.BindingContext;
 
 namespace Playground.iOS.Views.PhoneBook
 {

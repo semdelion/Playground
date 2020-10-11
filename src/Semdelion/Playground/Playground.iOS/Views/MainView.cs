@@ -1,6 +1,5 @@
 ﻿using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Views;
 using Playground.Core.ViewModels;
 using Semdelion.iOS.Views.Base;
 using UIKit;
@@ -18,6 +17,7 @@ namespace Playground.iOS.Views
         public MainView() : base(nameof(MainView), null)
         {
         }
+
         protected override void Binding()
         {
             base.Binding();

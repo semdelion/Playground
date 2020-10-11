@@ -2,7 +2,6 @@
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using Playground.Core.ViewModels.Tabs;
 using Semdelion.Core.ViewModels.Base;
 
 namespace Playground.Core.ViewModels

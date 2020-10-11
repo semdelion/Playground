@@ -3,7 +3,7 @@ using MvvmCross.Navigation;
 using Playground.Core.Navigation;
 using Semdelion.Core.ViewModels.Base;
 
-namespace Playground.Core.ViewModels
+namespace Playground.Core.ViewModels.Phonebook
 {
     public class ContactDetailsViewModel : BaseViewModel<ContactNavParams>
     {

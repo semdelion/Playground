@@ -1,30 +1,28 @@
-﻿using MvvmCross.Commands;
+﻿using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 using Playground.Core.CellElements;
 using Playground.Core.Navigation;
 using Playground.Core.Providers;
-using Refit;
 using Semdelion.API.Models;
 using Semdelion.Core.Enums;
 using Semdelion.Core.Extensions;
 using Semdelion.Core.ViewModels.Base;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Playground.Core.ViewModels
+namespace Playground.Core.ViewModels.Phonebook
 {
-    public class SecondViewModel : BasePageCollectionViewModel<ContactCellElement>
+    public class ContactsViewModel : BasePageCollectionViewModel<ContactCellElement>
     {
         protected IContactProvider ContactProvider { get; }
         public int _page = 1;
         public int _pageSize = 10;
 
-        public override string Title => "SecondViewModel";
+        public override string Title => "Phonebook";
 
-        public SecondViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IContactProvider contactProvider)
+        public ContactsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IContactProvider contactProvider)
            : base(logProvider, navigationService)
         {
             ContactProvider = contactProvider;

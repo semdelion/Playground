@@ -7,6 +7,7 @@ using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using MvvmCross.Platforms.Android.Views;
 using Playground.Core.ViewModels;
+using Playground.Core.ViewModels.Phonebook;
 using Semdelion.Droid.Views;
 
 namespace Playground.Droid.Views

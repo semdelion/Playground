@@ -1,5 +1,3 @@
-﻿using Playground.Core.ViewModels.Pager;
-using Playground.Core.ViewModels.Tabs;
 ﻿using MvvmCross;
 using MvvmCross.IoC;
 using Playground.Core.Providers;
@@ -15,7 +13,6 @@ namespace Playground.Core
         public override void Initialize()
         {
             base.Initialize();
-            RegisterAppStart<PagesRootViewModel>();
             Mvx.IoCProvider.RegisterType<IContactService, ContactService>();
 
             var serviceDecorator = new ServiceDecorator();
@@ -25,7 +22,7 @@ namespace Playground.Core
 
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IContactProvider, ContactProvider>();
 
-            RegisterAppStart<MainViewModel>();
+            RegisterAppStart<TabsRootViewModel>();
         }
     }
 }

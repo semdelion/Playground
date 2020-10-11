@@ -9,10 +9,10 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Playground.iOS.Views.Tabs
+namespace Playground.iOS.Views.Settings
 {
-    [Register("Tab2View")]
-    partial class Tab2View
+    [Register("SettingsTabView")]
+    partial class SettingsTabView
     {
         void ReleaseDesignerOutlets()
         {
