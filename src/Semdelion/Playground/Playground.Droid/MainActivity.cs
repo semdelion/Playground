@@ -25,11 +25,11 @@ namespace Playground.Droid
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.activity_main);
-            if (SupportActionBar == null)
-            {
-                var toolbar = FindViewById<Toolbar>(Resource.Id.main_toolbar);
-                SetSupportActionBar(toolbar);
-            }
+            //if (SupportActionBar == null)
+            //{
+            //    var toolbar = FindViewById<Toolbar>(Resource.Id.main_toolbar);
+            //    SetSupportActionBar(toolbar);
+            //}
 
             if (bundle == null)
                 ViewModel.FirstViewModel.Execute(null);

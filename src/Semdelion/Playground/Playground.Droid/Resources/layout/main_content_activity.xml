@@ -21,9 +21,9 @@
         android:id                              ="@+id/bottomNavigationView"
         android:layout_width                    ="0dp"
         android:layout_height                   ="wrap_content"
-        local:elevation                         ="6dp"
+        local:elevation                         ="16dp"
         local:labelVisibilityMode               ="unlabeled"
-        local:menu                              ="@menu/menu"
+        local:menu                              ="@menu/bottom_navigation_menu"
         local:layout_constraintBottom_toBottomOf="parent"
         local:layout_constraintEnd_toEndOf      ="parent"
         local:layout_constraintStart_toStartOf  ="parent" />
