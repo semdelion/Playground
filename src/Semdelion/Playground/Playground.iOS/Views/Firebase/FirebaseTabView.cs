@@ -11,7 +11,6 @@ namespace Playground.iOS.Views.Firebase
         protected override void ConfigureViews()
         {
             base.ConfigureViews();
-            View.BackgroundColor = UIColor.Yellow;
         }
     }
 }

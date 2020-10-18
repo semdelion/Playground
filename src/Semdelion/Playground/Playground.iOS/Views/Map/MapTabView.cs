@@ -11,7 +11,6 @@ namespace Playground.iOS.Views.Map
         protected override void ConfigureViews()
         {
             base.ConfigureViews();
-            View.BackgroundColor = UIColor.Cyan;
         }
     }
 }

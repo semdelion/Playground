@@ -14,7 +14,7 @@ using UIKit;
 
 namespace Playground.iOS.Views.PhoneBook
 {
-    [MvxTabPresentation(TabName = "Phone Book", TabIconName = "home", TabSelectedIconName = "selected", WrapInNavigationController = false)]
+    [MvxTabPresentation(TabName = "Phone Book", TabIconName = "home", TabSelectedIconName = "selected", WrapInNavigationController = true)]
     public partial class ContactsView : BaseViewController<ContactsViewModel>
     {
         private MvxUIRefreshControl _refresh;
@@ -44,18 +44,6 @@ namespace Playground.iOS.Views.PhoneBook
             TableView.Source = source;
             TableView.RefreshControl = _refresh;
             TableView.ReloadData();
-        }
-
-        public override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
-            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, animated);
-        }
-
-        public override void ViewWillDisappear(bool animated)
-        {
-            base.ViewWillDisappear(animated);
-            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, animated);
         }
 
         public class ContactsTableViewSource : MvxSimpleTableViewSource
