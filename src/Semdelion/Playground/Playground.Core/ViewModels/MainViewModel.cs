@@ -1,9 +1,12 @@
-﻿using MvvmCross.Commands;
+﻿using System.Threading.Tasks;
+using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using Playground.Core.ViewModels.Firebase;
+using Playground.Core.ViewModels.Map;
+using Playground.Core.ViewModels.Phonebook;
+using Playground.Core.ViewModels.Settings;
 using Semdelion.Core.ViewModels.Base;
-using System.Threading.Tasks;
-using MvvmCross.Localization;
 
 namespace Playground.Core.ViewModels
 {
@@ -38,7 +41,20 @@ namespace Playground.Core.ViewModels
 
         private async Task NavigateSecondView()
         {
-            await NavigationService.Navigate<SecondViewModel>();
+            await NavigationService.Navigate<ContactsViewModel>();
+        }
+
+        #endregion
+
+        #region Public
+
+        public Task SetupTabs()
+        {
+            return Task.WhenAll(
+                NavigationService.Navigate(typeof(FirebaseViewModel)),
+                NavigationService.Navigate(typeof(MapViewModel)),
+                NavigationService.Navigate(typeof(ContactsViewModel)),
+                NavigationService.Navigate(typeof(SettingsViewModel)));
         }
 
         private async Task ToFirebaseView()

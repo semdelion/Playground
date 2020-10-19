@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 using Semdelion.Core.Enums;
 
@@ -7,14 +8,19 @@ namespace Semdelion.Core.ViewModels.Interfaces
     public interface IBaseViewModel: IMvxViewModel, INotifyPropertyChanged
     {
         /// <summary>
-        ///     Заголовок вью модели.
+        ///     Заголовок ViewModel.
         /// </summary>
         string Title { get; }
 
         /// <summary>
-        ///     Состояние вью модели.
+        ///     Состояние ViewModel.
         /// </summary>
         States State { get; set; }
+
+        /// <summary>
+        ///     Сообщение о состояние ViewModel.
+        /// </summary>
+        IMvxCommand RefreshCommand { get; set; }
     }
 
     /// <summary>

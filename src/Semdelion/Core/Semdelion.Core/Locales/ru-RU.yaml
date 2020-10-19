@@ -1,0 +1,7 @@
+State:
+  Error: Ошибка
+  Loading: Загрузка...
+  NoDate: Нет данных 
+  NoInternet:
+    Message: Нет инернета
+    Button: Обновить

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local  ="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id        ="@+id/tab_playground"
+        android:enabled   ="true"
+        android:icon      ="@drawable/ic_playground"
+        local:showAsAction="ifRoom" />
+    <item
+        android:id        ="@+id/tab_map"
+        android:enabled   ="true"
+        android:icon      ="@drawable/ic_map"
+        local:showAsAction="ifRoom" />
+    <item
+        android:id        ="@+id/tab_notifications"
+        android:enabled   ="true"
+        android:icon      ="@drawable/ic_notification"
+        local:showAsAction="ifRoom" />
+    <item
+        android:id        ="@+id/tab_contact"
+        android:enabled   ="true"
+        android:icon      ="@drawable/ic_contact"
+        local:showAsAction="ifRoom" />
+    <item
+        android:id        ="@+id/tab_settings"
+        android:enabled   ="true"
+        android:icon      ="@drawable/ic_settings"
+        local:showAsAction="ifRoom" />
+</menu>

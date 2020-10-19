@@ -91,5 +91,21 @@
             name="semdelion_text_color_enabled_button_outlined">@color/Dark_Blue</item>
         <item
             name="semdelion_text_color_disabled_button_outlined">@color/colorButtonTextDisabled_Dark</item>
+
+        <!--  CardView  -->
+        <item
+            name="semdelion_background_cardview">#333333</item>
+
+        <!--  Navigarion View  -->
+        <item 
+            name  ="semdelion_text_color_enabled_botton_navigation_view">@color/Dark_Blue</item>
+        <item
+            name  ="semdelion_text_color_disabled_botton_navigation_view">#777777</item>
+        <item
+            name  ="semdelion_icon_color_enabled_botton_navigation_view">@color/Dark_Blue</item>
+        <item
+            name  ="semdelion_icon_color_disabled_botton_navigation_view">#777777</item>
+        <item
+            name  ="semdelion_background_color_bottom_navigation_view">#252525</item>
     </style>
 </resources>

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="7.0.0" />
+    <PackageReference Include="MvvmCross" Version="7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -13,11 +13,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Configs\config.yaml" />
     <None Remove="Locales\en-US.yaml" />
     <None Remove="Locales\ru-RU.yaml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Configs\config.yaml" />
     <EmbeddedResource Include="Locales\en-US.yaml" />
     <EmbeddedResource Include="Locales\ru-RU.yaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Phonebook\" />
+    <Folder Include="ViewModels\Firebase\" />
+    <Folder Include="ViewModels\Map\" />
+    <Folder Include="ViewModels\Settings\" />
   </ItemGroup>
 </Project>

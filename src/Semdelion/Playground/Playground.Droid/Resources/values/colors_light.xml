@@ -5,9 +5,9 @@
     <color name="colorAccent_Light">#3498db</color>
 
     <color name="colorBaseText_Light">#1f1f1f</color>
-    <color name="colorBackground_Light">#e1e1e1</color>
+    <color name="colorBackground_Light">#f1f1f1</color>
     <!--  Toolbar  -->
-    <color name="colorToolbarTitle_Light">#e1e1e1</color>
+    <color name="colorToolbarTitle_Light">#f1f1f1</color>
     <color name="colorBackgroundToolbar_Light">#2c3e50</color>
 
     <color name="Light_Blue">#3f88e2</color>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="Semdelion.Widget.BottomNavigation.Theme"
+         parent="">
+    <item name="android:background">?attr/semdelion_background_color_bottom_navigation_view</item>
+    <item name="itemIconTint">@color/semdelion_icon_color_bottom_navigation_view_selector</item>
+    <item name="itemTextColor">@color/semdelion_text_color_bottom_navigation_view_selector</item>
+  </style>
+</resources>

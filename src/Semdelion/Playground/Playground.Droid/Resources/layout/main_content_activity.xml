@@ -6,22 +6,25 @@
     android:layout_width     ="match_parent"
     android:layout_height    ="match_parent"
     android:background       ="?attr/semdelion_color_background">
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width ="match_parent"
-        android:layout_height="wrap_content"
-        android:id           ="@+id/main_appBarLayout">
-        <include
-            layout="@layout/_template_toolbar" />
-    </com.google.android.material.appbar.AppBarLayout>
     <FrameLayout
-        android:id="@+id/main_layoutContent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        local:layout_behavior="@string/appbar_scrolling_view_behavior"
-        local:layout_constraintBottom_toBottomOf="parent"
-        local:layout_constraintEnd_toEndOf="parent"
-        local:layout_constraintStart_toStartOf="parent"
-        local:layout_constraintTop_toBottomOf="@+id/main_appBarLayout">
-        <!-- The Main Content View -->
+        android:id                              ="@+id/main_layoutContent"
+        android:layout_width                    ="0dp"
+        android:layout_height                   ="0dp"
+        local:layout_behavior                   ="@string/appbar_scrolling_view_behavior"
+        local:layout_constraintBottom_toTopOf   ="@+id/bottomNavigationView"
+        local:layout_constraintEnd_toEndOf      ="parent"
+        local:layout_constraintStart_toStartOf  ="parent"
+        local:layout_constraintTop_toTopOf      ="parent">
     </FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        style                                   ="@style/Semdelion.Widget.BottomNavigation.Theme"
+        android:id                              ="@+id/bottomNavigationView"
+        android:layout_width                    ="0dp"
+        android:layout_height                   ="wrap_content"
+        local:elevation                         ="16dp"
+        local:labelVisibilityMode               ="unlabeled"
+        local:menu                              ="@menu/bottom_navigation_menu"
+        local:layout_constraintBottom_toBottomOf="parent"
+        local:layout_constraintEnd_toEndOf      ="parent"
+        local:layout_constraintStart_toStartOf  ="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
