@@ -3,28 +3,33 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local  ="http://schemas.android.com/apk/res-auto">
     <item
-        android:id        ="@+id/tab_playground"
-        android:enabled   ="true"
-        android:icon      ="@drawable/ic_playground"
-        local:showAsAction="ifRoom" />
+        android:id            ="@+id/tab_playground"
+        android:enabled       ="true"
+        android:icon          ="@drawable/ic_playground"
+        android:titleCondensed="PlaygroundViewModel"
+        local:showAsAction    ="ifRoom" />
     <item
-        android:id        ="@+id/tab_map"
-        android:enabled   ="true"
-        android:icon      ="@drawable/ic_map"
-        local:showAsAction="ifRoom" />
+        android:id            ="@+id/tab_map"
+        android:enabled       ="true"
+        android:icon          ="@drawable/ic_map"
+        android:titleCondensed="MapViewModel"
+        local:showAsAction    ="ifRoom" />
     <item
-        android:id        ="@+id/tab_notifications"
-        android:enabled   ="true"
-        android:icon      ="@drawable/ic_notification"
-        local:showAsAction="ifRoom" />
+        android:id            ="@+id/tab_notifications"
+        android:enabled       ="true"
+        android:icon          ="@drawable/ic_notification"
+        android:titleCondensed="NotificationsViewModel"
+        local:showAsAction    ="ifRoom" />
     <item
-        android:id        ="@+id/tab_contact"
-        android:enabled   ="true"
-        android:icon      ="@drawable/ic_contact"
-        local:showAsAction="ifRoom" />
+        android:id            ="@+id/tab_contact"
+        android:enabled       ="true"
+        android:icon          ="@drawable/ic_contact"
+        android:titleCondensed="ContactsViewModel"
+        local:showAsAction    ="ifRoom" />
     <item
-        android:id        ="@+id/tab_settings"
-        android:enabled   ="true"
-        android:icon      ="@drawable/ic_settings"
-        local:showAsAction="ifRoom" />
+        android:id            ="@+id/tab_settings"
+        android:enabled       ="true"
+        android:icon          ="@drawable/ic_settings"
+        android:titleCondensed="SettingsViewModel"
+        local:showAsAction    ="ifRoom" />
 </menu>

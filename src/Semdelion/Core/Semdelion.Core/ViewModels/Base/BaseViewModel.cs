@@ -11,6 +11,8 @@
     public abstract class BaseViewModel : MvxNavigationViewModel, IBaseViewModel, IMvxLocalizedTextSourceOwner
     {
         #region Fields
+        public string Key => GetType().Name;
+
         private IMvxLanguageBinder _localizedTextSource;
         private States _state;
         #endregion

@@ -10,6 +10,8 @@ namespace Semdelion.Core.ViewModels.Base
 {
     public abstract class BaseViewModel<TParameter, TResult> : MvxNavigationViewModel<TParameter, TResult>, IBaseViewModel<TParameter, TResult>, IMvxLocalizedTextSourceOwner
     {
+        public string Key => GetType().Name;
+
         private IMvxLanguageBinder _localizedTextSource;
 
         public virtual string Title => string.Empty;
@@ -33,6 +35,8 @@ namespace Semdelion.Core.ViewModels.Base
     public abstract class BaseViewModel<TParameter> : MvxNavigationViewModel<TParameter>, IBaseViewModel<TParameter>, IMvxLocalizedTextSourceOwner
         where TParameter : class
     {
+        public string Key => GetType().Name;
+
         private IMvxLanguageBinder _localizedTextSource;
 
         public string Title => string.Empty;
@@ -55,6 +59,8 @@ namespace Semdelion.Core.ViewModels.Base
     public abstract class BaseViewModelResult<TResult> : MvxViewModelResult<TResult>, IBaseViewModelResult<TResult>, IMvxLocalizedTextSourceOwner
         where TResult : class
     {
+        public string Key => GetType().Name;
+
         private IMvxLanguageBinder _localizedTextSource;
 
         public string Title => string.Empty;

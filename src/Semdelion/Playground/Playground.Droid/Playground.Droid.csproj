@@ -72,9 +72,12 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="Views\ContactDetailsView.cs" />
-    <Compile Include="Views\MainView.cs" />
-    <Compile Include="Views\SecondView.cs" />
+    <Compile Include="Views\Contacts\ContactDetailsView.cs" />
+    <Compile Include="Views\Contacts\ContactView.cs" />
+    <Compile Include="Views\Map\MapView.cs" />
+    <Compile Include="Views\Notification\FirebaseView.cs" />
+    <Compile Include="Views\Playground\PlaygroundView.cs" />
+    <Compile Include="Views\Settings\SettingsView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -170,12 +173,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\first_view.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\second_view.xml">
+    <AndroidResource Include="Resources\layout\contact_view.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -293,6 +291,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_playground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\playground_view.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

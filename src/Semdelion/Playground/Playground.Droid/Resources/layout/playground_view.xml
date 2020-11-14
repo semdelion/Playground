@@ -123,15 +123,3 @@
             local:MvxBind              ="Click ToSecondView"/>
     </LinearLayout>
 </ScrollView>
-
-
-
-      
-      
-
-      
-      
-
-      
-   
-      

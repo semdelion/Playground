@@ -19,7 +19,7 @@ namespace Playground.Droid
     [Activity( LaunchMode = LaunchMode.SingleTask,
                WindowSoftInputMode = SoftInput.StateHidden, 
                MainLauncher = true)]
-    class MainActivity : BaseFragmentHostActivity<MainFragmentHostViewModel>, IMvxAndroidSharedElements
+    class MainActivity : BaseFragmentHostActivity<MainViewModel>, IMvxAndroidSharedElements
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -31,8 +31,9 @@ namespace Playground.Droid
             //    SetSupportActionBar(toolbar);
             //}
 
-            if (bundle == null)
-                ViewModel.FirstViewModel.Execute(null);
+            //if (bundle == null)
+            //    ViewModel.FirstViewModel.Execute(null);
+            ViewModel.BottomNavigationItemSelectedCommand.Execute(ViewModel.Tabs[1].Key);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

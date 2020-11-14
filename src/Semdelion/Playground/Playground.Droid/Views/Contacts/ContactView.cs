@@ -13,11 +13,11 @@ using Semdelion.Droid.Views;
 
 namespace Playground.Droid.Views
 {
-    [MvxFragmentPresentation(typeof(MainFragmentHostViewModel), Resource.Id.main_layoutContent, true)]
-    [Register(nameof(SecondView))]
-    public class SecondView : BaseFragment<ContactsViewModel>
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, true)]
+    [Register(nameof(ContactView))]
+    public class ContactView : BaseFragment<ContactsViewModel>
     {
-        protected override int FragmentId => Resource.Layout.second_view;
+        protected override int FragmentId => Resource.Layout.contact_view;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

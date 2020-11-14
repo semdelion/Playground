@@ -1,6 +1,7 @@
 ﻿namespace Semdelion.Droid
 {
     using Android.Views;
+    using Google.Android.Material.BottomNavigation;
     using MvvmCross;
     using MvvmCross.Binding;
     using MvvmCross.Binding.Bindings.Target.Construction;
@@ -34,8 +35,11 @@
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
             base.FillTargetFactories(registry);
-            registry.RegisterCustomBindingFactory<ViewGroup>(StatesTargetBinding.Key,
-                viewGroup => new StatesTargetBinding(viewGroup));
+
+            registry.RegisterCustomBindingFactory<ViewGroup>(
+                StatesTargetBinding.Key, viewGroup => new StatesTargetBinding(viewGroup));
+            registry.RegisterCustomBindingFactory<BottomNavigationView>(
+                MvxBottomNavigationBinding.Key, view => new MvxBottomNavigationBinding(view));
         }
 
         protected override void FillValueConverters(IMvxValueConverterRegistry registry)

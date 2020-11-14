@@ -7,14 +7,15 @@ using Semdelion.Droid.Views;
 using Android.Widget;
 using System;
 using AndroidX.AppCompat.App;
+using Playground.Core.ViewModels.Playground;
 
-namespace Playground.Droid.Views
+namespace Playground.Droid.Views.Playground
 {
-    [MvxFragmentPresentation(typeof(MainFragmentHostViewModel), Resource.Id.main_layoutContent, false)]
-    [Register(nameof(MainView))]
-    public class MainView : BaseFragment<MainViewModel>
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, false)]
+    [Register(nameof(PlaygroundView))]
+    public class PlaygroundView : BaseFragment<PlaygroundViewModel>
     {
-        protected override int FragmentId => Resource.Layout.first_view;
+        protected override int FragmentId => Resource.Layout.playground_view;
 
         public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

@@ -10,9 +10,9 @@ using Playground.Core.ViewModels;
 using Playground.Core.ViewModels.Phonebook;
 using Semdelion.Droid.Views;
 
-namespace Playground.Droid.Views
+namespace Playground.Droid.Views.Contacts
 {
-    [MvxFragmentPresentation(typeof(MainFragmentHostViewModel), Resource.Id.main_layoutContent, true)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, true)]
     [Register(nameof(ContactDetailsView))]
     public class ContactDetailsView : BaseFragment<ContactDetailsViewModel>
     {
