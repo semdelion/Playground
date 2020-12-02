@@ -25,15 +25,9 @@ namespace Playground.Droid
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.activity_main);
-            //if (SupportActionBar == null)
-            //{
-            //    var toolbar = FindViewById<Toolbar>(Resource.Id.main_toolbar);
-            //    SetSupportActionBar(toolbar);
-            //}
 
-            //if (bundle == null)
-            //    ViewModel.FirstViewModel.Execute(null);
-            ViewModel.BottomNavigationItemSelectedCommand.Execute(ViewModel.Tabs[1].Key);
+            if (bundle == null)
+                ViewModel.BottomNavigationItemSelectedCommand.Execute(ViewModel.Tabs[0].Key);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

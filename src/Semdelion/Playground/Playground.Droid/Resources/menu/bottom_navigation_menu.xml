@@ -18,7 +18,7 @@
         android:id            ="@+id/tab_notifications"
         android:enabled       ="true"
         android:icon          ="@drawable/ic_notification"
-        android:titleCondensed="NotificationsViewModel"
+        android:titleCondensed="FirebaseViewModel"
         local:showAsAction    ="ifRoom" />
     <item
         android:id            ="@+id/tab_contact"

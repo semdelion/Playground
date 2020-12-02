@@ -12,7 +12,7 @@ namespace Playground.Droid.Views.Map
     [Register(nameof(MapView))]
     public class MapView : BaseFragment<MapViewModel>
     {
-        protected override int FragmentId => Resource.Layout.playground_view;
+        protected override int FragmentId => Resource.Layout.map_view;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

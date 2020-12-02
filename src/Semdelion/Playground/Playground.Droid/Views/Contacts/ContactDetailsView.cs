@@ -41,7 +41,7 @@ namespace Playground.Droid.Views.Contacts
         public override void OnResume()
         {
             base.OnResume();
-            (Activity as AppCompatActivity)?.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+           // (Activity as AppCompatActivity)?.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

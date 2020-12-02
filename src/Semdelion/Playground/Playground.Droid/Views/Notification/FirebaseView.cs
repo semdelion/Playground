@@ -12,7 +12,7 @@ namespace Playground.Droid.Views.Notification
     [Register(nameof(FirebaseView))]
     public class FirebaseView : BaseFragment<FirebaseViewModel>
     {
-        protected override int FragmentId => Resource.Layout.playground_view;
+        protected override int FragmentId => Resource.Layout.firebase_view;
 
         public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
