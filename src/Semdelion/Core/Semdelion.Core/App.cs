@@ -3,8 +3,11 @@
     using MvvmCross;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
+    using MvvmCross.Logging;
     using MvvmCross.ViewModels;
     using Plugin.Connectivity;
+    using Semdelion.Core.Log;
+    using Semdelion.Core.Log.Repository;
     using Semdelion.Core.Providers;
     using Semdelion.Core.Providers.Interfaces;
     using Semdelion.DAL.Helpers.Interfaces;
@@ -45,6 +48,13 @@
             Mvx.IoCProvider.RegisterSingleton<IAppSettings>(new AppSettings(Environment));
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton(() => CrossConnectivity.Current);
 
+            Mvx.IoCProvider.RegisterSingleton<IRepository>(() => new Repository());
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogRepository, LogRepository>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogWriter, LogWriter>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogReader, LogReader>();
+
+            var logger = Mvx.IoCProvider.Resolve<IMvxLogProvider>().GetLogFor(nameof(App));
+            logger.Trace("#################### Client Settings ####################");
         }
 
         public void InitializeCultureInfo(CultureInfo cultureInfo)

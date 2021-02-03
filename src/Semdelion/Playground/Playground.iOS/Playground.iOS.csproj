@@ -198,15 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_moon.imageset\" />
-    <Folder Include="Resources\" />
-    <Folder Include="Custom\" />
-    <Folder Include="Custom\ScrollablePage\" />
-    <Folder Include="Custom\Pages\" />
-    <Folder Include="Views\PhoneBook\" />
-    <Folder Include="Views\PhoneBook\Cells\" />
-    <Folder Include="Views\Settings\" />
-    <Folder Include="Views\Map\" />
-    <Folder Include="Views\Firebase\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">
@@ -224,6 +215,8 @@
     <ProjectReference Include="..\..\Core\Semdelion.iOS\Semdelion.iOS.csproj">
       <Project>{CC16DB5A-F214-45D6-A60B-E9A10BF157E2}</Project>
       <Name>Semdelion.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

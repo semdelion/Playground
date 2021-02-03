@@ -12,7 +12,6 @@ namespace Semdelion.Droid.Views
     public abstract class BaseFragment<TViewModel> : MvxFragment<TViewModel>
         where TViewModel : class, IBaseViewModel
     {
-
         protected Toolbar _toolbar;
         protected abstract int FragmentId { get; }
 

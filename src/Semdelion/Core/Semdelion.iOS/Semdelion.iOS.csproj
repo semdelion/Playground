@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Log\DebugTrace.cs" />
+    <Compile Include="Log\LogProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bindings\StatesTargetBinding.cs" />
     <Compile Include="BaseIosSetup.cs" />
