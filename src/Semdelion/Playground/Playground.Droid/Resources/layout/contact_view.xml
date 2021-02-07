@@ -11,7 +11,7 @@
         local:MvxBind			     ="RefreshCommand RefreshCommand; Refreshing IsRefreshing">
 		<MvvmCross.DroidX.RecyclerView.MvxRecyclerView
 			local:MvxBind			="ItemsSource Items; ItemClick ItemClickCommand"
-			local:MvxItemTemplate	="@layout/contact_item"
+			local:MvxItemTemplate	="@layout/_template_contact_item"
 			android:id				="@+id/recyclerView"
 			android:orientation		="vertical"
 			android:layout_width	="match_parent"

@@ -23,9 +23,7 @@
     <EmbeddedResource Include="Locales\ru-RU.yaml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\Phonebook\" />
     <Folder Include="ViewModels\Firebase\" />
     <Folder Include="ViewModels\Map\" />
-    <Folder Include="ViewModels\Settings\" />
   </ItemGroup>
 </Project>

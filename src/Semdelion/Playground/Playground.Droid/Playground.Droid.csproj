@@ -77,6 +77,7 @@
     <Compile Include="Views\Map\MapView.cs" />
     <Compile Include="Views\Notification\FirebaseView.cs" />
     <Compile Include="Views\Playground\PlaygroundView.cs" />
+    <Compile Include="Views\Settings\LogsView.cs" />
     <Compile Include="Views\Settings\SettingsView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,7 +206,7 @@
     <AndroidAotProfile Include="$(MSBuildThisFileDirectory)custom.aprof" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\contact_item.xml">
+    <AndroidResource Include="Resources\layout\_template_contact_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -309,6 +310,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\settings_view.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\logs_view.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\_template_log_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

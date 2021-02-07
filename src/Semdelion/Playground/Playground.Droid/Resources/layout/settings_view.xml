@@ -22,11 +22,7 @@
         android:text               ="logs"
         android:layout_width       ="match_parent"
         android:layout_height      ="wrap_content"
-        android:layout_marginBottom="16dp"/>
-    <TextView
-        style                ="@style/Semdelion.TextAppearance.Headline.H1"
-        android:layout_width ="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="t"
-        local:MvxBind        ="Text LogText"/>
+        android:layout_marginBottom="16dp"
+        local:MvxBind              ="Click OpenLogsCommand"/>
+    
 </LinearLayout>

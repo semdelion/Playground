@@ -3,7 +3,6 @@
     using Refit;
     using Semdelion.Core.Enums;
     using Semdelion.Core.ViewModels.Base;
-    using Semdelion.Core.ViewModels.Interfaces;
     using Semdelion.DAL;
     using Semdelion.DAL.Exceptions;
     using System;
