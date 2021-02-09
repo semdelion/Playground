@@ -1,5 +1,6 @@
 ﻿using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using Playground.Core.ViewModels.Settings.CellElements;
 using Semdelion.Core.Enums;
 using Semdelion.Core.Log;
@@ -13,26 +14,93 @@ namespace Playground.Core.ViewModels.Settings
 {
     public class LogsViewModel : BasePageCollectionViewModel<LogCellElement>
     {
-        public bool Trace { get; set; } = true;
-        public bool Debug { get; set; } = true;
-        public bool Info { get; set; } = false;
-        public bool Warn { get; set; } = true;
-        public bool Error { get; set; } = true;
-        public bool Fatal { get; set; } = true;
+        private bool _trace = true;
+        private bool _debug = true;
+        private bool _info = true;
+        private bool _warn = true;
+        private bool _error = true;
+        private bool _fatal = true;
 
-        public string SearchLine { get; set; } = "cli";
+        public bool Trace 
+        {
+            get => _trace;
+            set
+            {
+                SetProperty(ref _trace, value);
+                Items = new MvxObservableCollection<LogCellElement>(SortList(Logs));
+            }
+        }
 
-        private List<LogCellElement> Logs;
+        public bool Debug
+        {
+            get => _debug;
+            set
+            {
+                SetProperty(ref _debug, value);
+                Items = new MvxObservableCollection<LogCellElement>(SortList(Logs));
+            }
+        }
+
+        public bool Info
+        {
+            get => _info;
+            set
+            {
+                SetProperty(ref _info, value);
+                Items = new MvxObservableCollection<LogCellElement>(SortList(Logs));
+            }
+        }
+
+        public bool Warn
+        {
+            get => _warn;
+            set
+            {
+                SetProperty(ref _warn, value);
+                Items = new MvxObservableCollection<LogCellElement>(SortList(Logs));
+            }
+        }
+       
+        public bool Error
+        {
+            get => _error;
+            set
+            {
+                SetProperty(ref _error, value);
+                Items = new MvxObservableCollection<LogCellElement>(SortList(Logs));
+            }
+        }
+
+        public bool Fatal
+        {
+            get => _fatal;
+
+            set
+            {
+                SetProperty(ref _fatal, value);
+                Items = new MvxObservableCollection<LogCellElement>(SortList(Logs));
+            }
+        }
+
+        private string _searchLine = string.Empty;
+        public string SearchLine 
+        {
+            get => _searchLine;
+
+            set
+            {
+                SetProperty(ref _searchLine, value);
+                Items = new MvxObservableCollection<LogCellElement>(SortList(Logs));
+            }
+        }
+
+        private IList<LogCellElement> Logs;
 
         protected ILogReader LogReader { get; set; }
 
         public LogsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, ILogReader logReader) : base(logProvider, navigationService)
         {
             LogReader = logReader;
-        }
-
-        protected override async Task DoItemClickCommand(LogCellElement item)
-        {
         }
 
         protected override async Task<IList<LogCellElement>> LoadOnDemandItems(CancellationToken ct = default)
