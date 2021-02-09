@@ -27,7 +27,6 @@
         public override void Initialize()
         {
             base.Initialize();
-
             Environment = new EnvironmentBuilder().SetSettings(CreateSettings()).Build();
 
             var assemblyConfig = new AssemblyContentConfig(GetType().GetTypeInfo().Assembly)
@@ -54,7 +53,7 @@
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogReader, LogReader>();
 
             var logger = Mvx.IoCProvider.Resolve<IMvxLogProvider>().GetLogFor(nameof(App));
-            logger.Trace("#################### Client Settings ####################");
+            logger.Info("#################### Client Settings ####################");
         }
 
         public void InitializeCultureInfo(CultureInfo cultureInfo)

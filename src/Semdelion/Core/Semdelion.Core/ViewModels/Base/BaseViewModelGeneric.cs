@@ -8,7 +8,9 @@ using MvvmCross.Localization;
 
 namespace Semdelion.Core.ViewModels.Base
 {
-    public abstract class BaseViewModel<TParameter, TResult> : MvxNavigationViewModel<TParameter, TResult>, IBaseViewModel<TParameter, TResult>, IMvxLocalizedTextSourceOwner
+    public abstract class BaseViewModel<TParameter, TResult> : MvxNavigationViewModel<TParameter, TResult>, IBaseViewModel<TParameter, TResult>, IMvxLocalizedTextSourceOwner 
+        where TParameter : class
+        where TResult : class
     {
         public string Key => GetType().Name;
 

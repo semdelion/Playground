@@ -11,6 +11,5 @@ namespace Playground.Droid.Views.Settings
     public class LogsView : BaseFragment<LogsViewModel> 
     {
         protected override int FragmentId => Resource.Layout.logs_view;
-
     }
 }

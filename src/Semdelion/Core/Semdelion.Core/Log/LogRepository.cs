@@ -5,30 +5,30 @@
 
     public class LogRepository : ILogRepository
     {
-        private List<LogEntry> logEntries;
+        private List<LogEntry> _logEntries;
 
         public IRepository Repository { get; }
 
         public LogRepository(IRepository repository)
         {
-            this.logEntries = new List<LogEntry>();
+            _logEntries = new List<LogEntry>();
 
             Repository = repository;
         }
 
         public void Add(LogEntry entry)
         {
-            this.logEntries.Add(entry);
+            _logEntries.Add(entry);
         }
 
         public IEnumerable<LogEntry> All()
         {
-            return this.logEntries;
+            return _logEntries;
         }
 
         public void RemoveAll()
         {
-            this.logEntries = new List<LogEntry>();
+            _logEntries = new List<LogEntry>();
         }
     }
 }
