@@ -20,7 +20,7 @@ namespace Playground.Core.ViewModels.Phonebook
         public int _page = 1;
         public int _pageSize = 10;
 
-        public override string Title => "Phonebook";
+        public override string Title => this["ContactsViewModel.Title"];
 
         public ContactsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IContactProvider contactProvider)
            : base(logProvider, navigationService)

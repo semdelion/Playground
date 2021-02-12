@@ -5,6 +5,16 @@
     xmlns:tools         ="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id           ="@+id/log_app_bar_layout"
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id                  ="@+id/log_toolbar"
+            android:animateLayoutChanges="true"
+            android:layout_width        ="match_parent"
+            android:layout_height       ="wrap_content" />
+    </com.google.android.material.appbar.AppBarLayout>
     <MvvmCross.DroidX.RecyclerView.MvxRecyclerView
 		local:MvxBind			="ItemsSource Items"
 		local:MvxItemTemplate	="@layout/_template_log_item"

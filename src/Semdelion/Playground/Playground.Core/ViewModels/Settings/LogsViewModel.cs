@@ -21,6 +21,15 @@ namespace Playground.Core.ViewModels.Settings
         private bool _error = true;
         private bool _fatal = true;
 
+        private bool _searchHide = true;
+        public bool SearchHide
+        {
+            get => _trace;
+            set => SetProperty(ref _searchHide, value);
+        }
+
+        public override string Title => this["LogsViewModel.Title"];
+
         public bool Trace 
         {
             get => _trace;
@@ -98,7 +107,8 @@ namespace Playground.Core.ViewModels.Settings
 
         protected ILogReader LogReader { get; set; }
 
-        public LogsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, ILogReader logReader) : base(logProvider, navigationService)
+        public LogsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, ILogReader logReader)
+            : base(logProvider, navigationService)
         {
             LogReader = logReader;
         }

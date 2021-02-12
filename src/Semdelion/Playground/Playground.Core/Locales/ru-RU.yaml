@@ -7,7 +7,16 @@ State:
   NoInternet:
     Message: Нет инернета
     Button: Обновить
+
+ContactsViewModel:
+  Title: Телефонная книга
+
 ContactDetailsViewModel:
   Texts:
     Email: "Email:"
     Phone: "Телефон:"
+
+LogsViewModel:
+  Title: Логи
+  Placeholders:
+    Search: Поиск
