@@ -15,15 +15,15 @@
         android:backgroundTint                  ="#ffffff"
         android:textColor                       ="#ffffff"
         android:textColorHint                   ="#BBFFFFFF"
+        local:MvxBind                           ="Visibility InvertedVisibility(SearchHide)"
         local:layout_constraintBottom_toBottomOf="parent"
-        local:layout_constraintEnd_toStartOf    ="@+id/imageButton"
+        local:layout_constraintEnd_toStartOf    ="@+id/search_close_imageButton"
         local:layout_constraintStart_toStartOf  ="parent"
-        local:layout_constraintTop_toTopOf      ="parent"
-        local:MvxBind                           ="Visibility Visibility(!SearchHide)"/>
+        local:layout_constraintTop_toTopOf      ="parent"/>
     <ImageButton
-        android:id                              ="@+id/imageButton"
-        android:layout_width                    ="wrap_content"
-        android:layout_height                   ="wrap_content"
+        android:id                              ="@+id/search_close_imageButton"
+        android:layout_width                    ="24dp"
+        android:layout_height                   ="24dp"
         android:layout_marginEnd                ="12dp"
         android:layout_weight                   ="1"
         android:tint                            ="#fff"
@@ -31,6 +31,19 @@
         local:layout_constraintBottom_toBottomOf="parent"
         local:layout_constraintEnd_toEndOf      ="parent"
         local:layout_constraintTop_toTopOf      ="parent"
-        local:MvxBind                           ="Visibility Visibility(!SearchHide)"
+        local:MvxBind                           ="Visibility InvertedVisibility(SearchHide)"
         local:srcCompat                         ="@drawable/ic_clear" />
+    <ImageButton
+        android:id                              ="@+id/search_start_imageButton"
+        android:layout_width                    ="24dp"
+        android:layout_height                   ="24dp"
+        android:layout_marginEnd                ="12dp"
+        android:layout_weight                   ="1"
+        android:background                      ="#00000000"
+        android:tint                            ="#fff"
+        local:layout_constraintBottom_toBottomOf="parent"
+        local:layout_constraintEnd_toEndOf      ="parent"
+        local:layout_constraintTop_toTopOf      ="parent"
+        local:MvxBind                           ="Visibility Visibility(SearchHide)"
+        local:srcCompat                         ="@drawable/ic_search" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,6 +54,9 @@
 
             var logger = Mvx.IoCProvider.Resolve<IMvxLogProvider>().GetLogFor(nameof(App));
             logger.Info("#################### Client Settings ####################");
+            logger.Error("Error");
+            logger.Fatal("Fatal");
+            logger.Warn("Warn");
         }
 
         public void InitializeCultureInfo(CultureInfo cultureInfo)

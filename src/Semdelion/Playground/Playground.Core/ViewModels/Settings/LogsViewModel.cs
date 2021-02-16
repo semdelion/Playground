@@ -24,7 +24,7 @@ namespace Playground.Core.ViewModels.Settings
         private bool _searchHide = true;
         public bool SearchHide
         {
-            get => _trace;
+            get => _searchHide;
             set => SetProperty(ref _searchHide, value);
         }
 
@@ -188,7 +188,7 @@ namespace Playground.Core.ViewModels.Settings
 
                 foreach (MvxLogLevel logLevel in Enum.GetValues(typeof(MvxLogLevel)))
                 {
-                    if (item.LogLine.StartsWith(nameof(logLevel)))
+                    if (item.LogLine.StartsWith(logLevel.ToString()))
                     {
                         item.LogLevel = logLevel;
                         break;
