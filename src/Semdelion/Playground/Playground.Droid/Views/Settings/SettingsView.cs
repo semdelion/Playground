@@ -1,27 +1,28 @@
 ﻿using Android.OS;
-using Android.Views;
 using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using AndroidX.AppCompat.App;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
+using Playground.Core.ViewModels.Settings;
 using Semdelion.Droid.Views;
-using Android.Widget;
 using System;
-using AndroidX.AppCompat.App;
 
-namespace Playground.Droid.Views
+namespace Playground.Droid.Views.Settings
 {
-    [MvxFragmentPresentation(typeof(MainFragmentHostViewModel), Resource.Id.main_layoutContent, false)]
-    [Register(nameof(MainView))]
-    public class MainView : BaseFragment<MainViewModel>
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, false)]
+    [Register(nameof(SettingsView))]
+    public class SettingsView : BaseFragment<SettingsViewModel>
     {
-        protected override int FragmentId => Resource.Layout.first_view;
+        protected override int FragmentId => Resource.Layout.settings_view;
 
-        public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             var button = view.FindViewById<Button>(Resource.Id.first_view_button_theme);
-            button.Click += ChangeTheme;
-
+            if (button != null)
+                button.Click += ChangeTheme;
             return view;
         }
 

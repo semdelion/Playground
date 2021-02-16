@@ -1,6 +1,6 @@
 ﻿using Semdelion.API.Models;
 
-namespace Playground.Core.CellElements
+namespace Playground.Core.ViewModels.Phonebook.CellElements
 {
     public class ContactCellElement
     {

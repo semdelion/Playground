@@ -1,6 +1,8 @@
-﻿using MvvmCross.Logging;
+﻿using MvvmCross.Commands;
+using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using Semdelion.Core.ViewModels.Base;
+
 
 namespace Playground.Core.ViewModels.Settings
 {
@@ -8,8 +10,9 @@ namespace Playground.Core.ViewModels.Settings
     {
         public override string Title => "Settings";
 
-        public SettingsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
-        {
-        }
+        public SettingsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) 
+            : base(logProvider, navigationService) { }
+
+        public IMvxCommand OpenLogsCommand => new MvxAsyncCommand(async () => await NavigationService.Navigate<LogsViewModel>());
     }
 }

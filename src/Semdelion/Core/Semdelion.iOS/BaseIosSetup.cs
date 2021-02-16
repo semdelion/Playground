@@ -8,6 +8,7 @@
     using MvvmCross.Converters;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
+    using MvvmCross.Logging;
     using MvvmCross.Platforms.Ios.Core;
     using MvvmCross.Plugin;
     using MvvmCross.ViewModels;
@@ -17,7 +18,7 @@
     using Semdelion.DAL.Services;
     using Semdelion.iOS.Bindings;
     using Semdelion.iOS.Custom;
-    using UIKit;
+    using Semdelion.iOS.Log;
 
     public abstract  class BaseIosSetup : MvxIosSetup
     {
@@ -57,6 +58,16 @@
                 Folder = "Configs",
                 Parser = new ConfiguratorParser()
             };
+        }
+
+        protected override IMvxLogProvider CreateLogProvider()
+        {
+#if !RELEASE
+            Mvx.IoCProvider.RegisterType<IMvxLogProvider, LogProvider>();
+            return new LogProvider();
+#else
+            return base.CreateLogProvider();
+#endif
         }
 
         protected override void InitializeApp(IMvxPluginManager pluginManager, IMvxApplication app)

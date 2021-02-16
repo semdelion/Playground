@@ -2,7 +2,7 @@
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Binding.Views;
-using Playground.Core.CellElements;
+using Playground.Core.ViewModels.Phonebook.CellElements;
 using UIKit;
 
 namespace Playground.iOS.Views.PhoneBook.Cells

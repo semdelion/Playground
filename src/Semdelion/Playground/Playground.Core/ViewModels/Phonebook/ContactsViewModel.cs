@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using Playground.Core.CellElements;
 using Playground.Core.Navigation;
 using Playground.Core.Providers;
+using Playground.Core.ViewModels.Phonebook.CellElements;
 using Semdelion.API.Models;
 using Semdelion.Core.Enums;
 using Semdelion.Core.Extensions;
@@ -20,7 +20,7 @@ namespace Playground.Core.ViewModels.Phonebook
         public int _page = 1;
         public int _pageSize = 10;
 
-        public override string Title => "Phonebook";
+        public override string Title => this["ContactsViewModel.Title"];
 
         public ContactsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IContactProvider contactProvider)
            : base(logProvider, navigationService)

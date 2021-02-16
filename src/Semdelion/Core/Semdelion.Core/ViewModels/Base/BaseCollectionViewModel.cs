@@ -48,7 +48,7 @@ namespace Semdelion.Core.ViewModels.Base
         #region Protected
         protected abstract Task<IList<TItem>> LoadOnDemandItems(CancellationToken ct = default);
 
-        protected abstract Task DoItemClickCommand(TItem item);
+        protected virtual async Task DoItemClickCommand(TItem item) { }
 
         protected virtual async Task DoRefreshCommand()
         {

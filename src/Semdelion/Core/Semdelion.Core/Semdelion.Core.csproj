@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="7.0.1" />
+    <PackageReference Include="MvvmCross" Version="7.1.2" />
+    <PackageReference Include="MvvmCross.Plugin.Visibility" Version="7.1.2" />
+    <PackageReference Include="Realm" Version="10.1.0" />
     <PackageReference Include="Xamarin.Yaml.Parser" Version="1.1.9" />
     <PackageReference Include="Xamarin.Yaml.Localization" Version="1.1.9" />
   </ItemGroup>
@@ -17,7 +19,6 @@
   <ItemGroup>
     <Folder Include="Providers\" />
     <Folder Include="Providers\Interfaces\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Locales\" />
     <Folder Include="Helpers\" />
   </ItemGroup>

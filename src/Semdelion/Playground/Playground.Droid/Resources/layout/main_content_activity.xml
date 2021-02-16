@@ -7,7 +7,7 @@
     android:layout_height    ="match_parent"
     android:background       ="?attr/semdelion_color_background">
     <FrameLayout
-        android:id                              ="@+id/main_layoutContent"
+        android:id                              ="@+id/Root_FrameLayout"
         android:layout_width                    ="0dp"
         android:layout_height                   ="0dp"
         local:layout_behavior                   ="@string/appbar_scrolling_view_behavior"
@@ -26,5 +26,6 @@
         local:menu                              ="@menu/bottom_navigation_menu"
         local:layout_constraintBottom_toBottomOf="parent"
         local:layout_constraintEnd_toEndOf      ="parent"
-        local:layout_constraintStart_toStartOf  ="parent" />
+        local:layout_constraintStart_toStartOf  ="parent"
+        local:MvxBind                           ="BottomNavigationSelectedBindingKey BottomNavigationItemSelectedCommand" />
 </androidx.constraintlayout.widget.ConstraintLayout>
