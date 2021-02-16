@@ -1,16 +1,21 @@
 ﻿using Foundation;
 using Semdelion.iOS;
+using UIKit;
 
 namespace Playground.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the
-    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
     [Register(nameof(AppDelegate))]
     public class AppDelegate : BaseAppDelegate
     {
         public override BaseIosSetup MvxIosSetup()
         {
             return new Setup();
+        }
+
+        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+        {
+            Google.Maps.MapServices.ProvideApiKey("");//TODO add ApiKey
+            return base.FinishedLaunching(application, launchOptions);
         }
     }
 }
