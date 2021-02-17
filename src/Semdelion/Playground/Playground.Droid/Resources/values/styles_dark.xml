@@ -14,8 +14,10 @@
     <style
         name  ="SemdelionDark"
         parent="Theme.AppCompat.Light.NoActionBar">
-        <!--   Fonts     -->
+        <item 
+            name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
 
+        <!--   Fonts     -->
         <item
             name="semdelion_font_regular">@font/roboto_regular</item>
         <item

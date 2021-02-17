@@ -3,7 +3,14 @@
   <style
       name  ="AppThemeSplash"
       parent="SemdelionDark">
-    <item 
-        name="android:windowBackground">@drawable/splashscreen</item>>
+      <item 
+          name="android:windowBackground">@drawable/splashscreen</item>>
+  </style>
+  <style 
+      name="WindowAnimationTransition">
+      <item 
+          name="android:windowEnterAnimation">@android:anim/fade_in</item>
+      <item 
+          name="android:windowExitAnimation">@android:anim/fade_out</item>
   </style>
 </resources>
