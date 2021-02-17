@@ -2,7 +2,8 @@
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using AndroidX.AppCompat.App;
+using MvvmCross;
+using MvvmCross.Platforms.Android;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
 using Playground.Core.ViewModels.Settings;
@@ -28,10 +29,9 @@ namespace Playground.Droid.Views.Settings
 
         private void ChangeTheme(object o, EventArgs e)
         {
-            if (AppCompatDelegate.DefaultNightMode == AppCompatDelegate.ModeNightYes)
-                AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
-            else
-                AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightYes;
+            Semdelion.Core.User.Settings.ModeNight = !Semdelion.Core.User.Settings.ModeNight;
+            var activity = Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+            activity.Recreate();
         }
     }
 }
