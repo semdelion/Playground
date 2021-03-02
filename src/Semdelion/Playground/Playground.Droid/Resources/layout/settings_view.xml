@@ -8,23 +8,139 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp">
     <TextView
-        style                ="@style/Semdelion.TextAppearance.Headline.H1"
-        android:layout_width ="wrap_content"
-        android:layout_height="wrap_content"
-        android:text         ="Settings"/>
-    <Button
-        style                      ="@style/Semdelion.Widget.Button.Contained"
-        android:id                 ="@+id/first_view_button_theme"
-        android:text               ="Teme"
+        style                 ="@style/Semdelion.TextAppearance.Headline.H2"
+        android:layout_width  ="wrap_content"
+        android:layout_height ="wrap_content"
+        android:layout_gravity="center_horizontal"
+        local:MvxLang         ="Text SettingsViewModel.Title"
+        tools:text            ="Settings"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id                 ="@+id/settings_nightmode_layout"
         android:layout_width       ="match_parent"
         android:layout_height      ="wrap_content"
-        android:layout_marginBottom="16dp"/>
-    <Button
-        style                      ="@style/Semdelion.Widget.Button.Contained"
-        android:id                 ="@+id/settings_logs_button"
-        android:text               ="logs"
+        android:layout_marginTop   ="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable          ="true">
+        <ImageView
+            android:id                              ="@+id/settings_nightmode_icon_image_view"
+            android:layout_width                    ="24dp"
+            android:layout_height                   ="24dp"
+            android:tint                            ="?attr/semdelion_settings_icon"
+            android:src                             ="@drawable/ic_night_mode"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintStart_toStartOf  ="parent"
+            local:layout_constraintTop_toTopOf      ="parent"/>
+        <TextView
+            style                                   ="@style/Semdelion.TextAppearance.Subtitle.S2"
+            android:layout_width                    ="0dp"
+            android:layout_height                   ="wrap_content"
+            android:layout_marginStart              ="16dp"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintEnd_toStartOf    ="@+id/settings_nightmode_lottie"
+            local:layout_constraintStart_toEndOf    ="@+id/settings_nightmode_icon_image_view"
+            local:layout_constraintTop_toTopOf      ="parent"
+            local:MvxLang                           ="Text SettingsViewModel.NightMode"
+            tools:text                              ="Night Mode"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id                              ="@+id/settings_nightmode_lottie"
+            android:layout_width                    ="64dp"
+            android:layout_height                   ="24dp"
+            local:lottie_autoPlay                   ="false"
+            local:lottie_fileName                   ="nightmode_checkbox.json"
+            local:lottie_loop                       ="false"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintEnd_toEndOf      ="parent"
+            local:layout_constraintTop_toTopOf      ="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width      ="match_parent"
+        android:layout_height     ="0.5dp"
+        android:background        ="?attr/semdelion_settings_dividing_line"
+        android:layout_marginStart="40dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id                 ="@+id/settings_locale_layout"
         android:layout_width       ="match_parent"
         android:layout_height      ="wrap_content"
-        android:layout_marginBottom="16dp"
-        local:MvxBind              ="Click OpenLogsCommand"/>
+        android:layout_marginTop   ="8dp"
+        android:layout_marginBottom="8dp"
+        local:MvxBind              ="Click ChangeLocale"
+        android:clickable          ="true">
+        <ImageView
+            android:id                              ="@+id/settings_language_icon_image_view"
+            android:layout_width                    ="24dp"
+            android:layout_height                   ="24dp"
+            android:tint                            ="?attr/semdelion_settings_icon"
+            android:src                             ="@drawable/ic_language"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintStart_toStartOf  ="parent"
+            local:layout_constraintTop_toTopOf      ="parent"/>
+        <TextView
+            style                                   ="@style/Semdelion.TextAppearance.Subtitle.S2"
+            android:layout_width                    ="0dp"
+            android:layout_height                   ="wrap_content"
+            local:MvxBind                           ="Text CurrentCulture"
+            android:layout_marginStart              ="16dp"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintEnd_toStartOf    ="@+id/settings_language_arrow_image_view"
+            local:layout_constraintStart_toEndOf    ="@+id/settings_language_icon_image_view"
+            local:layout_constraintTop_toTopOf      ="parent"
+            tools:text                              ="Locale"/>
+        <ImageView
+            android:id                              ="@+id/settings_language_arrow_image_view"
+            android:layout_width                    ="8dp"
+            android:layout_height                   ="8dp"
+            android:tint                            ="?attr/semdelion_settings_arrow"
+            android:src                             ="@drawable/ic_arrow_right"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintEnd_toEndOf      ="parent"
+            local:layout_constraintTop_toTopOf      ="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width      ="match_parent"
+        android:layout_height     ="0.5dp"
+        android:background        ="?attr/semdelion_settings_dividing_line"
+        android:layout_marginStart="40dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id                 ="@+id/settings_logs_layout"
+        android:layout_width       ="match_parent"
+        android:layout_height      ="wrap_content"
+        android:layout_marginTop   ="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable          ="true"
+        local:MvxBind              ="Click OpenLogsCommand" >
+        <ImageView
+            android:id                              ="@+id/settings_logs_icon_image_view"
+            android:layout_width                    ="24dp"
+            android:layout_height                   ="24dp"
+            android:tint                            ="?attr/semdelion_settings_icon"
+            android:src                             ="@drawable/ic_logs"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintStart_toStartOf  ="parent"
+            local:layout_constraintTop_toTopOf      ="parent"/>
+        <TextView
+            style                                   ="@style/Semdelion.TextAppearance.Subtitle.S2"
+            android:layout_width                    ="0dp"
+            android:layout_height                   ="wrap_content"
+            android:layout_marginStart              ="16dp"
+            local:MvxLang                           ="Text SettingsViewModel.Logs"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintEnd_toStartOf    ="@+id/settings_logs_arrow_image_view"
+            local:layout_constraintStart_toEndOf    ="@+id/settings_logs_icon_image_view"
+            local:layout_constraintTop_toTopOf      ="parent"
+            tools:text                              ="Logs"/>
+        <ImageView
+            android:id                              ="@+id/settings_logs_arrow_image_view"
+            android:layout_width                    ="8dp"
+            android:layout_height                   ="12dp"
+            android:tint                            ="?attr/semdelion_settings_arrow"
+            android:src                             ="@drawable/ic_arrow_right"
+            local:layout_constraintBottom_toBottomOf="parent"
+            local:layout_constraintEnd_toEndOf      ="parent"
+            local:layout_constraintTop_toTopOf      ="parent"/>
+     </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width      ="match_parent"
+        android:layout_height     ="0.5dp"
+        android:background        ="?attr/semdelion_settings_dividing_line"
+        android:layout_marginStart="40dp"/>
 </LinearLayout>

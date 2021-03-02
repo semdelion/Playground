@@ -20,3 +20,8 @@ LogsViewModel:
   Title: Logs
   Placeholders:
     Search: Search
+
+SettingsViewModel:
+  Title: Settings
+  Logs: Logs
+  NightMode: Night mode

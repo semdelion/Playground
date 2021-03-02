@@ -20,3 +20,8 @@ LogsViewModel:
   Title: Логи
   Placeholders:
     Search: Поиск
+
+SettingsViewModel:
+  Title: Настройки
+  Logs: Логи
+  NightMode: Ночной режим

@@ -87,7 +87,7 @@
         public override void InitializeSecondary()
         {
             base.InitializeSecondary();
-            _app.InitializeCultureInfo(new CultureInfo("ru-RU"));
+            _app.InitializeCultureInfo(new CultureInfo(Core.User.Settings.Locale));
         }
 
         protected override IMvxLogProvider CreateLogProvider()

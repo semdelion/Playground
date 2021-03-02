@@ -147,8 +147,8 @@
         </LinearLayout>
     </HorizontalScrollView>
     <MvvmCross.DroidX.RecyclerView.MvxRecyclerView
-		android:id				                ="@+id/logs_recycler_view"
-		android:orientation		                ="vertical"
+		    android:id				                      ="@+id/logs_recycler_view"
+		    android:orientation		                  ="vertical"
         android:layout_width                    ="0dp"
         android:layout_height                   ="0dp"
         local:layout_constraintBottom_toBottomOf="parent"
@@ -156,5 +156,5 @@
         local:layout_constraintStart_toStartOf  ="parent"
         local:layout_constraintTop_toBottomOf   ="@+id/logs_filter_scroll"
         local:MvxBind                           ="ItemsSource Items"
-		local:MvxItemTemplate                   ="@layout/_template_log_item"/>
+		    local:MvxItemTemplate                   ="@layout/_template_log_item"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

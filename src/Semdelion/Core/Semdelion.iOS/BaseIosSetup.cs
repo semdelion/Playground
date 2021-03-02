@@ -13,6 +13,7 @@
     using MvvmCross.Plugin;
     using MvvmCross.ViewModels;
     using Semdelion.Core;
+    using Semdelion.Core.User;
     using Semdelion.DAL.Helpers;
     using Semdelion.DAL.Helpers.Interfaces;
     using Semdelion.DAL.Services;
@@ -83,7 +84,7 @@
         public override void InitializeSecondary()
         {
             base.InitializeSecondary();
-            _app.InitializeCultureInfo(new CultureInfo("en-US"));
+            _app.InitializeCultureInfo(new CultureInfo(Settings.Locale));
         }
     }
 }

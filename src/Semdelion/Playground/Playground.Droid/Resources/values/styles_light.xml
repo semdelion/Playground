@@ -106,6 +106,13 @@
             name  ="semdelion_icon_color_disabled_botton_navigation_view">#999999</item>
         <item
             name  ="semdelion_background_color_bottom_navigation_view">#e1e1e1</item>
-      
+
+        <!--  Settings  -->
+        <item
+            name  ="semdelion_settings_arrow">#999999</item>
+        <item
+            name  ="semdelion_settings_dividing_line">#bbbbbb</item>
+        <item
+            name  ="semdelion_settings_icon">@color/Light_Blue</item>
     </style>
 </resources>
