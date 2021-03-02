@@ -7,22 +7,21 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
-namespace Playground.iOS.Views.Settings
+namespace Playground.iOS.Views.Settings.Cells
 {
-    [Register ("SettingsTabView")]
-    partial class SettingsTabView
+    [Register ("FiltersCollectionViewCell")]
+    partial class FiltersCollectionViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton LogsButton { get; set; }
+        public UIKit.UILabel FilterLabel { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (LogsButton != null) {
-                LogsButton.Dispose ();
-                LogsButton = null;
+            if (FilterLabel != null) {
+                FilterLabel.Dispose ();
+                FilterLabel = null;
             }
         }
     }

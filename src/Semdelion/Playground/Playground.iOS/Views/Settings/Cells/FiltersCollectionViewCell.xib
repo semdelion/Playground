@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cZE-iV-UFb" customClass="FiltersCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="26"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="26"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-IO-Z8Q">
+                        <rect key="frame" x="4" y="4" width="62" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="9AF-pT-g6I"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="jAu-IO-Z8Q" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="4" id="DWW-lh-deq"/>
+                <constraint firstAttribute="bottom" secondItem="jAu-IO-Z8Q" secondAttribute="bottom" constant="4" id="UG1-Up-1Ro"/>
+                <constraint firstItem="jAu-IO-Z8Q" firstAttribute="top" secondItem="cZE-iV-UFb" secondAttribute="top" constant="4" id="Uva-PZ-L7s"/>
+                <constraint firstAttribute="trailing" secondItem="jAu-IO-Z8Q" secondAttribute="trailing" constant="4" id="k29-6h-Hwy"/>
+            </constraints>
+            <connections>
+                <outlet property="FilterLabel" destination="jAu-IO-Z8Q" id="name-outlet-jAu-IO-Z8Q"/>
+            </connections>
+            <point key="canvasLocation" x="-58" y="-21"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,12 +1,11 @@
-﻿using MvvmCross.Platforms.Ios.Presenters.Attributes;
-using MvvmCross.Binding.BindingContext;
+﻿using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using Playground.Core.ViewModels.Settings;
 using Semdelion.iOS.Views.Base;
-using UIKit;
 
 namespace Playground.iOS.Views.Settings
 {
-    [MvxTabPresentation(TabName = "Settings", TabIconName = "home", TabSelectedIconName = "selected", WrapInNavigationController = false)]
+    [MvxTabPresentation(TabName = "Settings", TabIconName = "ic_settings", TabSelectedIconName = "selected", WrapInNavigationController = true)]
     public partial class SettingsTabView : BaseViewController<SettingsViewModel>
     {
         public SettingsTabView() : base(nameof(SettingsTabView), null)
@@ -23,7 +22,7 @@ namespace Playground.iOS.Views.Settings
             base.Binding();
 
             var set = this.CreateBindingSet<SettingsTabView, SettingsViewModel>();
-            set.Bind(TextView).To(vm => vm.LogText);
+            set.Bind(LogsButton).To(vm => vm.OpenLogsCommand);
             set.Apply();
         }
     }

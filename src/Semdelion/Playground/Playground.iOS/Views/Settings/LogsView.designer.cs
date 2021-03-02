@@ -11,18 +11,27 @@ using UIKit;
 
 namespace Playground.iOS.Views.Settings
 {
-    [Register ("SettingsTabView")]
-    partial class SettingsTabView
+    [Register ("LogsView")]
+    partial class LogsView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton LogsButton { get; set; }
+        UIKit.UICollectionView CollectionView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView TableView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (LogsButton != null) {
-                LogsButton.Dispose ();
-                LogsButton = null;
+            if (CollectionView != null) {
+                CollectionView.Dispose ();
+                CollectionView = null;
+            }
+
+            if (TableView != null) {
+                TableView.Dispose ();
+                TableView = null;
             }
         }
     }

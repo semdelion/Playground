@@ -14,7 +14,7 @@ using UIKit;
 
 namespace Playground.iOS.Views.PhoneBook
 {
-    [MvxTabPresentation(TabName = "Phone Book", TabIconName = "home", TabSelectedIconName = "selected", WrapInNavigationController = true)]
+    [MvxTabPresentation(TabName = "Phone Book", TabIconName = "ic_contact", TabSelectedIconName = "selected", WrapInNavigationController = true)]
     public partial class ContactsView : BaseViewController<ContactsViewModel>
     {
         private MvxUIRefreshControl _refresh;

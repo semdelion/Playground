@@ -127,6 +127,23 @@
       <DependentUpon>TabsRootView.cs</DependentUpon>
     </Compile>
     <InterfaceDefinition Include="Views\TabsRootView.xib" />
+    <InterfaceDefinition Include="Views\Settings\LogsView.xib" />
+    <Compile Include="Views\Settings\LogsView.cs" />
+    <Compile Include="Views\Settings\LogsView.designer.cs">
+      <DependentUpon>LogsView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Settings\Cells\FiltersCollectionViewCell.xib" />
+    <Compile Include="Views\Settings\Cells\FiltersCollectionViewCell.cs" />
+    <Compile Include="Views\Settings\Cells\FiltersCollectionViewCell.designer.cs">
+      <DependentUpon>FiltersCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\Sources\FiltersCollectionSource.cs" />
+    <Compile Include="Views\Settings\Sources\LogsTableViewSource.cs" />
+    <InterfaceDefinition Include="Views\Settings\Cells\LogTableViewCell.xib" />
+    <Compile Include="Views\Settings\Cells\LogTableViewCell.designer.cs">
+      <DependentUpon>LogTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\Cells\LogTableViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -201,6 +218,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_moon.imageset\" />
+    <Folder Include="Views\Settings\Cells\" />
+    <Folder Include="Views\Settings\Sources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">
@@ -226,6 +245,11 @@
     <BundleResource Include="Resources\home%403x.png" />
     <BundleResource Include="Resources\home%402x.png" />
     <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\ic_contact.png" />
+    <BundleResource Include="Resources\ic_settings.png" />
+    <BundleResource Include="Resources\ic_playground.png" />
+    <BundleResource Include="Resources\ic_notification.png" />
+    <BundleResource Include="Resources\ic_map.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

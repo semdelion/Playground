@@ -9,7 +9,7 @@ using Semdelion.iOS.Views.Base;
 
 namespace Playground.iOS.Views.Map
 {
-    [MvxTabPresentation(TabName = "Map", TabIconName = "home", TabSelectedIconName = "selected", WrapInNavigationController = false)]
+    [MvxTabPresentation(TabName = "Map", TabIconName = "ic_map", TabSelectedIconName = "selected", WrapInNavigationController = false)]
     public partial class MapTabView : BaseViewController<MapViewModel>
     {
         private CLLocationManager _locationManager = new CLLocationManager();
