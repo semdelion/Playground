@@ -1,7 +1,6 @@
 ﻿using Android.Content;
 using Android.Graphics;
 using Android.Util;
-using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using MvvmCross.DroidX.RecyclerView;
@@ -18,12 +17,10 @@ namespace Playground.Droid.Adapters
         private Color _fatalColor = new Color(255, 51, 51);
         private Color _mainColor = new Color();
 
-
         public LogsAdapter(IMvxAndroidBindingContext bindingContext, Context context) : base(bindingContext)
         {
-            var theme = context.Theme;
             using var typedValue = new TypedValue();
-            if (theme.ResolveAttribute(Resource.Attribute.semdelion_text_color_caption, typedValue, true))
+            if (context.Theme.ResolveAttribute(Droid.Resource.Attribute.semdelion_text_color_caption, typedValue, true))
                 _mainColor = new Color(typedValue.Data);
         }
 
@@ -33,7 +30,7 @@ namespace Playground.Droid.Adapters
             var logCellElement = (LogCellElement)GetItem(position);
             if (logCellElement != null)
             {
-                var logTextView = holder.ItemView.FindViewById<TextView>(Resource.Id.logs_text_view);
+                var logTextView = holder.ItemView.FindViewById<TextView>(Droid.Resource.Id.logs_text_view);
 
                 if (logCellElement.LogLevel == MvxLogLevel.Warn)
                     logTextView.SetTextColor(_warningColor);
