@@ -19,6 +19,7 @@
     using Semdelion.DAL.Helpers;
     using Semdelion.DAL.Helpers.Interfaces;
     using Semdelion.DAL.Services;
+    using Semdelion.DAL.Services.Handlers;
     using Semdelion.Droid.Bindings;
     using Semdelion.Droid.Log;
     using System.Globalization;
@@ -53,7 +54,7 @@
         protected override void InitializeFirstChance()
         {
             base.InitializeFirstChance();
-            Mvx.IoCProvider.RegisterSingleton<IConnectionService>(() => new ConnectionService(() => new AndroidClientHandler()));
+            Mvx.IoCProvider.RegisterSingleton<IConnectionService>(() => new ConnectionService(() => new HttpLoggingHandler(new AndroidClientHandler())));
         }
 
         protected sealed override IMvxApplication CreateApp()

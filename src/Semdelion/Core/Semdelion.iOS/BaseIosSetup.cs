@@ -17,6 +17,7 @@
     using Semdelion.DAL.Helpers;
     using Semdelion.DAL.Helpers.Interfaces;
     using Semdelion.DAL.Services;
+    using Semdelion.DAL.Services.Handlers;
     using Semdelion.iOS.Bindings;
     using Semdelion.iOS.Custom;
     using Semdelion.iOS.Log;
@@ -34,7 +35,7 @@
         protected override void InitializeFirstChance()
         {
             base.InitializeFirstChance();
-            Mvx.IoCProvider.RegisterSingleton<IConnectionService>(() => new ConnectionService(() => new NSUrlSessionHandler()));
+            Mvx.IoCProvider.RegisterSingleton<IConnectionService>(() => new ConnectionService(() => new HttpLoggingHandler(new NSUrlSessionHandler())));
         }
 
         protected override void FillValueConverters(IMvxValueConverterRegistry registry)
