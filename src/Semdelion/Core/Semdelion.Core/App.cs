@@ -3,8 +3,11 @@
     using MvvmCross;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
+    using MvvmCross.Logging;
     using MvvmCross.ViewModels;
     using Plugin.Connectivity;
+    using Semdelion.Core.Log;
+    using Semdelion.Core.Log.Repository;
     using Semdelion.Core.Providers;
     using Semdelion.Core.Providers.Interfaces;
     using Semdelion.DAL.Helpers.Interfaces;
@@ -24,7 +27,6 @@
         public override void Initialize()
         {
             base.Initialize();
-
             Environment = new EnvironmentBuilder().SetSettings(CreateSettings()).Build();
 
             var assemblyConfig = new AssemblyContentConfig(GetType().GetTypeInfo().Assembly)
@@ -45,6 +47,16 @@
             Mvx.IoCProvider.RegisterSingleton<IAppSettings>(new AppSettings(Environment));
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton(() => CrossConnectivity.Current);
 
+            Mvx.IoCProvider.RegisterSingleton<IRepository>(() => new Repository());
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogRepository, LogRepository>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogWriter, LogWriter>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogReader, LogReader>();
+
+            var logger = Mvx.IoCProvider.Resolve<IMvxLogProvider>().GetLogFor(nameof(App));
+            logger.Info("#################### Client Settings ####################");
+            logger.Error("Error");
+            logger.Fatal("Fatal");
+            logger.Warn("Warn");
         }
 
         public void InitializeCultureInfo(CultureInfo cultureInfo)

@@ -8,11 +8,19 @@
     using Semdelion.Core.Enums;
     using Semdelion.Core.ViewModels.Interfaces;
 
-    public abstract class BaseViewModel : MvxNavigationViewModel, IBaseViewModel, IMvxLocalizedTextSourceOwner
+    public abstract class BaseViewModel : MvxNavigationViewModel, IBaseViewModel, IMvxLocalizedTextSourceOwner, ICancelViewModel
     {
         #region Fields
+        public string Key => GetType().Name;
+
         private IMvxLanguageBinder _localizedTextSource;
         private States _state;
+        #endregion
+
+        #region Commands
+
+        /// <inheritdoc cref="ICancelViewModel"/>
+        public virtual IMvxCommand CancelCommand => new MvxAsyncCommand(() => NavigationService.Close(this));
         #endregion
 
         #region Properties

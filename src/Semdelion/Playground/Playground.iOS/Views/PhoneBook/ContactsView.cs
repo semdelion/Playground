@@ -3,8 +3,9 @@ using System.Windows.Input;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using MvvmCross.Platforms.Ios.Views;
-using Playground.Core.ViewModels;
+using Playground.Core.ViewModels.Phonebook;
 using Playground.iOS.Views.PhoneBook.Cells;
 using Semdelion.iOS.Bindings;
 using Semdelion.iOS.Custom;
@@ -13,7 +14,8 @@ using UIKit;
 
 namespace Playground.iOS.Views.PhoneBook
 {
-    public partial class ContactsView : BaseViewController<SecondViewModel>
+    [MvxTabPresentation(TabName = "Phone Book", TabIconName = "ic_contact", TabSelectedIconName = "selected", WrapInNavigationController = true)]
+    public partial class ContactsView : BaseViewController<ContactsViewModel>
     {
         private MvxUIRefreshControl _refresh;
 
@@ -30,7 +32,7 @@ namespace Playground.iOS.Views.PhoneBook
             var emptyDataSet = new EmptyDataSet(ContentView, ViewModel.RefreshCommand);
             var source = new ContactsTableViewSource(TableView, ContactTableViewCell.Key, ContactTableViewCell.Key);
 
-            var set = this.CreateBindingSet<ContactsView, SecondViewModel>();
+            var set = this.CreateBindingSet<ContactsView, ContactsViewModel>();
             set.Bind(emptyDataSet).For(StatesTargetBinding.Key).To(vm => vm.State);
             set.Bind(source).To(vm => vm.Items);
             set.Bind(source).For(s => s.GetContactsCommand).To(vm => vm.LoadNextPage);
@@ -42,18 +44,6 @@ namespace Playground.iOS.Views.PhoneBook
             TableView.Source = source;
             TableView.RefreshControl = _refresh;
             TableView.ReloadData();
-        }
-
-        public override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
-            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, animated);
-        }
-
-        public override void ViewWillDisappear(bool animated)
-        {
-            base.ViewWillDisappear(animated);
-            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.DarkContent, animated);
         }
 
         public class ContactsTableViewSource : MvxSimpleTableViewSource

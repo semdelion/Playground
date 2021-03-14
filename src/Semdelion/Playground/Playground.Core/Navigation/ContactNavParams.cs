@@ -1,5 +1,4 @@
-﻿using Playground.Core.CellElements;
-using Semdelion.API.Models;
+﻿using Playground.Core.ViewModels.Phonebook.CellElements;
 
 namespace Playground.Core.Navigation
 {

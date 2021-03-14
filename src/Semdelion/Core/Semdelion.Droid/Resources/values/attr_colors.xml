@@ -95,4 +95,21 @@
     <attr
         name  ="semdelion_background_cardview"
         format="reference|color" />
+
+    <attr
+        name  ="semdelion_text_color_enabled_botton_navigation_view"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_text_color_disabled_botton_navigation_view"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_icon_color_enabled_botton_navigation_view"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_icon_color_disabled_botton_navigation_view"
+        format="reference|color" />
+    <attr
+        name  ="semdelion_background_color_bottom_navigation_view"
+        format="reference|color" />
+  
 </resources>

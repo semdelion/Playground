@@ -8,16 +8,18 @@
     using MvvmCross.Converters;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
+    using MvvmCross.Logging;
     using MvvmCross.Platforms.Ios.Core;
     using MvvmCross.Plugin;
     using MvvmCross.ViewModels;
     using Semdelion.Core;
+    using Semdelion.Core.User;
     using Semdelion.DAL.Helpers;
     using Semdelion.DAL.Helpers.Interfaces;
     using Semdelion.DAL.Services;
     using Semdelion.iOS.Bindings;
     using Semdelion.iOS.Custom;
-    using UIKit;
+    using Semdelion.iOS.Log;
 
     public abstract  class BaseIosSetup : MvxIosSetup
     {
@@ -59,6 +61,16 @@
             };
         }
 
+        protected override IMvxLogProvider CreateLogProvider()
+        {
+#if !RELEASE
+            Mvx.IoCProvider.RegisterType<IMvxLogProvider, LogProvider>();
+            return new LogProvider();
+#else
+            return base.CreateLogProvider();
+#endif
+        }
+
         protected override void InitializeApp(IMvxPluginManager pluginManager, IMvxApplication app)
         {
             base.InitializeApp(pluginManager, app);
@@ -72,7 +84,7 @@
         public override void InitializeSecondary()
         {
             base.InitializeSecondary();
-            _app.InitializeCultureInfo(new CultureInfo("en-US"));
+            _app.InitializeCultureInfo(new CultureInfo(Settings.Locale));
         }
     }
 }

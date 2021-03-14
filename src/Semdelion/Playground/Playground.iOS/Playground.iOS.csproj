@@ -82,6 +82,20 @@
     <Compile Include="Views\PhoneBook\ContactsView.designer.cs">
       <DependentUpon>ContactsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Custom\ScrollablePage\ScrollablePageViewController.cs" />
+    <Compile Include="Custom\ScrollablePage\IPageViewControllerDataSource.cs" />
+    <Compile Include="Custom\ScrollablePage\ScrollablePageDataSource.cs" />
+    <InterfaceDefinition Include="Custom\Pages\Page1View.xib" />
+    <Compile Include="Custom\Pages\Page1View.cs" />
+    <Compile Include="Custom\Pages\Page1View.designer.cs">
+      <DependentUpon>Page1View.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Custom\Pages\Page2View.xib" />
+    <Compile Include="Custom\Pages\Page2View.cs" />
+    <Compile Include="Custom\Pages\Page2View.designer.cs">
+      <DependentUpon>Page2View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\Pages\PageViewController.cs" />
     <InterfaceDefinition Include="Views\PhoneBook\ContactsView.xib" />
     <InterfaceDefinition Include="Views\PhoneBook\ContactDetailsView.xib" />
     <Compile Include="Views\PhoneBook\ContactDetailsView.cs" />
@@ -93,6 +107,43 @@
       <DependentUpon>ContactTableViewCell.cs</DependentUpon>
     </Compile>
     <InterfaceDefinition Include="Views\PhoneBook\Cells\ContactTableViewCell.xib" />
+    <Compile Include="Views\Map\MapTabView.cs" />
+    <Compile Include="Views\Map\MapTabView.designer.cs">
+      <DependentUpon>MapTabView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Map\MapTabView.xib" />
+    <Compile Include="Views\Settings\SettingsTabView.cs" />
+    <Compile Include="Views\Settings\SettingsTabView.designer.cs">
+      <DependentUpon>SettingsTabView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Settings\SettingsTabView.xib" />
+    <Compile Include="Views\Firebase\FirebaseTabView.cs" />
+    <Compile Include="Views\Firebase\FirebaseTabView.designer.cs">
+      <DependentUpon>FirebaseTabView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Firebase\FirebaseTabView.xib" />
+    <Compile Include="Views\TabsRootView.cs" />
+    <Compile Include="Views\TabsRootView.designer.cs">
+      <DependentUpon>TabsRootView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\TabsRootView.xib" />
+    <InterfaceDefinition Include="Views\Settings\LogsView.xib" />
+    <Compile Include="Views\Settings\LogsView.cs" />
+    <Compile Include="Views\Settings\LogsView.designer.cs">
+      <DependentUpon>LogsView.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Settings\Cells\FiltersCollectionViewCell.xib" />
+    <Compile Include="Views\Settings\Cells\FiltersCollectionViewCell.cs" />
+    <Compile Include="Views\Settings\Cells\FiltersCollectionViewCell.designer.cs">
+      <DependentUpon>FiltersCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\Sources\FiltersCollectionSource.cs" />
+    <Compile Include="Views\Settings\Sources\LogsTableViewSource.cs" />
+    <InterfaceDefinition Include="Views\Settings\Cells\LogTableViewCell.xib" />
+    <Compile Include="Views\Settings\Cells\LogTableViewCell.designer.cs">
+      <DependentUpon>LogTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\Cells\LogTableViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -104,12 +155,15 @@
     <Reference Include="I18N" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="MvvmCross">
-      <Version>7.0.0</Version>
+      <Version>7.1.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading">
       <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Google.iOS.Maps">
+      <Version>3.9.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -164,9 +218,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_moon.imageset\" />
-    <Folder Include="Resources\" />
-    <Folder Include="Views\PhoneBook\" />
-    <Folder Include="Views\PhoneBook\Cells\" />
+    <Folder Include="Views\Settings\Cells\" />
+    <Folder Include="Views\Settings\Sources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">
@@ -184,7 +237,19 @@
     <ProjectReference Include="..\..\Core\Semdelion.iOS\Semdelion.iOS.csproj">
       <Project>{CC16DB5A-F214-45D6-A60B-E9A10BF157E2}</Project>
       <Name>Semdelion.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home%403x.png" />
+    <BundleResource Include="Resources\home%402x.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\ic_contact.png" />
+    <BundleResource Include="Resources\ic_settings.png" />
+    <BundleResource Include="Resources\ic_playground.png" />
+    <BundleResource Include="Resources\ic_notification.png" />
+    <BundleResource Include="Resources\ic_map.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

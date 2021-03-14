@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android        ="http://schemas.android.com/apk/res/android"
+    xmlns:local          ="http://schemas.android.com/apk/res-auto"
+    xmlns:tools          ="http://schemas.android.com/tools"
+    android:layout_width ="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:id                              ="@+id/search_text"
+        android:layout_width                    ="0dp"
+        android:layout_marginEnd                ="6dp"
+        android:layout_height                   ="match_parent"
+        android:inputType                       ="textPostalAddress"
+        android:paddingTop                      ="6dp"
+        android:backgroundTint                  ="#ffffff"
+        android:textColor                       ="#ffffff"
+        android:textColorHint                   ="#BBFFFFFF"
+        local:MvxBind                           ="Visibility InvertedVisibility(SearchHide)"
+        local:layout_constraintBottom_toBottomOf="parent"
+        local:layout_constraintEnd_toStartOf    ="@+id/search_close_imageButton"
+        local:layout_constraintStart_toStartOf  ="parent"
+        local:layout_constraintTop_toTopOf      ="parent"/>
+    <ImageButton
+        android:id                              ="@+id/search_close_imageButton"
+        android:layout_width                    ="24dp"
+        android:layout_height                   ="24dp"
+        android:layout_marginEnd                ="12dp"
+        android:layout_weight                   ="1"
+        android:tint                            ="#fff"
+        android:background                      ="#00000000"
+        local:layout_constraintBottom_toBottomOf="parent"
+        local:layout_constraintEnd_toEndOf      ="parent"
+        local:layout_constraintTop_toTopOf      ="parent"
+        local:MvxBind                           ="Visibility InvertedVisibility(SearchHide)"
+        local:srcCompat                         ="@drawable/ic_clear" />
+    <ImageButton
+        android:id                              ="@+id/search_start_imageButton"
+        android:layout_width                    ="24dp"
+        android:layout_height                   ="24dp"
+        android:layout_marginEnd                ="12dp"
+        android:layout_weight                   ="1"
+        android:background                      ="#00000000"
+        android:tint                            ="#fff"
+        local:layout_constraintBottom_toBottomOf="parent"
+        local:layout_constraintEnd_toEndOf      ="parent"
+        local:layout_constraintTop_toTopOf      ="parent"
+        local:MvxBind                           ="Visibility Visibility(SearchHide)"
+        local:srcCompat                         ="@drawable/ic_search" />
+</androidx.constraintlayout.widget.ConstraintLayout>

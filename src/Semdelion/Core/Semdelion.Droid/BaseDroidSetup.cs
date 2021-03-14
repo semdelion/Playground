@@ -1,6 +1,7 @@
 ﻿namespace Semdelion.Droid
 {
     using Android.Views;
+    using Google.Android.Material.BottomNavigation;
     using MvvmCross;
     using MvvmCross.Binding;
     using MvvmCross.Binding.Bindings.Target.Construction;
@@ -8,6 +9,7 @@
     using MvvmCross.Converters;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
+    using MvvmCross.Logging;
     using MvvmCross.Platforms.Android.Core;
     using MvvmCross.Platforms.Android.Presenters;
     using MvvmCross.Plugin;
@@ -18,6 +20,7 @@
     using Semdelion.DAL.Helpers.Interfaces;
     using Semdelion.DAL.Services;
     using Semdelion.Droid.Bindings;
+    using Semdelion.Droid.Log;
     using System.Globalization;
     using System.Reflection;
     using Xamarin.Android.Net;
@@ -34,8 +37,11 @@
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
             base.FillTargetFactories(registry);
-            registry.RegisterCustomBindingFactory<ViewGroup>(StatesTargetBinding.Key,
-                viewGroup => new StatesTargetBinding(viewGroup));
+
+            registry.RegisterCustomBindingFactory<ViewGroup>(
+                StatesTargetBinding.Key, viewGroup => new StatesTargetBinding(viewGroup));
+            registry.RegisterCustomBindingFactory<BottomNavigationView>(
+                MvxBottomNavigationBinding.Key, view => new MvxBottomNavigationBinding(view));
         }
 
         protected override void FillValueConverters(IMvxValueConverterRegistry registry)
@@ -81,7 +87,17 @@
         public override void InitializeSecondary()
         {
             base.InitializeSecondary();
-            _app.InitializeCultureInfo(new CultureInfo("ru-RU"));
+            _app.InitializeCultureInfo(new CultureInfo(Core.User.Settings.Locale));
+        }
+
+        protected override IMvxLogProvider CreateLogProvider()
+        {
+#if !RELEASE
+            Mvx.IoCProvider.RegisterType<IMvxLogProvider, LogProvider>();
+            return new LogProvider();
+#else
+            return base.CreateLogProvider();
+#endif
         }
 
         public override void InitializePrimary()

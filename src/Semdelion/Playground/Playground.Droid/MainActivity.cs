@@ -3,7 +3,6 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using AndroidX.AppCompat.Widget;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using MvvmCross.Platforms.Android.Views;
 using MvvmCross.Presenters.Attributes;
@@ -19,20 +18,15 @@ namespace Playground.Droid
     [Activity( LaunchMode = LaunchMode.SingleTask,
                WindowSoftInputMode = SoftInput.StateHidden, 
                MainLauncher = true)]
-    class MainActivity : BaseFragmentHostActivity<MainFragmentHostViewModel>, IMvxAndroidSharedElements
+    class MainActivity : BaseFragmentHostActivity<MainViewModel>, IMvxAndroidSharedElements
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.activity_main);
-            if (SupportActionBar == null)
-            {
-                var toolbar = FindViewById<Toolbar>(Resource.Id.main_toolbar);
-                SetSupportActionBar(toolbar);
-            }
 
             if (bundle == null)
-                ViewModel.FirstViewModel.Execute(null);
+                ViewModel.BottomNavigationItemSelectedCommand.Execute(ViewModel.Tabs[0].Key);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

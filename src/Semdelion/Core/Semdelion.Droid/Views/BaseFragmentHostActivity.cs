@@ -1,5 +1,4 @@
 ﻿using Android.OS;
-using AndroidX.AppCompat.App;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Views;
 using Semdelion.Core.ViewModels.Interfaces;
@@ -13,8 +12,7 @@ namespace Semdelion.Droid.Resources.View
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetTheme(AppCompatDelegate.DefaultNightMode == AppCompatDelegate.ModeNightYes ?
-                    Resource.Style.AppThemeDark : Resource.Style.AppThemeLight);
+            SetTheme(Core.User.Settings.ModeNight ? Resource.Style.AppThemeDark : Resource.Style.AppThemeLight);
             Xamarin.Essentials.Platform.Init(this, bundle);
             Binding();
         }

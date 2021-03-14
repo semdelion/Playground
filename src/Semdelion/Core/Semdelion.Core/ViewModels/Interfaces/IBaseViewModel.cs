@@ -7,6 +7,8 @@ namespace Semdelion.Core.ViewModels.Interfaces
 {
     public interface IBaseViewModel: IMvxViewModel, INotifyPropertyChanged
     {
+        string Key { get; }
+
         /// <summary>
         ///     Заголовок ViewModel.
         /// </summary>

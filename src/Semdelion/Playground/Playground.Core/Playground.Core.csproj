@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="7.0.1" />
+    <PackageReference Include="MvvmCross" Version="7.1.2" />
+    <PackageReference Include="Refit" Version="6.0.24" />
+    <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.24" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,5 +23,9 @@
     <EmbeddedResource Include="Configs\config.yaml" />
     <EmbeddedResource Include="Locales\en-US.yaml" />
     <EmbeddedResource Include="Locales\ru-RU.yaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Firebase\" />
+    <Folder Include="ViewModels\Map\" />
   </ItemGroup>
 </Project>

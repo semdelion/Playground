@@ -1,13 +1,12 @@
 ﻿using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platforms.Ios.Views;
 using Playground.Core.ViewModels;
 using Semdelion.iOS.Views.Base;
 using UIKit;
 
 namespace Playground.iOS.Views
 {
-    public partial class MainView : BaseViewController<MainViewModel>
+   /* public partial class MainView : BaseViewController<MainViewModel>
     {
         [Outlet]
         public UIButton NextButton { get; set; }
@@ -18,6 +17,7 @@ namespace Playground.iOS.Views
         public MainView() : base(nameof(MainView), null)
         {
         }
+
         protected override void Binding()
         {
             base.Binding();
@@ -34,6 +34,6 @@ namespace Playground.iOS.Views
             NavigationController.NavigationBar.Translucent = true;
             NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
         }
-    }
+    }*/
 }
 

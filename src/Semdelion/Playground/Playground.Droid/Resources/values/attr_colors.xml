@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <attr
+      name  ="semdelion_settings_arrow"
+      format="color" />
+  <attr
+      name  ="semdelion_settings_dividing_line"
+      format="color" />
+  <attr
+      name  ="semdelion_settings_icon"
+      format="color" />
+</resources>

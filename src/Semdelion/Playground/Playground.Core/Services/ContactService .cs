@@ -5,6 +5,7 @@ using Semdelion.DAL;
 using Semdelion.DAL.Models;
 using Semdelion.DAL.Services;
 using Semdelion.DAL.Services.Decorators;
+using System;
 using System.Threading.Tasks;
 
 namespace Playground.Core.Services
@@ -15,7 +16,7 @@ namespace Playground.Core.Services
 
         public ContactService(IConnectionService connectionService, IServiceDecorator serviceDecorator) : base(connectionService, serviceDecorator) 
         {
-            _contactService = RestService.For<IContact>(connectionService._lazyHttpClient.Value);
+            _contactService = RestService.For<IContact>(connectionService._lazyHttpClient.Value, new RefitSettings(new NewtonsoftJsonContentSerializer()));
         }
 
         public async Task<RequestResult<ContactResult>> GetContacts(int count = 5, int page = 1, ApiMethodContext context = default)

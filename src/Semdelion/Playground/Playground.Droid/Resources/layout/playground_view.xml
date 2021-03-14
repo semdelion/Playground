@@ -1,0 +1,106 @@
+<ScrollView
+    xmlns:android        ="http://schemas.android.com/apk/res/android"
+    xmlns:local          ="http://schemas.android.com/apk/res-auto"
+    xmlns:tools          ="http://schemas.android.com/tools"
+    android:orientation  ="vertical"
+    android:layout_width ="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation       ="vertical"
+        android:layout_width      ="match_parent"
+        android:layout_height     ="wrap_content"
+        android:layout_marginLeft ="16dp"
+        android:layout_marginRight="16dp">
+        <Button
+            style                      ="@style/Semdelion.Widget.Button.Contained"
+            android:text               ="Button"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_margin      ="8dp"/>
+        <Button
+            style                      ="@style/Semdelion.Widget.Button.Contained"
+            android:text               ="Button"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_margin      ="8dp"
+            android:enabled            ="false"/>
+        <Button
+            style                      ="@style/Semdelion.Widget.Button.Outlined"
+            android:text               ="Button"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_margin      = "8dp"/>
+        <Button
+            style                      ="@style/Semdelion.Widget.Button.Outlined"
+            android:text               ="Button"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_margin      ="8dp"
+            android:enabled            ="false"/>
+        <Button
+            style                      ="@style/Semdelion.Widget.Button.Text"
+            android:text               ="Button"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"/>
+        <Button
+            style                      ="@style/Semdelion.Widget.Button.Text"
+            android:text               ="Button"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:enabled            ="false"/>
+
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Headline.H1"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text               ="TextAppearance.Headline.H1"/>
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Headline.H2"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text               ="TextAppearance.Headline.H2"/>
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Headline.H3"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text               ="TextAppearance.Headline.H3"/>
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Subtitle.S1"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text               ="TextAppearance.Subtitle.S1"/>
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Subtitle.S2"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text               ="TextAppearance.Subtitle.S2"/>
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Body.B1"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text               ="TextAppearance.Body.B1"/>
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Body.B2"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text               ="TextAppearance.Body.B2"/>
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Caption"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text               ="TextAppearance.Caption"/>
+        <TextView
+            style                      ="@style/Semdelion.TextAppearance.Overline"
+            android:layout_width       ="match_parent"
+            android:layout_height      ="wrap_content"
+            android:text               ="TextAppearance.Overline"/>
+    </LinearLayout>
+</ScrollView>
