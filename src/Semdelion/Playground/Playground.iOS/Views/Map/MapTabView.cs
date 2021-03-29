@@ -6,6 +6,7 @@ using MapKit;
 using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using Playground.Core.ViewModels.Map;
 using Semdelion.iOS.Views.Base;
+using UIKit;
 
 namespace Playground.iOS.Views.Map
 {
@@ -20,26 +21,36 @@ namespace Playground.iOS.Views.Map
         {
             base.ConfigureViews();
 
-            CheckLocationAuthorization();
-
-            Coordinates = new List<CLLocationCoordinate2D>()
+            try
             {
-                new CLLocationCoordinate2D(42.364260, -71.120824),
-                new CLLocationCoordinate2D(30.2649977168594, -97.73863627705),
-                new CLLocationCoordinate2D(43.690854, -79.391111),
-                new CLLocationCoordinate2D(43.736333, -107.272647)
-            };
+                CheckLocationAuthorization();
 
-            var minLatitude = Coordinates.Min(x => x.Latitude);
-            var maxLatitude = Coordinates.Max(x => x.Latitude);
-            var minLongitude = Coordinates.Min(x => x.Longitude);
-            var maxLongitude = Coordinates.Max(x => x.Longitude);
+                Coordinates = new List<CLLocationCoordinate2D>()
+                {
+                    new CLLocationCoordinate2D(42.364260, -71.120824),
+                    new CLLocationCoordinate2D(30.2649977168594, -97.73863627705),
+                    new CLLocationCoordinate2D(43.690854, -79.391111),
+                    new CLLocationCoordinate2D(43.736333, -107.272647)
+                };
 
-            var zoomLatitude = (minLatitude + maxLatitude) / 2;
-            var zoomLongitude = (minLongitude + maxLongitude) / 2;
+                var minLatitude = Coordinates.Min(x => x.Latitude);
+                var maxLatitude = Coordinates.Max(x => x.Latitude);
+                var minLongitude = Coordinates.Min(x => x.Longitude);
+                var maxLongitude = Coordinates.Max(x => x.Longitude);
 
-            SetupMKMapView(zoomLatitude, zoomLongitude, maxLatitude - minLatitude, maxLongitude - minLongitude);
-            SetupGoogleMap(zoomLatitude, zoomLongitude);
+                var zoomLatitude = (minLatitude + maxLatitude) / 2;
+                var zoomLongitude = (minLongitude + maxLongitude) / 2;
+
+                SetupMKMapView(zoomLatitude, zoomLongitude, maxLatitude - minLatitude, maxLongitude - minLongitude);
+                SetupGoogleMap(zoomLatitude, zoomLongitude);
+            }
+            catch
+            {
+                var alert = UIAlertController.Create("ApiKey", "Api Key not set!", UIAlertControllerStyle.Alert);
+                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                PresentViewController(alert, true, null);
+                //ShowViewController(alert, null);
+            }
         }
 
         private void CheckLocationAuthorization()

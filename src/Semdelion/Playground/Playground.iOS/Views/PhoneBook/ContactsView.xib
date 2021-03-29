@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +23,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="knp-Kc-rcD">
                     <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                    <color key="backgroundColor" red="0.16470588235294117" green="0.18431372549019609" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="bacground_second_color"/>
                     <color key="separatorColor" red="0.2196078431372549" green="0.23529411764705882" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -32,11 +33,11 @@
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYS-Go-8z4">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                    <color key="backgroundColor" red="0.12549019607843137" green="0.14117647058823529" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="background_color"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="K6B-WX-OsO"/>
-            <color key="backgroundColor" red="0.19215686274509802" green="0.21568627450980393" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="background_color"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="EYS-Go-8z4" secondAttribute="trailing" id="1gw-cr-fFa"/>
                 <constraint firstItem="knp-Kc-rcD" firstAttribute="leading" secondItem="K6B-WX-OsO" secondAttribute="leading" id="EHp-wi-2Sf"/>
@@ -50,4 +51,12 @@
             <point key="canvasLocation" x="25" y="52"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="bacground_second_color">
+            <color red="0.76899999380111694" green="0.79199999570846558" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="background_color">
+            <color red="0.54900002479553223" green="0.58399999141693115" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

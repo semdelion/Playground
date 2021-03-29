@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,11 +37,11 @@
                 </collectionView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H8m-9f-dzj">
                     <rect key="frame" x="0.0" y="104" width="414" height="758"/>
-                    <color key="backgroundColor" red="0.19215686274509802" green="0.21568627450980393" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" name="background_color"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="M8X-SW-2r0"/>
-            <color key="backgroundColor" red="0.19215686274509802" green="0.21568627450980393" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="background_color"/>
             <constraints>
                 <constraint firstItem="H8m-9f-dzj" firstAttribute="top" secondItem="dol-qU-HOk" secondAttribute="bottom" id="7vW-0l-IAA"/>
                 <constraint firstAttribute="trailing" secondItem="dol-qU-HOk" secondAttribute="trailing" constant="16" id="UwE-1H-3Es"/>
@@ -55,6 +56,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="background_color">
+            <color red="0.5490196078431373" green="0.58431372549019611" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

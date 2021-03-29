@@ -215,11 +215,25 @@
     <ImageAsset Include="Assets.xcassets\logo_splashscreen.imageset\logo_splashscreen.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\background_color.colorset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\bacground_second_color.colorset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\text_color.colorset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\ic_logs.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\ic_logs-1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\ic_night_mode-1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\ic_night_mode.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\ic_language.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\ic_language-1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_moon.imageset\" />
     <Folder Include="Views\Settings\Cells\" />
     <Folder Include="Views\Settings\Sources\" />
+    <Folder Include="Assets.xcassets\background_color.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">
@@ -250,6 +264,8 @@
     <BundleResource Include="Resources\ic_playground.png" />
     <BundleResource Include="Resources\ic_notification.png" />
     <BundleResource Include="Resources\ic_map.png" />
+    <BundleResource Include="Resources\nightmode_checkbox.json" />
+    <BundleResource Include="Resources\nightmode.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

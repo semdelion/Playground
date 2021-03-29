@@ -13,12 +13,6 @@ namespace Playground.iOS.Views
         public override async void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            {
-                OverrideUserInterfaceStyle = UIUserInterfaceStyle.Dark;
-                UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, animated);
-                UINavigationBar.Appearance.TintColor = UIColor.White;
-            }
             if (!_tabsInitialized)
             {
                 await ViewModel.SetupTabs();
