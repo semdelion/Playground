@@ -2,23 +2,20 @@
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using AndroidX.ConstraintLayout.Widget;
 using Com.Airbnb.Lottie;
-using Java.Lang.Annotation;
 using MvvmCross;
 using MvvmCross.Platforms.Android;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
 using Playground.Core.ViewModels.Settings;
 using Semdelion.Droid.Views;
-using System;
 
 namespace Playground.Droid.Views.Settings
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, false)]
-    [Register(nameof(SettingsView))]
-    public class SettingsView : BaseFragment<SettingsViewModel>
+    [Register(nameof(SettingsFragment))]
+    public class SettingsFragment : BaseFragment<SettingsViewModel>
     {
         protected override int FragmentId => Resource.Layout.settings_view;
 

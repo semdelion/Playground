@@ -1,5 +1,4 @@
-﻿using Android.OS;
-using Android.Runtime;
+﻿using Android.Runtime;
 using Android.Views;
 using Android.Views.InputMethods;
 using AndroidX.AppCompat.App;
@@ -16,8 +15,8 @@ using Semdelion.Droid.Views;
 namespace Playground.Droid.Views.Settings
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, true)]
-    [Register(nameof(LogsView))]
-    public class LogsView : BaseFragment<LogsViewModel> 
+    [Register(nameof(LogsFragment))]
+    public class LogsFragment : BaseFragment<LogsViewModel> 
     {
         protected override int FragmentId => Resource.Layout.logs_view;
 

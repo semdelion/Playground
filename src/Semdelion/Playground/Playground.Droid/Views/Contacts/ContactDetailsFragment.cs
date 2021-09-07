@@ -1,7 +1,6 @@
 ﻿using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using AndroidX.AppCompat.App;
 using AndroidX.Transitions;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
@@ -13,8 +12,8 @@ using Semdelion.Droid.Views;
 namespace Playground.Droid.Views.Contacts
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, true)]
-    [Register(nameof(ContactDetailsView))]
-    public class ContactDetailsView : BaseFragment<ContactDetailsViewModel>
+    [Register(nameof(ContactDetailsFragment))]
+    public class ContactDetailsFragment : BaseFragment<ContactDetailsViewModel>
     {
         protected override int FragmentId => Resource.Layout.contact_details_view;
 
