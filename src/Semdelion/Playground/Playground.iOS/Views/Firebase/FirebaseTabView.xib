@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirebaseTabView">
             <connections>
+                <outlet property="tokenTextView" destination="40e-7j-w7n" id="FsT-fo-520"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
             </connections>
         </placeholder>
@@ -20,24 +21,40 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firebase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="150-g9-OeA">
-                    <rect key="frame" x="169.5" y="436" width="75" height="24"/>
+                    <rect key="frame" x="169.5" y="336" width="75" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" systemColor="systemBlueColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="40e-7j-w7n">
+                    <rect key="frame" x="16" y="392" width="382" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="zXe-bM-WRk"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" name="background_color"/>
             <constraints>
                 <constraint firstItem="150-g9-OeA" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="0Ka-7b-SRV"/>
-                <constraint firstItem="150-g9-OeA" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" id="oOU-ww-3Oj"/>
+                <constraint firstItem="40e-7j-w7n" firstAttribute="top" secondItem="150-g9-OeA" secondAttribute="bottom" constant="32" id="3wd-kS-g7g"/>
+                <constraint firstAttribute="trailing" secondItem="40e-7j-w7n" secondAttribute="trailing" constant="16" id="EY2-jM-hTK"/>
+                <constraint firstItem="40e-7j-w7n" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="16" id="WXp-Ub-vEy"/>
+                <constraint firstItem="150-g9-OeA" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" constant="-100" id="oOU-ww-3Oj"/>
             </constraints>
             <point key="canvasLocation" x="25" y="52"/>
         </view>
     </objects>
     <resources>
         <namedColor name="background_color">
-            <color red="0.72156864404678345" green="0.86274510622024536" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.54900002479553223" green="0.58399999141693115" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Playground.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.Playground.iOS</string>
+	<string>dev.semdelionteam.playground</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -45,5 +45,9 @@
 	<string>Your location is required for xyz benefits for you</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Your location is required for xyz benefits for you</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>

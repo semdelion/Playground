@@ -15,5 +15,11 @@ namespace Semdelion.Core.User
             get => Preferences.Get("Locale", "en-US");
             set => Preferences.Set("Locale", value);
         }
+
+        public static string TokenFcm
+        {
+            get => Preferences.Get("Token", string.Empty);
+            set => Preferences.Set("Token", value);
+        }
     }
 }

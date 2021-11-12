@@ -1,21 +1,26 @@
-﻿// WARNING
+// WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Visual Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
 using Foundation;
-using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
 namespace Playground.iOS.Views.Firebase
 {
-    [Register("FirebaseTabView")]
-    partial class FirebaseTabView
-    {
-        void ReleaseDesignerOutlets()
-        {
-        }
-    }
+	[Register ("FirebaseTabView")]
+	partial class FirebaseTabView
+	{
+		[Outlet]
+		UIKit.UITextView tokenTextView { get; set; }
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (tokenTextView != null) {
+				tokenTextView.Dispose ();
+				tokenTextView = null;
+			}
+		}
+	}
 }
