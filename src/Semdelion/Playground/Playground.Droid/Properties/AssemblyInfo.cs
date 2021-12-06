@@ -27,5 +27,5 @@ using Android.App;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: MetaData("com.google.android.maps.v2.API_KEY", Value = "AIzaSyBYMOdzi5s-982zJ7VZUQ0QkA-FlX97pkE")]
+[assembly: MetaData("com.google.android.maps.v2.API_KEY", Value = "***")]
 [assembly: MetaData("com.google.android.gms.version", Value = "@integer/google_play_services_version")]

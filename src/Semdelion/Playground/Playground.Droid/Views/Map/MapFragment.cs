@@ -4,7 +4,6 @@ using Android.Gms.Maps.Utils.Clustering;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Playground.Core.ViewModels;
 using Playground.Core.ViewModels.Map;
@@ -66,8 +65,6 @@ namespace Playground.Droid.Views.Map
             ConfigClusterPlanets();
 
             SetupMap();
-
-            //SetupItems();
         }
 
         private void ConfigClusterStars()
@@ -109,9 +106,7 @@ namespace Playground.Droid.Views.Map
             ClusterItem itemClicked = (ClusterItem)p0;
 
             //Dismiss the info window clicked
-            Marker markerClicked = _clusterRendererStar.GetMarker(itemClicked);
-            if (markerClicked == null)
-                markerClicked = _clusterRendererStar.GetMarker(itemClicked);
+            Marker markerClicked = _clusterRendererStar.GetMarker(itemClicked) ?? _clusterRendererPlanet.GetMarker(itemClicked);
 
             markerClicked.HideInfoWindow();
         }

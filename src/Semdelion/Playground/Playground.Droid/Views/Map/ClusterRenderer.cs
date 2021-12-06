@@ -53,18 +53,8 @@ namespace Playground.Droid.Views.Map
         protected override void OnBeforeClusterItemRendered(Java.Lang.Object p0, MarkerOptions markerOptions)
         {
             ClusterItem clusterItem = (ClusterItem)p0;
-            Bitmap bitmap = null;
-
-            if (clusterItem.SpaceObject == SpaceObjectType.Star)
-            {
-                bitmap = BitmapFactory.DecodeResource(_context.Resources, Resource.Drawable.ic_sun);
-                
-            }
-            if (clusterItem.SpaceObject == SpaceObjectType.Planet)
-            {
-                bitmap = BitmapFactory.DecodeResource(_context.Resources, Resource.Drawable.ic_earth);
-            }
-
+            Bitmap bitmap = BitmapFactory.DecodeResource(_context.Resources, 
+                clusterItem.SpaceObject == SpaceObjectType.Star ? Resource.Drawable.ic_sun : Resource.Drawable.ic_earth);
             Bitmap smallMarker = Bitmap.CreateScaledBitmap(bitmap, (int)Converters.DpToPx(_context, 28), (int)Converters.DpToPx(_context, 28), false);
             //Icon for single marker
             markerOptions.SetIcon(BitmapDescriptorFactory.FromBitmap(smallMarker));
