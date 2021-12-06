@@ -7,8 +7,8 @@ using Playground.Core.ViewModels.Playground;
 namespace Playground.Droid.Views.Playground
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, false)]
-    [Register(nameof(PlaygroundView))]
-    public class PlaygroundView : BaseFragment<PlaygroundViewModel>
+    [Register(nameof(PlaygroundFragment))]
+    public class PlaygroundFragment : BaseFragment<PlaygroundViewModel>
     {
         protected override int FragmentId => Resource.Layout.playground_view;
     }

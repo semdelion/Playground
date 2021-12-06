@@ -9,8 +9,8 @@ using Semdelion.Droid.Views;
 namespace Playground.Droid.Views.Notification
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.Root_FrameLayout, false)]
-    [Register(nameof(FirebaseView))]
-    public class FirebaseView : BaseFragment<FirebaseViewModel>
+    [Register(nameof(FirebaseFragment))]
+    public class FirebaseFragment : BaseFragment<FirebaseViewModel>
     {
         protected override int FragmentId => Resource.Layout.firebase_view;
 

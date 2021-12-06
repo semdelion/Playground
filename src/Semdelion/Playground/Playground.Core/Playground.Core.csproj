@@ -26,6 +26,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\Firebase\" />
-    <Folder Include="ViewModels\Map\" />
   </ItemGroup>
 </Project>
