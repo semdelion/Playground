@@ -2,6 +2,7 @@
 {
     using Android.Views;
     using Google.Android.Material.BottomNavigation;
+    using Microsoft.Extensions.Logging;
     using MvvmCross;
     using MvvmCross.Binding;
     using MvvmCross.Binding.Bindings.Target.Construction;
@@ -9,7 +10,6 @@
     using MvvmCross.Converters;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
-    using MvvmCross.Logging;
     using MvvmCross.Platforms.Android.Core;
     using MvvmCross.Platforms.Android.Presenters;
     using MvvmCross.Plugin;
@@ -25,6 +25,8 @@
     using System.Globalization;
     using System.Reflection;
     using Xamarin.Android.Net;
+    using Serilog.Extensions.Logging;
+    using Serilog;
 
     public abstract class BaseDroidSetup : MvxAndroidSetup
     {
@@ -51,13 +53,13 @@
             registry.AddOrOverwrite("Language", new MvxLanguageConverter());
         }
 
-        protected override void InitializeFirstChance()
+        protected override void InitializeFirstChance(IMvxIoCProvider iocProvider)
         {
-            base.InitializeFirstChance();
+            base.InitializeFirstChance(iocProvider);
             Mvx.IoCProvider.RegisterSingleton<IConnectionService>(() => new ConnectionService(() => new HttpLoggingHandler(new AndroidClientHandler())));
         }
 
-        protected sealed override IMvxApplication CreateApp()
+        protected sealed override IMvxApplication CreateApp(IMvxIoCProvider iocProvider) 
         {
             _app = CreateSemApp();
             return _app;
@@ -91,13 +93,36 @@
             _app.InitializeCultureInfo(new CultureInfo(Core.User.Settings.Locale));
         }
 
-        protected override IMvxLogProvider CreateLogProvider()
+        protected override ILoggerProvider CreateLogProvider()
         {
 #if !RELEASE
-            Mvx.IoCProvider.RegisterType<IMvxLogProvider, LogProvider>();
+            Mvx.IoCProvider.RegisterType<ILoggerProvider, LogProvider>();
             return new LogProvider();
 #else
-            return base.CreateLogProvider();
+			return new SerilogLoggerProvider();
+#endif
+        }
+
+        protected override ILoggerFactory CreateLogFactory()
+        {
+#if !RELEASE
+            var loggerProviders = new LoggerProviderCollection();
+            loggerProviders.AddProvider(Mvx.IoCProvider.Resolve<ILoggerProvider>());
+            Serilog.Log.Logger = new LoggerConfiguration()
+               .MinimumLevel.Verbose()
+               .WriteTo.Providers(loggerProviders)
+               .CreateLogger();
+
+            var loggerFactory = new SerilogLoggerFactory();
+            loggerFactory.AddProvider(Mvx.IoCProvider.Resolve<ILoggerProvider>());
+            return loggerFactory;
+#else
+			Serilog.Log.Logger = new LoggerConfiguration()
+			   .MinimumLevel.Debug()
+			   .WriteTo.AndroidLog()
+			   .CreateLogger();
+
+			return new SerilogLoggerFactory();
 #endif
         }
 

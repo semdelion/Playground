@@ -1,4 +1,4 @@
-﻿using MvvmCross.Logging;
+﻿using Microsoft.Extensions.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Playground.Core.ViewModels.Settings.CellElements;
@@ -14,12 +14,12 @@ namespace Playground.Core.ViewModels.Settings
 {
     public class LogsViewModel : BasePageCollectionViewModel<LogCellElement>
     {
-        private bool _trace = true;
-        private bool _debug = true;
-        private bool _info = true;
-        private bool _warn = true;
-        private bool _error = true;
-        private bool _fatal = true;
+        private static bool _trace = true;
+        private static bool _debug = true;
+        private static bool _info = true;
+        private static bool _warn = true;
+        private static bool _error = true;
+        private static bool _fatal = true;
 
         private bool _searchHide = true;
         public bool SearchHide
@@ -107,8 +107,8 @@ namespace Playground.Core.ViewModels.Settings
 
         protected ILogReader LogReader { get; set; }
 
-        public LogsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, ILogReader logReader)
-            : base(logProvider, navigationService)
+        public LogsViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService, ILogReader logReader)
+            : base(loggerFactory, navigationService)
         {
             LogReader = logReader;
         }
@@ -134,27 +134,27 @@ namespace Playground.Core.ViewModels.Settings
             {
                 switch(item.LogLevel)
                 {
-                    case MvxLogLevel.Trace:
+                    case LogLevel.Trace:
                         if (Trace && ContainSearchText(item.LogLine))
                             items.Add(item);
                         break;
-                    case MvxLogLevel.Debug:
+                    case LogLevel.Debug:
                         if (Debug && ContainSearchText(item.LogLine))
                             items.Add(item);
                         break;
-                    case MvxLogLevel.Info:
+                    case LogLevel.Information:
                         if (Info && ContainSearchText(item.LogLine))
                             items.Add(item);
                         break;
-                    case MvxLogLevel.Warn:
+                    case LogLevel.Warning:
                         if (Warn && ContainSearchText(item.LogLine))
                             items.Add(item);
                         break;
-                    case MvxLogLevel.Error:
+                    case LogLevel.Error:
                         if (Error && ContainSearchText(item.LogLine))
                             items.Add(item);
                         break;
-                    case MvxLogLevel.Fatal:
+                    case LogLevel.Critical:
                         if (Fatal && ContainSearchText(item.LogLine))
                             items.Add(item);
                         break;
@@ -186,7 +186,7 @@ namespace Playground.Core.ViewModels.Settings
             {
                 var item = new LogCellElement { LogLine = log };
 
-                foreach (MvxLogLevel logLevel in Enum.GetValues(typeof(MvxLogLevel)))
+                foreach (LogLevel logLevel in Enum.GetValues(typeof(LogLevel)))
                 {
                     if (item.LogLine.StartsWith(logLevel.ToString()))
                     {

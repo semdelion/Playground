@@ -1,5 +1,5 @@
-﻿using MvvmCross.Commands;
-using MvvmCross.Logging;
+﻿using Microsoft.Extensions.Logging;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Semdelion.Core.Providers.Interfaces;
@@ -20,10 +20,10 @@ namespace Playground.Core.ViewModels.Settings
         public MvxObservableCollection<CultureInfo> Cultures { get; set; }
 
         public SettingsViewModel(
-            IMvxLogProvider logProvider, 
+            ILoggerFactory loggerFactory, 
             IMvxNavigationService navigationService,
             IMvxLocalizationProvider localizationProvider) 
-            : base(logProvider, navigationService) 
+            : base(loggerFactory, navigationService) 
         {
             LocalizationProvider = localizationProvider;
         }

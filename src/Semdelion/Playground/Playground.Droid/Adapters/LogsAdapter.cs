@@ -3,8 +3,8 @@ using Android.Graphics;
 using Android.Util;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
+using Microsoft.Extensions.Logging;
 using MvvmCross.DroidX.RecyclerView;
-using MvvmCross.Logging;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using Playground.Core.ViewModels.Settings.CellElements;
 
@@ -32,11 +32,11 @@ namespace Playground.Droid.Adapters
             {
                 var logTextView = holder.ItemView.FindViewById<TextView>(Droid.Resource.Id.logs_text_view);
 
-                if (logCellElement.LogLevel == MvxLogLevel.Warn)
+                if (logCellElement.LogLevel == LogLevel.Warning)
                     logTextView.SetTextColor(_warningColor);
-                else if (logCellElement.LogLevel == MvxLogLevel.Error)
+                else if (logCellElement.LogLevel == LogLevel.Error)
                     logTextView.SetTextColor(_errorColor);
-                else if (logCellElement.LogLevel == MvxLogLevel.Fatal)
+                else if (logCellElement.LogLevel == LogLevel.Critical)
                     logTextView.SetTextColor(_fatalColor);
                 else
                     logTextView.SetTextColor(_mainColor);

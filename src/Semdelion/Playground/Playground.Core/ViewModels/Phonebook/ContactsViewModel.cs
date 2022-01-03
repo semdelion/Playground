@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using MvvmCross.Commands;
-using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using Playground.Core.Navigation;
 using Playground.Core.Providers;
@@ -22,8 +22,8 @@ namespace Playground.Core.ViewModels.Phonebook
 
         public override string Title => this["ContactsViewModel.Title"];
 
-        public ContactsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IContactProvider contactProvider)
-           : base(logProvider, navigationService)
+        public ContactsViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService, IContactProvider contactProvider)
+           : base(loggerFactory, navigationService)
         {
             ContactProvider = contactProvider;
         }

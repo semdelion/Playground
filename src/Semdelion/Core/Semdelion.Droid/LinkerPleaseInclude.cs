@@ -1,4 +1,4 @@
-﻿using Android.App;
+using Android.App;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
@@ -107,12 +107,7 @@ namespace Semdelion.Droid
             var context2 = new MvxTaskBasedBindingContext();
             context2.Dispose();
         }
-
-        public void Include(MvxNavigationService service, IMvxViewModelLoader loader)
-        {
-            service = new MvxNavigationService(null, loader);
-        }
-
+        
         public void Include(ConsoleColor color)
         {
             Console.Write("");

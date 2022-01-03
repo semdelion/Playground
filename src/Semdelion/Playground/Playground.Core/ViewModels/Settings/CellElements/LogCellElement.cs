@@ -1,4 +1,5 @@
-﻿using MvvmCross.Logging;
+﻿
+using Microsoft.Extensions.Logging;
 
 namespace Playground.Core.ViewModels.Settings.CellElements
 {
@@ -6,6 +7,6 @@ namespace Playground.Core.ViewModels.Settings.CellElements
     {
         public string LogLine { get; set; }
 
-        public MvxLogLevel? LogLevel { get; set; } = null;
+        public LogLevel? LogLevel { get; set; } = null;
     }
 }

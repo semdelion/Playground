@@ -1,9 +1,9 @@
-﻿using MvvmCross.Logging;
-using MvvmCross.Navigation;
+﻿using MvvmCross.Navigation;
 using Semdelion.Core.ViewModels.Base;
 using System.Collections.Generic;
 using Playground.Core.ViewModels.Map.Item;
 using System;
+using Microsoft.Extensions.Logging;
 
 namespace Playground.Core.ViewModels.Map
 {
@@ -15,7 +15,7 @@ namespace Playground.Core.ViewModels.Map
         
         public UserLocation CurrentUserLocation = new UserLocation { Latitude = 56.4977, Longitude = 84.9744 };
 
-        public MapViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
+        public MapViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService) : base(loggerFactory, navigationService)
         {
             MapItems = GetMapItems();
         }

@@ -1,8 +1,8 @@
 ﻿namespace Semdelion.Core.ViewModels.Base
 {
+    using Microsoft.Extensions.Logging;
     using MvvmCross.Commands;
     using MvvmCross.Localization;
-    using MvvmCross.Logging;
     using MvvmCross.Navigation;
     using MvvmCross.ViewModels;
     using Semdelion.Core.Enums;
@@ -42,8 +42,8 @@
         #endregion
 
         #region Constructor
-        protected BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
-            : base(logProvider, navigationService) { }
+        protected BaseViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService)
+            : base(loggerFactory, navigationService) { }
         #endregion
     }
 }

@@ -160,9 +160,9 @@
     <Reference Include="MonoTouch.Dialog-1" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="MvvmCross">
-      <Version>7.1.2</Version>
+      <Version>8.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading">
       <Version>2.4.11.982</Version>
@@ -232,25 +232,48 @@
     <ImageAsset Include="Assets.xcassets\logo_splashscreen.imageset\logo_splashscreen.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\background_color.colorset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\bacground_second_color.colorset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\text_color.colorset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\ic_logs.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\ic_logs-1.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\ic_night_mode-1.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\ic_night_mode.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\ic_language.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\ic_language-1.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\background_color.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\bacground_second_color.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\text_color.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\ic_logs.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\ic_logs-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_logs.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\ic_night_mode-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_night_mode.imageset\ic_night_mode.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\ic_language.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\ic_language-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_language.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_moon.imageset\" />
-    <Folder Include="Views\Settings\Cells\" />
-    <Folder Include="Views\Settings\Sources\" />
-    <Folder Include="Assets.xcassets\background_color.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Playground.Core\Playground.Core.csproj">

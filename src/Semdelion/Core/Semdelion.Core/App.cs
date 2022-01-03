@@ -1,9 +1,9 @@
 ﻿namespace Semdelion.Core
 {
+    using Microsoft.Extensions.Logging;
     using MvvmCross;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
-    using MvvmCross.Logging;
     using MvvmCross.ViewModels;
     using Plugin.Connectivity;
     using Semdelion.Core.Log;
@@ -52,11 +52,8 @@
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogWriter, LogWriter>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogReader, LogReader>();
 
-            var logger = Mvx.IoCProvider.Resolve<IMvxLogProvider>().GetLogFor(nameof(App));
-            logger.Info("#################### Client Settings ####################");
-            logger.Error("Error");
-            logger.Fatal("Fatal");
-            logger.Warn("Warn");
+            var logger = Mvx.IoCProvider.Resolve<ILoggerFactory>().CreateLogger(nameof(App));
+            logger.Log(LogLevel.Information, "#################### Client Settings ####################");
         }
 
         public void InitializeCultureInfo(CultureInfo cultureInfo)

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using MvvmCross;
 using MvvmCross.Commands;
-using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using Playground.Core.ViewModels.Firebase;
 using Playground.Core.ViewModels.Map;
@@ -34,8 +34,8 @@ namespace Playground.Core.ViewModels
 
         #region Constructor
 
-        public MainViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
-           : base(logProvider, navigationService)
+        public MainViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService)
+           : base(loggerFactory, navigationService)
         {
             BottomNavigationItemSelectedCommand = new MvxCommand<string>(BottomNavigationItemSelected);
 

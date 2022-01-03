@@ -2,32 +2,29 @@
 {
     using System;
     using System.Diagnostics;
-    using System.Linq;
-    using MvvmCross.Logging;
     using MvvmCross;
     using Semdelion.Core.Log;
     using Semdelion.Core.Extensions;
+    using Microsoft.Extensions.Logging;
 
-    public class DebugTrace : IMvxLog
-	{
+    public class DebugTrace : ILogger
+    {
         private ILogWriter logWriter;
         protected ILogWriter LogWriter => Mvx.IoCProvider.CanResolve<ILogWriter>() ? (logWriter ??= Mvx.IoCProvider.Resolve<ILogWriter>()) : null;
 
-        public bool Log(MvxLogLevel logLevel, Func<string> messageFunc, Exception exception = null, params object[] formatParameters)
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             try
             {
                 var logEntry = string.Empty;
 
-                if (messageFunc == null)
+                if (formatter == null)
                 {
-                    logEntry = $"{logLevel}:{exception?.BuildAllMessagesAndStackTrace()}";
+                    logEntry = $"{logLevel}:" + (exception?.BuildAllMessagesAndStackTrace() ?? string.Empty);
                 }
                 else
                 {
-                    logEntry = formatParameters.Any()
-                        ? string.Format(logLevel + ":" + messageFunc() + ":" + exception?.BuildAllMessagesAndStackTrace(), formatParameters)
-                        : logLevel + ":" + messageFunc();
+                    logEntry = logLevel + ":" + formatter.Invoke(state, exception);
                 }
 
                 Debug.WriteLine(logEntry);
@@ -36,14 +33,25 @@
             }
             catch (Exception)
             {
-                this.Trace($"Exception during trace of {logLevel} {messageFunc?.Invoke()}");
+                this.Log(LogLevel.Trace, $"Exception during trace of {logLevel} {exception.Message}");
             }
+        }
+
+        public bool IsEnabled(LogLevel logLevel)
+        {
             return true;
         }
 
-        public bool IsLogLevelEnabled(MvxLogLevel logLevel)
+        public IDisposable BeginScope<TState>(TState state)
         {
-            return true;
+            return new Disposable();
+        }
+
+        internal class Disposable : IDisposable
+        {
+            public void Dispose()
+            {
+            }
         }
     }
 }

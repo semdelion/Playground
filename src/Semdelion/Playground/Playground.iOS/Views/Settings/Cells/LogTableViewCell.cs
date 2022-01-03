@@ -3,9 +3,9 @@
     using System;
     using Foundation;
     using MvvmCross.Binding.BindingContext;
-    using MvvmCross.Logging;
     using MvvmCross.Platforms.Ios.Binding.Views;
     using Playground.Core.ViewModels.Settings.CellElements;
+    using Microsoft.Extensions.Logging;
     using UIKit;
 
     public partial class LogTableViewCell : MvxTableViewCell
@@ -18,15 +18,15 @@
             Nib = UINib.FromName(nameof(LogTableViewCell), NSBundle.MainBundle);
         }
 
-        public MvxLogLevel ColorText
+        public LogLevel ColorText
         {
             set
             {
-                if (value == MvxLogLevel.Warn)
+                if (value == LogLevel.Warning)
                     LogLabel.TextColor = UIColor.Orange;
-                else if (value == MvxLogLevel.Error)
+                else if (value == LogLevel.Error)
                     LogLabel.TextColor = UIColor.Red;
-                else if (value == MvxLogLevel.Fatal)
+                else if (value == LogLevel.Critical)
                     LogLabel.TextColor = UIColor.Red;
                 else
                     LogLabel.TextColor = UIColor.White;

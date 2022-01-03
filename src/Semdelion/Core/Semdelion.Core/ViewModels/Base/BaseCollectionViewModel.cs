@@ -1,5 +1,5 @@
-﻿using MvvmCross.Commands;
-using MvvmCross.Logging;
+﻿using Microsoft.Extensions.Logging;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Semdelion.Core.ViewModels.Interfaces;
@@ -41,8 +41,8 @@ namespace Semdelion.Core.ViewModels.Base
 
         #region Constructors
         /// <inheritdoc />
-        protected BaseCollectionViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
-            : base(logProvider, navigationService) { }
+        protected BaseCollectionViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService)
+            : base(loggerFactory, navigationService) { }
         #endregion
 
         #region Protected

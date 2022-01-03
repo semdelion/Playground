@@ -20,7 +20,8 @@ namespace Semdelion.Droid.Bindings
         public MvxBottomNavigationBinding(BottomNavigationView bottomNav) : base(bottomNav)
         {
             _bottomNav = bottomNav;
-            _bottomNav.NavigationItemSelected += OnNavigationItemSelected;
+            _bottomNav.ItemSelected += OnNavigationItemSelected;
+            //_bottomNav.NavigationItemSelected += OnNavigationItemSelected;
         }
 
         public override void SetValue(object value)
@@ -33,7 +34,7 @@ namespace Semdelion.Droid.Bindings
 
         }
 
-        void OnNavigationItemSelected(object sender, BottomNavigationView.NavigationItemSelectedEventArgs e)
+        void OnNavigationItemSelected(object sender, BottomNavigationView.ItemSelectedEventArgs e)
         {
 
             if (_command != null)
@@ -43,7 +44,7 @@ namespace Semdelion.Droid.Bindings
         protected override void Dispose(bool isDisposing)
         {
             if (isDisposing)
-                _bottomNav.NavigationItemSelected -= OnNavigationItemSelected;
+                _bottomNav.ItemSelected -= OnNavigationItemSelected;
 
             base.Dispose(isDisposing);
         }

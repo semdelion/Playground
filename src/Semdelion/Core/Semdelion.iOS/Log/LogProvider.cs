@@ -1,9 +1,9 @@
 ﻿namespace Semdelion.iOS.Log
 {
-    using MvvmCross.Logging;
+    using Microsoft.Extensions.Logging;
     using System;
 
-    public class LogProvider : IMvxLogProvider
+    public class LogProvider : ILoggerProvider
     {
         private DebugTrace _trace;
 
@@ -24,12 +24,7 @@
                = new Lazy<OpenMdc>(GetOpenMdcMethod);
         }
 
-        public IMvxLog GetLogFor<T>()
-        {
-            return _trace ??= new DebugTrace();
-        }
-
-        public IMvxLog GetLogFor(string name)
+        public ILogger GetLogFor<T>()
         {
             return _trace ??= new DebugTrace();
         }
@@ -46,9 +41,14 @@
         protected virtual OpenMdc GetOpenMdcMethod()
             => (_, __) => NoopDisposableInstance;
 
-        public IMvxLog GetLogFor(Type type)
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            NoopDisposableInstance.Dispose();
+        }
+
+        public ILogger CreateLogger(string categoryName)
+        {
+            return _trace ?? (_trace = new DebugTrace());
         }
     }
 

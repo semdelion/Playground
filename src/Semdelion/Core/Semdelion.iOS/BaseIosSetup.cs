@@ -3,12 +3,12 @@
     using System.Globalization;
     using System.Net.Http;
     using System.Reflection;
+    using Microsoft.Extensions.Logging;
     using MvvmCross;
     using MvvmCross.Binding.Bindings.Target.Construction;
     using MvvmCross.Converters;
     using MvvmCross.IoC;
     using MvvmCross.Localization;
-    using MvvmCross.Logging;
     using MvvmCross.Platforms.Ios.Core;
     using MvvmCross.Plugin;
     using MvvmCross.ViewModels;
@@ -21,10 +21,15 @@
     using Semdelion.iOS.Bindings;
     using Semdelion.iOS.Custom;
     using Semdelion.iOS.Log;
+    using Serilog;
+    using Serilog.Extensions.Logging;
 
     public abstract  class BaseIosSetup : MvxIosSetup
     {
         private App _app;
+
+        private Microsoft.Extensions.Logging.ILogger logger;
+        protected Microsoft.Extensions.Logging.ILogger Logger => logger ??= Mvx.IoCProvider.Resolve<ILoggerFactory>().CreateLogger(nameof(BaseIosSetup));
 
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
@@ -32,10 +37,10 @@
             base.FillTargetFactories(registry);
         }
 
-        protected override void InitializeFirstChance()
+        protected override void InitializeFirstChance(IMvxIoCProvider iocProvider)
         {
-            base.InitializeFirstChance();
             Mvx.IoCProvider.RegisterSingleton<IConnectionService>(() => new ConnectionService(() => new HttpLoggingHandler(new NSUrlSessionHandler())));
+            base.InitializeFirstChance(iocProvider);
         }
 
         protected override void FillValueConverters(IMvxValueConverterRegistry registry)
@@ -44,7 +49,7 @@
             registry.AddOrOverwrite("Language", new MvxLanguageConverter());
         }
 
-        protected sealed override IMvxApplication CreateApp()
+        protected sealed override IMvxApplication CreateApp(IMvxIoCProvider iocProvider)
         {
             _app = CreateSemApp();
             return _app;
@@ -62,13 +67,36 @@
             };
         }
 
-        protected override IMvxLogProvider CreateLogProvider()
+        protected override ILoggerProvider CreateLogProvider()
         {
 #if !RELEASE
-            Mvx.IoCProvider.RegisterType<IMvxLogProvider, LogProvider>();
+            Mvx.IoCProvider.RegisterType<ILoggerProvider, LogProvider>();
             return new LogProvider();
 #else
-            return base.CreateLogProvider();
+			return new SerilogLoggerProvider();
+#endif
+        }
+
+        protected override ILoggerFactory CreateLogFactory()
+        {
+#if !RELEASE
+            var loggerProviders = new LoggerProviderCollection();
+            loggerProviders.AddProvider(Mvx.IoCProvider.Resolve<ILoggerProvider>());
+            Serilog.Log.Logger = new LoggerConfiguration()
+               .MinimumLevel.Verbose()
+               .WriteTo.Providers(loggerProviders)
+               .CreateLogger();
+
+            var loggerFactory = new SerilogLoggerFactory();
+            loggerFactory.AddProvider(Mvx.IoCProvider.Resolve<ILoggerProvider>());
+            return loggerFactory;
+#else
+            Serilog.Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.NSLog()
+                .CreateLogger();
+
+            return new SerilogLoggerFactory();
 #endif
         }
 

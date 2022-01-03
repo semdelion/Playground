@@ -1,10 +1,10 @@
 ﻿using MvvmCross.ViewModels;
 using Semdelion.Core.ViewModels.Interfaces;
 using Semdelion.Core.Enums;
-using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.Commands;
 using MvvmCross.Localization;
+using Microsoft.Extensions.Logging;
 
 namespace Semdelion.Core.ViewModels.Base
 {
@@ -32,8 +32,8 @@ namespace Semdelion.Core.ViewModels.Base
 
         public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ??= new MvxLanguageBinder(string.Empty);
 
-        public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
-            : base(logProvider, navigationService) { }
+        public BaseViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService)
+            : base(loggerFactory, navigationService) { }
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ namespace Semdelion.Core.ViewModels.Base
 
         public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ??= new MvxLanguageBinder(string.Empty);
 
-        public BaseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
+        public BaseViewModel(ILoggerFactory logProvider, IMvxNavigationService navigationService)
            : base(logProvider, navigationService) { }
     }
     /// <summary>
@@ -91,7 +91,7 @@ namespace Semdelion.Core.ViewModels.Base
 
         public virtual IMvxLanguageBinder LocalizedTextSource => _localizedTextSource ??= new MvxLanguageBinder(string.Empty);
 
-        public BaseViewModelResult(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
-          : base(logProvider, navigationService) { }
+        public BaseViewModelResult(ILoggerFactory loggerFactory, IMvxNavigationService navigationService)
+          : base(loggerFactory, navigationService) { }
     }
 }

@@ -1,4 +1,4 @@
-﻿using MvvmCross.Logging;
+﻿using Microsoft.Extensions.Logging;
 using MvvmCross.Navigation;
 using Semdelion.Core.ViewModels.Interfaces;
 using System.Collections.Generic;
@@ -9,8 +9,8 @@ namespace Semdelion.Core.ViewModels.Base
     {
         protected int CurrentCount => IsRefreshing ? 0 : (Items?.Count ?? 0);
 
-        protected BasePageCollectionViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) 
-            : base(logProvider, navigationService) { }
+        protected BasePageCollectionViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService) 
+            : base(loggerFactory, navigationService) { }
 
         protected override void SetItems(IList<TItem> items)
         {

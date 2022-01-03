@@ -1,4 +1,4 @@
-﻿using MvvmCross.Logging;
+﻿using Microsoft.Extensions.Logging;
 using MvvmCross.Navigation;
 using Playground.Core.Navigation;
 using Semdelion.Core.ViewModels.Base;
@@ -15,8 +15,8 @@ namespace Playground.Core.ViewModels.Phonebook
 
         public string Phone { get; set; }
 
-        public ContactDetailsViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) 
-            : base(logProvider, navigationService) { }
+        public ContactDetailsViewModel(ILoggerFactory loggerFactory, IMvxNavigationService navigationService) 
+            : base(loggerFactory, navigationService) { }
 
         public override void Prepare(ContactNavParams parameter)
         {
